@@ -60,11 +60,12 @@ export default function Contact() {
 
     const name = `${formState.firstName} ${formState.lastName}`.trim();
     const subject = encodeURIComponent(`Cleaning enquiry: ${formState.service}`);
+    const cc = encodeURIComponent("callum@shroweb.com");
     const body = encodeURIComponent(
       `Name: ${name || "Not provided"}\nEmail: ${formState.email || "Not provided"}\nService: ${formState.service}\n\nMessage:\n${formState.message || "No message provided"}`
     );
 
-    window.location.href = `mailto:info@hullcleaning.co.uk?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@hullcleaning.co.uk?cc=${cc}&subject=${subject}&body=${body}`;
     setStatus("Your email app should open with your enquiry ready to send.");
   }
 

@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Clock3, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Button, Card } from "./ui";
 
+const formEndpoint = "https://formsubmit.co/ajax/info@hullcleaning.co.uk";
+
 export default function Contact() {
   const [formState, setFormState] = useState({
     firstName: "",
@@ -13,6 +15,7 @@ export default function Contact() {
   });
 
   const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const contactMethods = [
     {
@@ -55,18 +58,49 @@ export default function Contact() {
     setFormState((current) => ({ ...current, [name]: value }));
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
     const name = `${formState.firstName} ${formState.lastName}`.trim();
-    const subject = encodeURIComponent(`Cleaning enquiry: ${formState.service}`);
-    const cc = encodeURIComponent("callum@shroweb.com");
-    const body = encodeURIComponent(
-      `Name: ${name || "Not provided"}\nEmail: ${formState.email || "Not provided"}\nService: ${formState.service}\n\nMessage:\n${formState.message || "No message provided"}`
-    );
+    const formData = new FormData();
+    formData.append("name", name || "Not provided");
+    formData.append("email", formState.email || "Not provided");
+    formData.append("service", formState.service);
+    formData.append("message", formState.message || "No message provided");
+    formData.append("_subject", `Cleaning enquiry: ${formState.service}`);
+    formData.append("_cc", "callum@shroweb.com");
+    formData.append("_template", "table");
+    formData.append("_captcha", "false");
 
-    window.location.href = `mailto:info@hullcleaning.co.uk?cc=${cc}&subject=${subject}&body=${body}`;
-    setStatus("Your email app should open with your enquiry ready to send.");
+    setIsSubmitting(true);
+    setStatus("");
+
+    try {
+      const response = await fetch(formEndpoint, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Unable to send enquiry");
+      }
+
+      setStatus("Thanks, your enquiry has been sent.");
+      setFormState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        service: "Domestic Cleaning",
+        message: "",
+      });
+    } catch (error) {
+      setStatus("There was a problem sending your enquiry. Please try WhatsApp or email instead.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -152,16 +186,16 @@ export default function Contact() {
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-700">First Name</label>
-                  <input name="firstName" value={formState.firstName} onChange={handleChange} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Alex" />
+                  <input name="firstName" value={formState.firstName} onChange={handleChange} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Alex" required />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-700">Last Name</label>
-                  <input name="lastName" value={formState.lastName} onChange={handleChange} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Taylor" />
+                  <input name="lastName" value={formState.lastName} onChange={handleChange} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Taylor" required />
                 </div>
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700">Email Address</label>
-                <input name="email" value={formState.email} onChange={handleChange} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="alex@example.com" />
+                <input name="email" type="email" value={formState.email} onChange={handleChange} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="alex@example.com" required />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700">Service Required</label>
@@ -176,9 +210,11 @@ export default function Contact() {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700">Message</label>
-                <textarea name="message" value={formState.message} onChange={handleChange} rows={5} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Tell us what type of clean you need, your area, and whether it is a one-off or regular job..." />
+                <textarea name="message" value={formState.message} onChange={handleChange} rows={5} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Tell us what type of clean you need, your area, and whether it is a one-off or regular job..." required />
               </div>
-                <Button size="lg" className="w-full text-lg shadow-xl shadow-brand-primary/20">Send Enquiry</Button>
+                <Button size="lg" className="w-full text-lg shadow-xl shadow-brand-primary/20" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send Enquiry"}
+                </Button>
                 {status ? <p className="text-sm text-gray-600">{status}</p> : null}
               </form>
             </Card>

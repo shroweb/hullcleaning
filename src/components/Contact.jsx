@@ -47,12 +47,6 @@ export default function Contact() {
       value: "Mon-Sat: 8am-6pm",
       icon: Clock3,
     },
-    {
-      title: "Response Time",
-      description: "Best for quick quotes and availability.",
-      value: "Usually within a few hours",
-      icon: MessageCircle,
-    },
   ];
 
   function handleChange(event) {

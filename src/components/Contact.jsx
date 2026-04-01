@@ -1,19 +1,11 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { Clock3, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Button, Card } from "./ui";
 
-const formEndpoint = "https://formsubmit.co/hull.cleaning@outlook.com";
+const formEndpoint = "https://api.web3forms.com/submit";
+const accessKey = "cdccd11d-d7bd-49c4-a85c-1a3d51fe9b70";
 
 export default function Contact() {
-  const [formState, setFormState] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    service: "Domestic Cleaning",
-    message: "",
-  });
-
   const successUrl =
     typeof window !== "undefined"
       ? `${window.location.origin}/thanks`
@@ -48,11 +40,6 @@ export default function Contact() {
       icon: Clock3,
     },
   ];
-
-  function handleChange(event) {
-    const { name, value } = event.target;
-    setFormState((current) => ({ ...current, [name]: value }));
-  }
 
   return (
     <section id="contact" className="bg-gray-50/60 py-24">
@@ -134,28 +121,28 @@ export default function Contact() {
                 </p>
               </div>
               <form className="space-y-5" action={formEndpoint} method="POST">
-                <input type="hidden" name="_subject" value={`Cleaning enquiry: ${formState.service}`} />
-                <input type="hidden" name="_cc" value="callum@shroweb.com" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value={successUrl} />
+                <input type="hidden" name="access_key" value={accessKey} />
+                <input type="hidden" name="subject" value="Cleaning enquiry from hullcleaning.co.uk" />
+                <input type="hidden" name="from_name" value="In & Out Cleaning Website" />
+                <input type="hidden" name="redirect" value={successUrl} />
+                <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex="-1" autoComplete="off" />
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-700">First Name</label>
-                  <input name="firstName" value={formState.firstName} onChange={handleChange} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Alex" required />
+                  <input name="First Name" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Alex" required />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-700">Last Name</label>
-                  <input name="lastName" value={formState.lastName} onChange={handleChange} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Taylor" required />
+                  <input name="Last Name" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Taylor" required />
                 </div>
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700">Email Address</label>
-                <input name="email" type="email" value={formState.email} onChange={handleChange} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="alex@example.com" required />
+                <input name="email" type="email" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="alex@example.com" required />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700">Service Required</label>
-                <select name="service" value={formState.service} onChange={handleChange} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300">
+                <select name="Service Required" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300">
                   <option>Domestic Cleaning</option>
                   <option>Commercial Offices</option>
                   <option>End of Tenancy</option>
@@ -166,7 +153,7 @@ export default function Contact() {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700">Message</label>
-                <textarea name="message" value={formState.message} onChange={handleChange} rows={5} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Tell us what type of clean you need, your area, and whether it is a one-off or regular job..." required />
+                <textarea name="message" rows={5} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Tell us what type of clean you need, your area, and whether it is a one-off or regular job..." required />
               </div>
                 <Button size="lg" className="w-full text-lg shadow-xl shadow-brand-primary/20">
                   Send Enquiry

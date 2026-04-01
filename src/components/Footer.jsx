@@ -22,7 +22,7 @@ export default function Footer() {
               <a href="https://w.app/inoutcleaning" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors">
                 <MessageCircle size={20} />
               </a>
-              <a href="mailto:info@hullcleaning.co.uk" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-secondary hover:text-[#081525] transition-colors">
+              <a href="mailto:hull.cleaning@outlook.com" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-secondary hover:text-[#081525] transition-colors">
                 <Mail size={20} />
               </a>
               <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors">
@@ -60,7 +60,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li>Swanland, East Yorkshire</li>
               <li>WhatsApp live chat available</li>
-              <li>info@hullcleaning.co.uk</li>
+              <li>hull.cleaning@outlook.com</li>
               <li className="pt-2 text-xs opacity-60">Mon - Fri: 8:00 AM - 6:00 PM</li>
               <li className="text-xs opacity-60">Sat - Sun: 9:00 AM - 4:00 PM</li>
             </ul>

@@ -80,11 +80,11 @@ export default function AreaPage() {
                 Chat on WhatsApp
               </a>
               <a
-                href="mailto:info@hullcleaning.co.uk"
+                href="mailto:hull.cleaning@outlook.com"
                 className="flex items-center gap-3 rounded-2xl border border-gray-200 px-5 py-4 font-semibold text-gray-900"
               >
                 <Mail size={20} />
-                info@hullcleaning.co.uk
+                hull.cleaning@outlook.com
               </a>
             </div>
           </Card>

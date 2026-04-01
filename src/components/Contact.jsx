@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Clock3, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Button, Card } from "./ui";
 
-const formEndpoint = "https://formsubmit.co/info@hullcleaning.co.uk";
+const formEndpoint = "https://formsubmit.co/hull.cleaning@outlook.com";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -31,9 +31,9 @@ export default function Contact() {
     {
       title: "Email",
       description: "Ideal for quote details and photos.",
-      value: "info@hullcleaning.co.uk",
+      value: "hull.cleaning@outlook.com",
       icon: Mail,
-      href: "mailto:info@hullcleaning.co.uk",
+      href: "mailto:hull.cleaning@outlook.com",
     },
     {
       title: "Based In",

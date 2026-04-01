@@ -42,7 +42,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900">Contact</h2>
             <p className="mt-3 leading-relaxed">
-              For booking questions, contact <a href="mailto:info@hullcleaning.co.uk" className="text-brand-primary">info@hullcleaning.co.uk</a>.
+              For booking questions, contact <a href="mailto:hull.cleaning@outlook.com" className="text-brand-primary">hull.cleaning@outlook.com</a>.
             </p>
           </section>
         </div>

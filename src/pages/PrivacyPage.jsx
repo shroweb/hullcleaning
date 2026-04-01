@@ -42,7 +42,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900">Contact</h2>
             <p className="mt-3 leading-relaxed">
-              If you have a privacy question, contact <a href="mailto:info@hullcleaning.co.uk" className="text-brand-primary">info@hullcleaning.co.uk</a>.
+              If you have a privacy question, contact <a href="mailto:hull.cleaning@outlook.com" className="text-brand-primary">hull.cleaning@outlook.com</a>.
             </p>
           </section>
         </div>

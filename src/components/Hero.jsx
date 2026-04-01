@@ -99,11 +99,11 @@ export default function Hero() {
             className="relative mx-auto mt-2 hidden w-full max-w-md lg:mt-0 lg:block lg:max-w-none"
           >
             <div className="absolute inset-4 -z-10 rounded-[2.75rem] bg-gradient-to-br from-brand-accent via-white to-brand-accent-green blur-2xl" />
-            <div className="relative z-10 overflow-hidden rounded-[2.5rem] border border-white/70 bg-white shadow-2xl shadow-blue-500/10">
+            <div className="relative z-10 aspect-[5/5.9] overflow-hidden rounded-[2.5rem] border border-white/70 bg-white shadow-2xl shadow-blue-500/10 xl:aspect-[5/5.6]">
               <img 
                 src="/hero.png" 
                 alt="Professional cleaning in Hull" 
-                className="h-auto w-full object-cover"
+                className="h-full w-full object-cover object-center"
               />
               <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-brand-secondary/10 via-brand-primary/5 to-transparent" />
             </div>

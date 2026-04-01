@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Clock3, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Button, Card } from "./ui";
 
-const formEndpoint = "https://formsubmit.co/ajax/info@hullcleaning.co.uk";
+const formEndpoint = "https://formsubmit.co/info@hullcleaning.co.uk";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -14,8 +14,10 @@ export default function Contact() {
     message: "",
   });
 
-  const [status, setStatus] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const successUrl =
+    typeof window !== "undefined"
+      ? `${window.location.origin}/thanks`
+      : "/thanks";
 
   const contactMethods = [
     {
@@ -56,51 +58,6 @@ export default function Contact() {
   function handleChange(event) {
     const { name, value } = event.target;
     setFormState((current) => ({ ...current, [name]: value }));
-  }
-
-  async function handleSubmit(event) {
-    event.preventDefault();
-
-    const name = `${formState.firstName} ${formState.lastName}`.trim();
-    const formData = new FormData();
-    formData.append("name", name || "Not provided");
-    formData.append("email", formState.email || "Not provided");
-    formData.append("service", formState.service);
-    formData.append("message", formState.message || "No message provided");
-    formData.append("_subject", `Cleaning enquiry: ${formState.service}`);
-    formData.append("_cc", "callum@shroweb.com");
-    formData.append("_template", "table");
-    formData.append("_captcha", "false");
-
-    setIsSubmitting(true);
-    setStatus("");
-
-    try {
-      const response = await fetch(formEndpoint, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-        },
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error("Unable to send enquiry");
-      }
-
-      setStatus("Thanks, your enquiry has been sent.");
-      setFormState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        service: "Domestic Cleaning",
-        message: "",
-      });
-    } catch (error) {
-      setStatus("There was a problem sending your enquiry. Please try WhatsApp or email instead.");
-    } finally {
-      setIsSubmitting(false);
-    }
   }
 
   return (
@@ -182,7 +139,12 @@ export default function Contact() {
                   Include your area, property type, and whether the job is one-off or regular.
                 </p>
               </div>
-              <form className="space-y-5" onSubmit={handleSubmit}>
+              <form className="space-y-5" action={formEndpoint} method="POST">
+                <input type="hidden" name="_subject" value={`Cleaning enquiry: ${formState.service}`} />
+                <input type="hidden" name="_cc" value="callum@shroweb.com" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value={successUrl} />
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-700">First Name</label>
@@ -212,10 +174,9 @@ export default function Contact() {
                 <label className="text-sm font-bold text-gray-700">Message</label>
                 <textarea name="message" value={formState.message} onChange={handleChange} rows={5} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Tell us what type of clean you need, your area, and whether it is a one-off or regular job..." required />
               </div>
-                <Button size="lg" className="w-full text-lg shadow-xl shadow-brand-primary/20" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : "Send Enquiry"}
+                <Button size="lg" className="w-full text-lg shadow-xl shadow-brand-primary/20">
+                  Send Enquiry
                 </Button>
-                {status ? <p className="text-sm text-gray-600">{status}</p> : null}
               </form>
             </Card>
           </motion.div>

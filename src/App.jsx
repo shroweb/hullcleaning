@@ -12,6 +12,7 @@ import AreaPage from "./pages/AreaPage";
 import ReviewsPage from "./pages/ReviewsPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
+import ThanksPage from "./pages/ThanksPage";
 import { motion, useScroll, useSpring } from "framer-motion";
 import WhatsAppChatWidget from "./components/WhatsAppChatWidget";
 
@@ -55,6 +56,7 @@ export default function App() {
             <Route path="/reviews" element={<ReviewsPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
+            <Route path="/thanks" element={<ThanksPage />} />
             <Route path="/areas/:slug" element={<AreaPage />} />
           </Routes>
         </main>

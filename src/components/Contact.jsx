@@ -141,6 +141,10 @@ export default function Contact() {
                 <input name="email" type="email" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="alex@example.com" required />
               </div>
               <div className="space-y-2">
+                <label className="text-sm font-bold text-gray-700">Phone Number</label>
+                <input name="Phone Number" type="tel" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="07..." />
+              </div>
+              <div className="space-y-2">
                 <label className="text-sm font-bold text-gray-700">Service Required</label>
                 <select name="Service Required" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300">
                   <option>Domestic Cleaning</option>

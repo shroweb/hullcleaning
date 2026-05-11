@@ -8,7 +8,7 @@ export default function Reviews() {
     <section id="reviews" className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-brand-primary font-bold tracking-widest uppercase text-xs">Testimonials</span>
+          <span className="text-brand-label font-bold tracking-widest uppercase text-xs">Testimonials</span>
           <h2 className="mt-4 text-4xl font-extrabold text-gray-900 tracking-tight">
             Hear From Our <span className="text-brand-primary">Happy Customers</span>
           </h2>

@@ -35,7 +35,7 @@ export default function Services() {
     <section id="services" className="overflow-hidden bg-gray-50/70 py-24">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom duration-700">
-          <span className="text-brand-primary font-bold tracking-widest uppercase text-xs">Our Expertise</span>
+          <span className="text-brand-label font-bold tracking-widest uppercase text-xs">Our Expertise</span>
           <h2 className="mt-4 text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
             Straightforward Cleaning Services <br />
             <span className="text-brand-primary">Built Around Real Local Needs</span>

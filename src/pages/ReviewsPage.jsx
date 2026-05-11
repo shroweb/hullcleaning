@@ -19,7 +19,7 @@ export default function ReviewsPage() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-brand-primary font-bold tracking-widest uppercase text-xs">
+          <span className="text-brand-label font-bold tracking-widest uppercase text-xs">
             Customer Reviews
           </span>
           <h1 className="mt-4 text-5xl font-extrabold text-gray-900 tracking-tight">
@@ -40,7 +40,7 @@ export default function ReviewsPage() {
             >
               <Card className="h-full border-none bg-gray-50/80 shadow-lg shadow-gray-200/60">
                 <div className="flex items-center justify-between">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-primary">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-label">
                     <Quote size={14} />
                     Review
                   </div>

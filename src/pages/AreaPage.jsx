@@ -35,7 +35,7 @@ export default function AreaPage() {
           transition={{ duration: 0.7 }}
           className="max-w-4xl"
         >
-          <span className="text-brand-primary font-bold tracking-widest uppercase text-xs">
+          <span className="text-brand-label font-bold tracking-widest uppercase text-xs">
             {area.name} Cleaning Services
           </span>
           <h1 className="mt-4 text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">

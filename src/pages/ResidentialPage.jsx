@@ -27,7 +27,7 @@ export default function ResidentialPage() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <span className="text-brand-primary font-bold tracking-widest uppercase text-xs">Home Cleaning</span>
+          <span className="text-brand-label font-bold tracking-widest uppercase text-xs">Home Cleaning</span>
           <h1 className="mt-4 text-5xl font-extrabold text-gray-900 tracking-tight">
             Domestic Cleaning <br />
             <span className="text-brand-primary">That Fits Around Home Life</span>

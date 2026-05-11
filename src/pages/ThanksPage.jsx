@@ -11,7 +11,7 @@ export default function ThanksPage() {
       />
       <div className="container mx-auto max-w-3xl px-6 text-center">
         <div className="rounded-[2.5rem] bg-gray-50 p-10 shadow-sm">
-          <div className="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">
+          <div className="text-xs font-bold uppercase tracking-[0.18em] text-brand-label">
             Enquiry sent
           </div>
           <h1 className="mt-4 text-5xl font-extrabold tracking-tight text-gray-900">

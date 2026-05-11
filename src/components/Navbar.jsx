@@ -39,8 +39,8 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center gap-4">
-        <Link to="/contact">
-          <Button size="sm" className="hidden sm:flex">Book Now</Button>
+        <Link to="/contact" className="hidden sm:flex">
+          <Button size="sm">Book Now</Button>
         </Link>
         <button
           type="button"

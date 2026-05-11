@@ -9,7 +9,7 @@ export default function ServiceAreas() {
     <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="text-brand-primary font-bold tracking-widest uppercase text-xs">
+          <span className="text-brand-label font-bold tracking-widest uppercase text-xs">
             Service Areas
           </span>
           <h2 className="mt-4 text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
@@ -23,7 +23,7 @@ export default function ServiceAreas() {
         <div className="rounded-[2rem] bg-gradient-to-br from-brand-accent to-white p-6 shadow-sm shadow-blue-100/40 lg:p-8">
           <div className="mb-8 flex flex-col items-center gap-6 text-center">
             <div className="flex flex-col items-center">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-primary shadow-sm">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-label shadow-sm">
                 <Sparkles size={14} />
                 Local Coverage
               </div>

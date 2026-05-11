@@ -9,7 +9,7 @@ export default function TermsPage() {
       />
       <div className="container mx-auto max-w-4xl px-6">
         <div className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">
+          <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-label">
             Legal
           </span>
           <h1 className="mt-4 text-5xl font-extrabold tracking-tight text-gray-900">

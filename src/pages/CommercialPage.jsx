@@ -27,7 +27,7 @@ export default function CommercialPage() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <span className="text-brand-primary font-bold tracking-widest uppercase text-xs">Business Cleaning</span>
+          <span className="text-brand-label font-bold tracking-widest uppercase text-xs">Business Cleaning</span>
           <h1 className="mt-4 text-5xl font-extrabold text-gray-900 tracking-tight">
             Commercial Cleaning <br />
             <span className="text-brand-primary">for Offices and Food Premises</span>

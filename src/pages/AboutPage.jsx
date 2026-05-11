@@ -35,7 +35,7 @@ export default function AboutPage() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <span className="text-brand-primary font-bold tracking-widest uppercase text-xs">Our Story</span>
+          <span className="text-brand-label font-bold tracking-widest uppercase text-xs">Our Story</span>
           <h1 className="mt-4 text-5xl font-extrabold text-gray-900 tracking-tight">
             Passionately Cleaning <br />
             <span className="text-brand-primary">Hull & East Yorkshire</span>

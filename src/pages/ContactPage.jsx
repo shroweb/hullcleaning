@@ -18,7 +18,7 @@ export default function ContactPage() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <span className="text-brand-primary font-bold tracking-widest uppercase text-xs">Reach Out</span>
+          <span className="text-brand-label font-bold tracking-widest uppercase text-xs">Reach Out</span>
           <h1 className="mt-4 text-5xl font-extrabold text-gray-900 tracking-tight">
             Let's Get Your Space <br />
             <span className="text-brand-primary">Sparkling Clean</span>

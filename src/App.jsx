@@ -1,20 +1,21 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import AboutPage from "./pages/AboutPage";
-import ServicesPage from "./pages/ServicesPage";
-import ResidentialPage from "./pages/ResidentialPage";
-import CommercialPage from "./pages/CommercialPage";
-import ContactPage from "./pages/ContactPage";
-import AreaPage from "./pages/AreaPage";
-import ReviewsPage from "./pages/ReviewsPage";
-import PrivacyPage from "./pages/PrivacyPage";
-import TermsPage from "./pages/TermsPage";
-import ThanksPage from "./pages/ThanksPage";
 import { motion, useScroll, useSpring } from "framer-motion";
 import WhatsAppChatWidget from "./components/WhatsAppChatWidget";
+
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const ServicesPage = lazy(() => import("./pages/ServicesPage"));
+const ResidentialPage = lazy(() => import("./pages/ResidentialPage"));
+const CommercialPage = lazy(() => import("./pages/CommercialPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const AreaPage = lazy(() => import("./pages/AreaPage"));
+const ReviewsPage = lazy(() => import("./pages/ReviewsPage"));
+const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
+const TermsPage = lazy(() => import("./pages/TermsPage"));
+const ThanksPage = lazy(() => import("./pages/ThanksPage"));
 
 // Helper to scroll to top on route change
 function ScrollToTop() {
@@ -46,19 +47,21 @@ export default function App() {
         <Navbar />
         
         <main className="min-h-screen">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/services/residential" element={<ResidentialPage />} />
-            <Route path="/services/commercial" element={<CommercialPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/reviews" element={<ReviewsPage />} />
-            <Route path="/privacy" element={<PrivacyPage />} />
-            <Route path="/terms" element={<TermsPage />} />
-            <Route path="/thanks" element={<ThanksPage />} />
-            <Route path="/areas/:slug" element={<AreaPage />} />
-          </Routes>
+          <Suspense fallback={null}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/services/residential" element={<ResidentialPage />} />
+              <Route path="/services/commercial" element={<CommercialPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/reviews" element={<ReviewsPage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/thanks" element={<ThanksPage />} />
+              <Route path="/areas/:slug" element={<AreaPage />} />
+            </Routes>
+          </Suspense>
         </main>
 
         <Footer />

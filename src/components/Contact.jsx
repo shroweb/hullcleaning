@@ -53,7 +53,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="relative bg-gradient-to-br from-white via-brand-accent to-brand-accent-green p-8 sm:p-10 lg:p-14"
           >
-            <div className="inline-flex rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-primary shadow-sm">
+            <div className="inline-flex rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-label shadow-sm">
               Get in touch
             </div>
             <h2 className="mb-6 mt-6 text-4xl font-extrabold tracking-tight text-gray-900 lg:text-5xl">
@@ -110,7 +110,7 @@ export default function Contact() {
           >
             <Card className="w-full border border-gray-100 bg-white p-8 shadow-xl shadow-gray-200/70 sm:p-10">
               <div className="mb-8">
-                <div className="text-sm font-bold uppercase tracking-[0.18em] text-brand-primary">
+                <div className="text-sm font-bold uppercase tracking-[0.18em] text-brand-label">
                   Quick Enquiry
                 </div>
                 <h3 className="mt-3 text-3xl font-bold tracking-tight text-gray-900">

@@ -1,6 +1,8 @@
 import { Home, SprayCan, Sparkles } from "lucide-react";
 import Seo from "../components/Seo";
 import ServicePageLayout from "../components/ServicePageLayout";
+import { serviceAreas } from "../data/serviceAreas";
+import { servicePages } from "../data/servicePages";
 
 const features = [
   "One-off cleaning visits",
@@ -12,6 +14,20 @@ const features = [
 ];
 
 export default function ResidentialPage() {
+  const areaLinks = serviceAreas.slice(0, 6).map((area) => ({
+    label: area.name,
+    to: `/areas/${area.slug}`,
+  }));
+
+  const relatedServices = servicePages
+    .filter((service) => service.slug !== "domestic-cleaning-hull")
+    .slice(0, 3)
+    .map((service) => ({
+      label: service.title,
+      to: `/${service.slug}`,
+      description: service.description,
+    }));
+
   return (
     <>
       <Seo
@@ -31,6 +47,10 @@ export default function ResidentialPage() {
         checklistColorClass="text-green-500"
         primaryCtaLabel="Get a Free Estimate"
         secondaryCtaLabel="Contact Us"
+        localCoverageTitle="Domestic cleaning in Hull, Swanland, and nearby villages"
+        localCoverageText="We carry out domestic cleaning in Hull and surrounding areas including Swanland, Kirk Ella, Willerby, Anlaby, Hessle, Cottingham, North Ferriby, and Beverley."
+        areaLinks={areaLinks}
+        relatedServices={relatedServices}
         infoCards={[
           {
             icon: Home,

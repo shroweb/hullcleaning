@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const stats = [
   { label: "Happy Customers", value: "50+" },
-  { label: "Service Areas", value: "7" },
+  { label: "Service Areas", value: "9" },
   { label: "Core Services", value: "6" },
   { label: "Based In", value: "Swanland" },
 ];

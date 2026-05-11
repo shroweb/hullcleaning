@@ -1,6 +1,8 @@
 import { Leaf, Scissors, PackageOpen } from "lucide-react";
 import Seo from "../components/Seo";
 import ServicePageLayout from "../components/ServicePageLayout";
+import { serviceAreas } from "../data/serviceAreas";
+import { servicePages } from "../data/servicePages";
 
 const features = [
   "Garden tidy ups and weeding",
@@ -12,6 +14,20 @@ const features = [
 ];
 
 export default function TidyUpsPage() {
+  const areaLinks = serviceAreas.map((area) => ({
+    label: area.name,
+    to: `/areas/${area.slug}`,
+  }));
+
+  const relatedServices = servicePages
+    .filter((service) => service.slug !== "tidy-ups-hull")
+    .slice(0, 3)
+    .map((service) => ({
+      label: service.title,
+      to: `/${service.slug}`,
+      description: service.description,
+    }));
+
   return (
     <>
       <Seo
@@ -31,6 +47,10 @@ export default function TidyUpsPage() {
         checklistColorClass="text-green-500"
         primaryCtaLabel="Ask on WhatsApp"
         secondaryCtaLabel="Get a Quote"
+        localCoverageTitle="Tidy ups and organisation help in Hull and nearby villages"
+        localCoverageText="We provide garden tidy ups, decluttering, and practical organisation help across Hull, Swanland, Willerby, Kirk Ella, Hessle, Beverley, and nearby areas."
+        areaLinks={areaLinks}
+        relatedServices={relatedServices}
         infoCards={[
           {
             icon: Leaf,

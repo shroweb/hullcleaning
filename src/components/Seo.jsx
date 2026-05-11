@@ -8,13 +8,19 @@ export default function Seo({ title, description = defaultDescription }) {
   useEffect(() => {
     document.title = title ? `${title} | ${siteName}` : siteName;
 
-    let descriptionTag = document.querySelector('meta[name="description"]');
-    if (!descriptionTag) {
-      descriptionTag = document.createElement("meta");
-      descriptionTag.setAttribute("name", "description");
-      document.head.appendChild(descriptionTag);
-    }
-    descriptionTag.setAttribute("content", description);
+    const upsertMeta = (selector, attrName, attrValue, content) => {
+      let tag = document.querySelector(selector);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute(attrName, attrValue);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute("content", content);
+    };
+
+    upsertMeta('meta[name="description"]', "name", "description", description);
+    upsertMeta('meta[property="og:title"]', "property", "og:title", title ? `${title} | ${siteName}` : siteName);
+    upsertMeta('meta[property="og:description"]', "property", "og:description", description);
   }, [title, description]);
 
   return null;

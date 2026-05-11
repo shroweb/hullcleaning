@@ -1,6 +1,8 @@
 import { KeyRound, ShieldCheck, Clock } from "lucide-react";
 import Seo from "../components/Seo";
 import ServicePageLayout from "../components/ServicePageLayout";
+import { serviceAreas } from "../data/serviceAreas";
+import { servicePages } from "../data/servicePages";
 
 const features = [
   "Full property deep clean throughout",
@@ -12,6 +14,20 @@ const features = [
 ];
 
 export default function EndOfTenancyPage() {
+  const areaLinks = serviceAreas.map((area) => ({
+    label: area.name,
+    to: `/areas/${area.slug}`,
+  }));
+
+  const relatedServices = servicePages
+    .filter((service) => service.slug !== "end-of-tenancy-cleaning-hull")
+    .slice(0, 3)
+    .map((service) => ({
+      label: service.title,
+      to: `/${service.slug}`,
+      description: service.description,
+    }));
+
   return (
     <>
       <Seo
@@ -31,6 +47,10 @@ export default function EndOfTenancyPage() {
         reverse
         primaryCtaLabel="Get a Free Quote"
         secondaryCtaLabel="Contact Us"
+        localCoverageTitle="End of tenancy cleaning in Hull and nearby areas"
+        localCoverageText="We cover move-out and handover cleans across Hull, Swanland, Kirk Ella, Willerby, Hessle, Cottingham, Beverley, and surrounding villages."
+        areaLinks={areaLinks}
+        relatedServices={relatedServices}
         infoCards={[
           {
             icon: KeyRound,

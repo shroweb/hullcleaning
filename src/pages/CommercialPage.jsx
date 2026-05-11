@@ -1,6 +1,8 @@
 import { Building, ShieldCheck, Clock } from "lucide-react";
 import Seo from "../components/Seo";
 import ServicePageLayout from "../components/ServicePageLayout";
+import { serviceAreas } from "../data/serviceAreas";
+import { servicePages } from "../data/servicePages";
 
 const features = [
   "Office and workstation cleaning",
@@ -12,6 +14,20 @@ const features = [
 ];
 
 export default function CommercialPage() {
+  const areaLinks = serviceAreas.slice(0, 6).map((area) => ({
+    label: area.name,
+    to: `/areas/${area.slug}`,
+  }));
+
+  const relatedServices = servicePages
+    .filter((service) => !["commercial-cleaning-hull", "takeaway-cleaning-hull"].includes(service.slug))
+    .slice(0, 3)
+    .map((service) => ({
+      label: service.title,
+      to: `/${service.slug}`,
+      description: service.description,
+    }));
+
   return (
     <>
       <Seo
@@ -31,6 +47,10 @@ export default function CommercialPage() {
         reverse
         primaryCtaLabel="Request a Proposal"
         secondaryCtaLabel="Contact Us"
+        localCoverageTitle="Commercial cleaning across Hull and West Hull villages"
+        localCoverageText="We cover offices, workplaces, and small commercial premises across Hull, Hessle, Anlaby, Willerby, Kirk Ella, Swanland, and nearby villages."
+        areaLinks={areaLinks}
+        relatedServices={relatedServices}
         infoCards={[
           {
             icon: ShieldCheck,

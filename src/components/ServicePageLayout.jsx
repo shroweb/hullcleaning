@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { CheckCircle2, MessageCircle } from "lucide-react";
 import { Button, Card } from "./ui";
+import InternalLinksSection from "./InternalLinksSection";
 
 export default function ServicePageLayout({
   eyebrow,
@@ -18,6 +19,10 @@ export default function ServicePageLayout({
   primaryCtaLabel = "Chat on WhatsApp",
   secondaryCtaLabel = "Get a Quote",
   checklistColorClass = "text-brand-primary",
+  localCoverageTitle,
+  localCoverageText,
+  areaLinks = [],
+  relatedServices = [],
 }) {
   return (
     <div className="bg-white pb-24 pt-28 sm:pt-32">
@@ -64,7 +69,7 @@ export default function ServicePageLayout({
           </div>
         </motion.div>
 
-        <div className={`grid items-start gap-12 lg:grid-cols-[${reverse ? "0.92fr_1.08fr" : "1.08fr_0.92fr"}]`}>
+        <div className={reverse ? "grid items-start gap-12 lg:grid-cols-[0.92fr_1.08fr]" : "grid items-start gap-12 lg:grid-cols-[1.08fr_0.92fr]"}>
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -111,6 +116,22 @@ export default function ServicePageLayout({
             </div>
           </motion.div>
         </div>
+
+        <InternalLinksSection
+          title={localCoverageTitle || `Areas we cover for ${title.toLowerCase()}`}
+          description={
+            localCoverageText ||
+            `We cover Hull, Swanland, and nearby villages for ${title.toLowerCase()}, with local pages for each area so you can quickly see where we work.`
+          }
+          items={areaLinks}
+          variant="areas"
+        />
+
+        <InternalLinksSection
+          title="Related cleaning services"
+          description="Customers often book more than one type of cleaning support. These pages make it easy to compare the other services we offer nearby."
+          items={relatedServices}
+        />
       </div>
     </div>
   );

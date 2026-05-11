@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { Sparkles, Shield, UserCheck, Clock } from "lucide-react";
 import { Card } from "../components/ui";
 import Seo from "../components/Seo";
+import InternalLinksSection from "../components/InternalLinksSection";
+import { serviceAreas } from "../data/serviceAreas";
+import { servicePages } from "../data/servicePages";
 
 const values = [
   {
@@ -22,6 +25,17 @@ const values = [
 ];
 
 export default function AboutPage() {
+  const serviceLinks = servicePages.slice(0, 4).map((service) => ({
+    label: service.title,
+    to: `/${service.slug}`,
+    description: service.description,
+  }));
+
+  const areaLinks = serviceAreas.slice(0, 6).map((area) => ({
+    label: area.name,
+    to: `/areas/${area.slug}`,
+  }));
+
   return (
     <div className="pt-32 pb-24 bg-white">
       <Seo
@@ -90,6 +104,19 @@ export default function AboutPage() {
             </motion.div>
           ))}
         </div>
+
+        <InternalLinksSection
+          title="Cleaning services we provide"
+          description="If you want to see the detail behind each service, these pages cover the main work we carry out across Hull and the surrounding villages."
+          items={serviceLinks}
+        />
+
+        <InternalLinksSection
+          title="Areas we regularly cover"
+          description="We are based in Swanland and regularly work across West Hull and nearby villages, with dedicated local pages for each area."
+          items={areaLinks}
+          variant="areas"
+        />
       </div>
     </div>
   );

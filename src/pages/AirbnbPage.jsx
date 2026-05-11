@@ -1,6 +1,8 @@
 import { BedDouble, Star, RefreshCcw } from "lucide-react";
 import Seo from "../components/Seo";
 import ServicePageLayout from "../components/ServicePageLayout";
+import { serviceAreas } from "../data/serviceAreas";
+import { servicePages } from "../data/servicePages";
 
 const features = [
   "Full clean between every guest stay",
@@ -12,6 +14,22 @@ const features = [
 ];
 
 export default function AirbnbPage() {
+  const areaLinks = serviceAreas
+    .filter((area) => ["hull", "beverley", "cottingham", "north-ferriby", "swanland"].includes(area.slug))
+    .map((area) => ({
+      label: area.name,
+      to: `/areas/${area.slug}`,
+    }));
+
+  const relatedServices = servicePages
+    .filter((service) => service.slug !== "airbnb-cleaning-hull")
+    .slice(0, 3)
+    .map((service) => ({
+      label: service.title,
+      to: `/${service.slug}`,
+      description: service.description,
+    }));
+
   return (
     <>
       <Seo
@@ -31,6 +49,10 @@ export default function AirbnbPage() {
         reverse
         primaryCtaLabel="Chat on WhatsApp"
         secondaryCtaLabel="Get a Quote"
+        localCoverageTitle="Airbnb and holiday-let cleaning across Hull and East Yorkshire"
+        localCoverageText="We cover Hull and nearby East Yorkshire locations for Airbnb and holiday-let cleaning, including Swanland, Beverley, Cottingham, and surrounding areas."
+        areaLinks={areaLinks}
+        relatedServices={relatedServices}
         infoCards={[
           {
             icon: RefreshCcw,

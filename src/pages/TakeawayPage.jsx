@@ -1,6 +1,8 @@
 import { UtensilsCrossed, ShieldCheck, Clock } from "lucide-react";
 import Seo from "../components/Seo";
 import ServicePageLayout from "../components/ServicePageLayout";
+import { serviceAreas } from "../data/serviceAreas";
+import { servicePages } from "../data/servicePages";
 
 const features = [
   "Kitchen deep clean throughout",
@@ -12,6 +14,22 @@ const features = [
 ];
 
 export default function TakeawayPage() {
+  const areaLinks = serviceAreas
+    .filter((area) => ["hull", "hessle", "anlaby", "cottingham", "beverley"].includes(area.slug))
+    .map((area) => ({
+      label: area.name,
+      to: `/areas/${area.slug}`,
+    }));
+
+  const relatedServices = servicePages
+    .filter((service) => !["takeaway-cleaning-hull", "commercial-cleaning-hull"].includes(service.slug))
+    .slice(0, 3)
+    .map((service) => ({
+      label: service.title,
+      to: `/${service.slug}`,
+      description: service.description,
+    }));
+
   return (
     <>
       <Seo
@@ -30,6 +48,10 @@ export default function TakeawayPage() {
         features={features}
         primaryCtaLabel="Get a Quote"
         secondaryCtaLabel="Contact Us"
+        localCoverageTitle="Takeaway cleaning in Hull and nearby business areas"
+        localCoverageText="We help food businesses across Hull and nearby areas with kitchen deep cleans, extraction cleaning support, and practical out-of-hours resets."
+        areaLinks={areaLinks}
+        relatedServices={relatedServices}
         infoCards={[
           {
             icon: UtensilsCrossed,

@@ -25,7 +25,8 @@ export default function Hero() {
       <div className="absolute left-[-10rem] top-[-8rem] h-72 w-72 rounded-full bg-brand-accent blur-3xl" />
       <div className="absolute right-[-10rem] top-10 h-72 w-72 rounded-full bg-brand-accent-green/80 blur-3xl" />
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
-        <div className="grid items-center gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:gap-12">
+        <div className="mx-auto max-w-[72rem]">
+          <div className="grid items-center gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:gap-12">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -98,6 +99,7 @@ export default function Hero() {
               />
             </div>
           </motion.div>
+        </div>
         </div>
       </div>
     </section>

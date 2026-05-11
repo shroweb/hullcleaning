@@ -56,16 +56,15 @@ const services = [
 
 export default function Services({ hideHeading = false }) {
   return (
-    <section id="services" className="overflow-hidden bg-gray-50/70 py-16">
+    <section id="services" className="overflow-hidden bg-white py-24">
       <div className="container mx-auto px-6">
         {!hideHeading && (
-          <div className="text-center max-w-2xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom duration-700">
-            <span className="text-brand-label font-bold tracking-widest uppercase text-xs">Our Expertise</span>
-            <h2 className="mt-4 text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
-              Straightforward Cleaning Services <br />
-              <span className="text-brand-primary">Built Around Real Local Needs</span>
+          <div className="mx-auto mb-16 max-w-2xl text-center">
+            <span className="text-brand-label text-xs font-bold uppercase tracking-[0.18em]">Services</span>
+            <h2 className="mt-4 text-4xl font-extrabold tracking-tight text-gray-900 lg:text-5xl">
+              Straightforward cleaning services for local homes and businesses
             </h2>
-            <p className="mt-6 text-lg text-gray-600">
+            <p className="mt-5 text-lg text-gray-600">
               Domestic, commercial, tenancy, takeaway, and tidy-up support across Hull and the surrounding area.
             </p>
           </div>
@@ -81,44 +80,43 @@ export default function Services({ hideHeading = false }) {
               viewport={{ once: true }}
               className="h-full group"
             >
-                <Card className="h-full flex flex-col overflow-hidden border border-white/70 bg-white/90 shadow-lg shadow-gray-200/60 transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-2xl">
-                  <div className="mb-8 p-1 flex justify-center md:justify-start">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-accent text-brand-primary transition-transform duration-500 group-hover:rotate-6">
-                      <service.icon size={28} />
-                    </div>
+              <Card className="flex h-full flex-col overflow-hidden border-gray-200 bg-white transition-shadow duration-300 group-hover:shadow-lg">
+                <div className="mb-8 flex justify-center p-1 md:justify-start">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-accent text-brand-primary">
+                    <service.icon size={28} />
                   </div>
+                </div>
 
-                  <div className="flex-1 text-center md:text-left">
-                    <h3 className="mb-4 text-2xl font-bold text-gray-900">{service.title}</h3>
-                    <p className="mb-8 min-h-[112px] leading-relaxed text-gray-600">
-                      {service.description}
-                    </p>
-                    
-                    <ul className="mb-8 space-y-4">
-                      {service.perks.map(perk => (
-                        <li key={perk} className="flex items-center justify-center gap-3 text-sm text-gray-700 font-medium md:justify-start">
-                          <CheckCircle2 size={18} className="text-green-500 shrink-0" />
-                          {perk}
-                        </li>
-                      ))}
-                    </ul>
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="mb-4 text-2xl font-bold text-gray-900">{service.title}</h3>
+                  <p className="mb-8 min-h-[112px] leading-relaxed text-gray-600">
+                    {service.description}
+                  </p>
+
+                  <ul className="mb-8 space-y-4">
+                    {service.perks.map((perk) => (
+                      <li key={perk} className="flex items-center justify-center gap-3 text-sm font-medium text-gray-700 md:justify-start">
+                        <CheckCircle2 size={18} className="shrink-0 text-green-500" />
+                        {perk}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {service.image ? (
+                  <div className="relative mt-4 h-52 overflow-hidden rounded-[1.5rem] bg-gray-100">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
                   </div>
+                ) : null}
 
-                  {service.image ? (
-                    <div className="relative mt-4 h-52 overflow-hidden rounded-3xl bg-gray-100">
-                      <img 
-                        src={service.image} 
-                        alt={service.title} 
-                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/15 to-transparent" />
-                    </div>
-                  ) : null}
-                  
-                  <Link to={service.link} className="mt-6 inline-flex items-center justify-center text-sm font-bold text-brand-primary md:justify-start">
-                    View details
-                  </Link>
-                </Card>
+                <Link to={service.link} className="mt-6 inline-flex items-center justify-center text-sm font-bold text-brand-primary hover:text-[#0d68d2] md:justify-start">
+                  View details
+                </Link>
+              </Card>
             </motion.div>
           ))}
         </div>

@@ -21,10 +21,11 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white pb-14 pt-20 sm:pb-18 sm:pt-28 lg:pt-32 lg:pb-24">
-      <div className="absolute inset-x-0 top-0 h-[28rem] bg-gradient-to-b from-blue-50 via-green-50/70 to-white sm:h-[34rem]" />
+    <section className="relative overflow-hidden bg-[#f7fbff] pb-14 pt-16 sm:pb-18 sm:pt-24 lg:pb-20 lg:pt-28">
+      <div className="absolute left-[-10rem] top-[-8rem] h-72 w-72 rounded-full bg-brand-accent blur-3xl" />
+      <div className="absolute right-[-10rem] top-10 h-72 w-72 rounded-full bg-brand-accent-green/80 blur-3xl" />
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
-        <div className="grid items-center gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:gap-12">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -34,57 +35,59 @@ export default function Hero() {
           >
             <motion.span
               variants={itemVariants}
-              className="inline-flex max-w-full rounded-full bg-gradient-to-r from-brand-accent to-brand-accent-green px-4 py-2 text-[11px] font-semibold tracking-wide text-brand-primary shadow-sm shadow-blue-100 sm:text-sm"
+              className="inline-flex max-w-full rounded-full border border-[#d7e7fb] bg-white px-4 py-2 text-[11px] font-semibold tracking-wide text-brand-primary sm:text-sm"
             >
               Based in Swanland, covering Hull and nearby villages
             </motion.span>
             <motion.h1
               variants={itemVariants}
-              className="mx-auto mt-5 max-w-[18ch] text-[2rem] font-bold leading-[1.05] text-gray-900 sm:mt-8 sm:text-[2.6rem] lg:mx-0 lg:max-w-none lg:text-[3.5rem]"
+              className="mx-auto mt-5 max-w-[11ch] text-[3rem] font-bold leading-[0.98] tracking-[-0.04em] text-gray-900 sm:mt-7 sm:max-w-[12ch] sm:text-[4.25rem] lg:mx-0 lg:max-w-[12ch] lg:text-[4.8rem]"
             >
-              Reliable Cleaning for{" "}
-              <span className="text-brand-primary">Homes and Businesses in Hull</span>
+              Reliable cleaning for{" "}
+              <span className="text-brand-primary">homes and businesses in Hull</span>
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="mx-auto mt-4 max-w-[22rem] text-base leading-relaxed text-gray-600 sm:mt-6 sm:max-w-xl sm:text-xl lg:mx-0 lg:max-w-2xl"
+              className="mx-auto mt-5 max-w-[24rem] text-base leading-relaxed text-gray-600 sm:max-w-xl sm:text-lg lg:mx-0 lg:max-w-xl"
             >
-              Domestic, commercial, tenancy, takeaway, and tidy-up cleaning from a Swanland-based team covering Hull and nearby villages.
+              One-off cleans, regular home visits, office cleaning, tenancy work, takeaway deep cleans, and tidy-up support from a Swanland-based team.
             </motion.p>
             <motion.div
               variants={itemVariants}
-              className="mt-6 flex flex-wrap justify-center gap-2 sm:mt-8 sm:gap-3 lg:justify-start"
+              className="mt-6 flex flex-wrap justify-center gap-2 sm:gap-3 lg:justify-start"
             >
               {["One-off and regular cleans", "Commercial offices", "End of tenancy"].map((item) => (
                 <div
                   key={item}
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-medium text-gray-700 shadow-sm ring-1 ring-gray-100 sm:px-4 sm:text-sm"
+                  className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-700 sm:px-4 sm:text-sm"
                 >
                   <CheckCircle2 size={14} className="text-brand-secondary sm:h-4 sm:w-4" />
                   {item}
                 </div>
               ))}
             </motion.div>
-            <motion.div variants={itemVariants} className="mx-auto mt-7 flex w-full max-w-sm flex-col gap-3 sm:mt-10 lg:mx-0 lg:max-w-none lg:flex-row lg:flex-wrap lg:justify-start">
+            <motion.div variants={itemVariants} className="mx-auto mt-8 flex w-full max-w-sm flex-col gap-3 sm:mt-9 lg:mx-0 lg:max-w-none lg:flex-row lg:justify-start">
               <a href="https://w.app/inoutcleaning" target="_blank" rel="noreferrer" className="w-full lg:w-auto">
-                <Button size="lg" className="w-full gap-2 shadow-xl shadow-brand-primary/20 lg:w-auto">
+                <Button size="lg" className="w-full gap-2 lg:w-auto">
                   <MessageCircle size={20} />
                   Chat on WhatsApp
                 </Button>
               </a>
               <Link to="/contact" className="w-full lg:w-auto">
-                <Button size="lg" className="w-full shadow-xl shadow-brand-primary/20 lg:w-auto">Book a Professional Clean</Button>
+                <Button variant="secondary" size="lg" className="w-full lg:w-auto">
+                  Book a Clean
+                </Button>
               </Link>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               variants={itemVariants}
-              className="mt-7 flex flex-wrap items-center justify-center gap-3 sm:mt-12 sm:gap-4 lg:justify-start"
+              className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-600 sm:mt-10 lg:justify-start"
             >
-              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-medium text-gray-700 shadow-sm ring-1 ring-gray-100 sm:px-4 sm:py-3 sm:text-sm">
-                <span className="text-gray-900 font-bold">50+</span> happy customers
+              <div className="inline-flex items-center gap-2">
+                <span className="font-semibold text-gray-900">50+ happy customers</span>
               </div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-medium text-gray-700 shadow-sm ring-1 ring-gray-100 sm:px-4 sm:py-3 sm:text-sm">
+              <div className="inline-flex items-center gap-2">
                 <MapPin size={14} className="text-brand-primary sm:h-4 sm:w-4" />
                 Based in Swanland
               </div>
@@ -98,8 +101,7 @@ export default function Hero() {
             viewport={{ once: true }}
             className="relative mx-auto mt-2 hidden w-full max-w-md lg:mt-0 lg:block lg:max-w-[420px] xl:max-w-[480px]"
           >
-            <div className="absolute inset-4 -z-10 rounded-[2.75rem] bg-gradient-to-br from-brand-accent via-white to-brand-accent-green blur-2xl" />
-            <div className="relative z-10 aspect-[4/3.8] overflow-hidden rounded-[2.5rem] border border-white/70 bg-white shadow-2xl shadow-blue-500/10">
+            <div className="relative z-10 aspect-[4/3.8] overflow-hidden rounded-[2rem] border border-white bg-white shadow-xl shadow-gray-200/80">
               <img
                 src="/hero.png"
                 alt="Professional cleaning in Hull"
@@ -108,7 +110,6 @@ export default function Hero() {
                 width="480"
                 height="565"
               />
-              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-brand-secondary/10 via-brand-primary/5 to-transparent" />
             </div>
           </motion.div>
         </div>

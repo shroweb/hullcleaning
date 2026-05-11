@@ -36,10 +36,11 @@ export default function Hero() {
           >
             <motion.h1
               variants={itemVariants}
-              className="mx-auto mt-2 max-w-[11ch] text-[3rem] font-bold leading-[0.98] tracking-[-0.04em] text-gray-900 sm:mt-4 sm:max-w-[12ch] sm:text-[4.25rem] lg:mx-0 lg:max-w-[12ch] lg:text-[4.8rem]"
+              className="mx-auto mt-2 max-w-[11ch] text-[3rem] font-bold leading-[0.98] tracking-[-0.04em] text-gray-900 sm:mt-4 sm:max-w-[12ch] sm:text-[4.25rem] lg:mx-0 lg:max-w-none lg:text-[4.7rem]"
             >
-              Reliable cleaning for{" "}
-              <span className="text-brand-primary">homes and businesses in Hull</span>
+              <span className="block">Reliable cleaning for</span>
+              <span className="block text-brand-primary">homes and businesses</span>
+              <span className="block text-brand-primary">in Hull</span>
             </motion.h1>
             <motion.p
               variants={itemVariants}

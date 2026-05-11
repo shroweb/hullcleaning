@@ -21,22 +21,22 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#f7fbff] pb-14 pt-16 sm:pb-18 sm:pt-24 lg:pb-20 lg:pt-28">
+    <section className="relative overflow-hidden bg-[#f7fbff] pb-14 pt-16 sm:pb-18 sm:pt-24 lg:pb-22 lg:pt-28">
       <div className="absolute left-[-10rem] top-[-8rem] h-72 w-72 rounded-full bg-brand-accent blur-3xl" />
       <div className="absolute right-[-10rem] top-10 h-72 w-72 rounded-full bg-brand-accent-green/80 blur-3xl" />
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
-        <div className="mx-auto max-w-[72rem]">
-          <div className="grid items-center gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:gap-12">
+        <div className="mx-auto max-w-[76rem]">
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(31rem,0.95fr)] lg:gap-14 xl:grid-cols-[minmax(0,1fr)_minmax(35rem,0.95fr)]">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center lg:text-left"
+            className="text-center lg:max-w-[44rem] lg:text-left"
           >
             <motion.h1
               variants={itemVariants}
-              className="mx-auto mt-2 max-w-[11ch] text-[3rem] font-bold leading-[0.98] tracking-[-0.04em] text-gray-900 sm:mt-4 sm:max-w-[12ch] sm:text-[4.25rem] lg:mx-0 lg:max-w-none lg:text-[4.25rem] xl:text-[4.5rem]"
+              className="mx-auto mt-2 max-w-[11ch] text-[3rem] font-bold leading-[0.98] tracking-[-0.04em] text-gray-900 sm:mt-4 sm:max-w-[12ch] sm:text-[4.25rem] lg:mx-0 lg:max-w-none lg:text-[4rem] xl:text-[4.35rem]"
             >
               <span className="block lg:whitespace-nowrap">Reliable cleaning</span>
               <span className="block text-brand-primary lg:whitespace-nowrap">for homes and businesses</span>
@@ -87,16 +87,17 @@ export default function Hero() {
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="relative mx-auto mt-2 hidden w-full max-w-md lg:mt-0 lg:block lg:max-w-[420px] xl:max-w-[480px]"
+            className="relative mx-auto mt-2 hidden w-full lg:mt-0 lg:block"
           >
-            <div className="relative z-10 aspect-[4/3.8] overflow-hidden rounded-[2rem] border border-white bg-white shadow-xl shadow-gray-200/80">
+            <div className="absolute inset-8 -z-10 rounded-[2.5rem] bg-white/70 blur-2xl" />
+            <div className="relative z-10 aspect-[1/1.08] overflow-hidden rounded-[2.5rem] border border-white/80 bg-white shadow-[0_30px_70px_rgba(15,23,42,0.12)] xl:aspect-[1/1.02]">
               <img
                 src="/hero.png"
                 alt="Professional cleaning in Hull"
                 className="h-full w-full object-cover object-center"
                 fetchpriority="high"
-                width="480"
-                height="565"
+                width="620"
+                height="680"
               />
             </div>
           </motion.div>

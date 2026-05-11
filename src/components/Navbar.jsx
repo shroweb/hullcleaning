@@ -18,7 +18,7 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 mx-auto flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4 max-w-7xl"
+      className="fixed top-0 left-0 right-0 z-50 mx-auto flex items-center justify-between px-4 py-2.5 sm:px-6 sm:py-4 max-w-7xl"
     >
       <div className="absolute inset-0 -z-10 rounded-b-[1.75rem] border-b border-white/20 bg-white/60 shadow-sm backdrop-blur-xl" />
       
@@ -26,7 +26,7 @@ export default function Navbar() {
         <img
           src="/logo.png"
           alt="In & Out Cleaning"
-          className="h-9 w-auto transition-transform duration-300 group-hover:scale-[1.02] sm:h-14"
+          className="h-8 w-auto transition-transform duration-300 group-hover:scale-[1.02] sm:h-14"
         />
       </Link>
 

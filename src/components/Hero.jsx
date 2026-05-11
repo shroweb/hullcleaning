@@ -21,12 +21,12 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#f7fbff] pb-14 pt-16 sm:pb-18 sm:pt-24 lg:pb-22 lg:pt-28">
+    <section className="relative overflow-hidden bg-[#f7fbff] pb-12 pt-14 sm:pb-18 sm:pt-24 lg:pb-22 lg:pt-28">
       <div className="absolute left-[-10rem] top-[-8rem] h-72 w-72 rounded-full bg-brand-accent blur-3xl" />
       <div className="absolute right-[-10rem] top-10 h-72 w-72 rounded-full bg-brand-accent-green/80 blur-3xl" />
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <div className="mx-auto max-w-[76rem]">
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.84fr)_minmax(36rem,1.16fr)] lg:gap-18 xl:grid-cols-[minmax(0,0.82fr)_minmax(39rem,1.18fr)]">
+          <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,0.84fr)_minmax(36rem,1.16fr)] lg:gap-18 xl:grid-cols-[minmax(0,0.82fr)_minmax(39rem,1.18fr)]">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -36,7 +36,7 @@ export default function Hero() {
           >
             <motion.h1
               variants={itemVariants}
-              className="mx-auto mt-2 max-w-[11ch] text-[3rem] font-bold leading-[0.98] tracking-[-0.04em] text-gray-900 sm:mt-4 sm:max-w-[12ch] sm:text-[4.25rem] lg:mx-0 lg:max-w-none lg:text-[4.15rem] xl:text-[4.45rem]"
+              className="mx-auto mt-1 max-w-[11ch] text-[2.7rem] font-bold leading-[0.97] tracking-[-0.04em] text-gray-900 sm:mt-4 sm:max-w-[12ch] sm:text-[4.25rem] lg:mx-0 lg:max-w-none lg:text-[4.15rem] xl:text-[4.45rem]"
             >
               <span className="block lg:whitespace-nowrap">Reliable cleaning</span>
               <span className="block text-brand-primary lg:whitespace-nowrap">for Hull homes</span>
@@ -44,13 +44,13 @@ export default function Hero() {
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="mx-auto mt-5 max-w-[24rem] text-base leading-relaxed text-gray-600 sm:max-w-xl sm:text-lg lg:mx-0 lg:max-w-[30rem]"
+              className="mx-auto mt-4 max-w-[23rem] text-base leading-relaxed text-gray-600 sm:max-w-xl sm:text-lg lg:mx-0 lg:max-w-[30rem]"
             >
               One-off cleans, regular home visits, office cleaning, tenancy work, takeaway deep cleans, and tidy-up support from a Swanland-based team covering Hull and nearby villages.
             </motion.p>
             <motion.div
               variants={itemVariants}
-              className="mt-6 flex flex-wrap justify-center gap-2 sm:gap-3 lg:justify-start"
+              className="mt-5 flex flex-wrap justify-center gap-2 sm:gap-3 lg:justify-start"
             >
               {["One-off and regular cleans", "Commercial offices", "End of tenancy"].map((item) => (
                 <div
@@ -62,7 +62,7 @@ export default function Hero() {
                 </div>
               ))}
             </motion.div>
-            <motion.div variants={itemVariants} className="mx-auto mt-8 flex w-full max-w-sm flex-col gap-3 sm:mt-9 lg:mx-0 lg:max-w-none lg:flex-row lg:justify-start">
+            <motion.div variants={itemVariants} className="mx-auto mt-7 flex w-full max-w-sm flex-col gap-2.5 sm:mt-9 lg:mx-0 lg:max-w-none lg:flex-row lg:justify-start">
               <a href="https://w.app/inoutcleaning" target="_blank" rel="noreferrer" className="w-full lg:w-auto">
                 <Button size="lg" className="w-full gap-2 lg:w-auto">
                   <MessageCircle size={20} />

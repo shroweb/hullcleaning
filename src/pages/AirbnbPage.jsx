@@ -1,8 +1,6 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { CheckCircle2, BedDouble, Star, RefreshCcw } from "lucide-react";
-import { Button, Card } from "../components/ui";
+import { BedDouble, Star, RefreshCcw } from "lucide-react";
 import Seo from "../components/Seo";
+import ServicePageLayout from "../components/ServicePageLayout";
 
 const features = [
   "Full clean between every guest stay",
@@ -15,86 +13,48 @@ const features = [
 
 export default function AirbnbPage() {
   return (
-    <div className="pt-32 pb-24 bg-white">
+    <>
       <Seo
         title="Airbnb and Holiday Let Cleaning Hull"
         description="Airbnb and holiday let cleaning in Hull and East Yorkshire. Fast turnaround cleans with linen change, restocking, and reliable cover between every booking."
       />
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center max-w-3xl mx-auto mb-20"
-        >
-          <span className="text-brand-label font-bold tracking-widest uppercase text-xs">Short-Term Lets</span>
-          <h1 className="mt-4 text-5xl font-extrabold text-gray-900 tracking-tight">
-            Airbnb and Holiday Let <br />
-            <span className="text-brand-primary">Cleaning in Hull</span>
-          </h1>
-          <p className="mt-6 text-xl text-gray-600">
-            Fast, reliable turnaround cleans for short-term lets and holiday properties across Hull and East Yorkshire — so every guest arrives to a fresh, welcoming space.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:flex lg:flex-row-reverse gap-20 items-center mb-24">
-          <div className="lg:w-1/2 relative">
-            <div className="rounded-[2.5rem] overflow-hidden shadow-2xl">
-              <img src="/airbnb.jpg" alt="Airbnb and holiday let cleaning Hull" className="w-full h-auto" />
-            </div>
-            <div className="absolute -top-10 -right-10 w-48 h-48 bg-brand-accent-green rounded-full -z-10 blur-2xl" />
-          </div>
-
-          <div className="lg:w-1/2 space-y-8">
-            <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Reliable Between Every Booking</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Short-term lets depend on consistent presentation. We handle the turnaround clean between guests — linen changes, bathroom and kitchen resets, restocking supplies, and making sure the property is exactly as guests expect when they arrive.
-            </p>
-
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {features.map(f => (
-                <li key={f} className="flex items-start gap-3 text-gray-700 font-medium">
-                  <CheckCircle2 size={24} className="text-brand-primary shrink-0" />
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="pt-6 flex gap-4">
-              <a href="https://w.app/inoutcleaning" target="_blank" rel="noreferrer">
-                <Button size="lg">Chat on WhatsApp</Button>
-              </a>
-              <Link to="/contact">
-                <Button size="lg" variant="secondary">Get a Quote</Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <Card>
-            <div className="w-12 h-12 bg-brand-accent text-brand-primary rounded-xl flex items-center justify-center mb-6">
-              <RefreshCcw size={24} />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Turnaround Cleans</h3>
-            <p className="text-gray-600 leading-relaxed">Full clean and reset between guest stays, timed around your check-out and check-in windows — including same-day turnarounds.</p>
-          </Card>
-          <Card>
-            <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
-              <BedDouble size={24} />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Linen and Supplies</h3>
-            <p className="text-gray-600 leading-relaxed">Bed linen and towel changes included, plus restocking of guest essentials if you provide them — leaving nothing for you to manage remotely.</p>
-          </Card>
-          <Card>
-            <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
-              <Star size={24} />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">5-Star Presentation</h3>
-            <p className="text-gray-600 leading-relaxed">Consistent cleaning helps protect your reviews and ratings — guests notice the difference a properly cleaned property makes.</p>
-          </Card>
-        </div>
-      </div>
-    </div>
+      <ServicePageLayout
+        eyebrow="Short-Term Lets"
+        title="Airbnb and holiday let"
+        highlight="cleaning in Hull"
+        description="Fast, reliable turnaround cleans for short-term lets and holiday properties across Hull and East Yorkshire, so every guest arrives to a fresh, welcoming space."
+        image="/airbnb.jpg"
+        imageAlt="Airbnb and holiday let cleaning Hull"
+        introTitle="Reliable between every booking"
+        introText="Short-term lets depend on consistent presentation. We handle the turnaround clean between guests, including bathroom and kitchen resets, linen changes, and restocking if needed, so the property feels guest-ready every time."
+        features={features}
+        reverse
+        primaryCtaLabel="Chat on WhatsApp"
+        secondaryCtaLabel="Get a Quote"
+        infoCards={[
+          {
+            icon: RefreshCcw,
+            title: "Turnaround Cleans",
+            text: "Full clean and reset between guest stays, timed around your check-out and check-in windows, including same-day turnarounds when needed.",
+            iconWrapClass: "bg-brand-accent",
+            iconClass: "text-brand-primary",
+          },
+          {
+            icon: BedDouble,
+            title: "Linen and Supplies",
+            text: "Bed linen and towel changes included, plus restocking of essentials if you provide them, so there is less to manage remotely.",
+            iconWrapClass: "bg-green-100",
+            iconClass: "text-green-600",
+          },
+          {
+            icon: Star,
+            title: "Consistent Presentation",
+            text: "Reliable cleaning helps protect your reviews and ratings because guests notice immediately when a property feels genuinely fresh and looked after.",
+            iconWrapClass: "bg-blue-100",
+            iconClass: "text-blue-600",
+          },
+        ]}
+      />
+    </>
   );
 }

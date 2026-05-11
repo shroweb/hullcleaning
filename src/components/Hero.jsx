@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { CheckCircle2, MapPin, MessageCircle } from "lucide-react";
+import { CheckCircle2, MessageCircle } from "lucide-react";
 import { Button } from "./ui";
 
 const containerVariants = {
@@ -33,15 +33,9 @@ export default function Hero() {
             viewport={{ once: true }}
             className="text-center lg:text-left"
           >
-            <motion.span
-              variants={itemVariants}
-              className="inline-flex max-w-full rounded-full border border-[#d7e7fb] bg-white px-4 py-2 text-[11px] font-semibold tracking-wide text-brand-primary sm:text-sm"
-            >
-              Based in Swanland, covering Hull and nearby villages
-            </motion.span>
             <motion.h1
               variants={itemVariants}
-              className="mx-auto mt-5 max-w-[11ch] text-[3rem] font-bold leading-[0.98] tracking-[-0.04em] text-gray-900 sm:mt-7 sm:max-w-[12ch] sm:text-[4.25rem] lg:mx-0 lg:max-w-[12ch] lg:text-[4.8rem]"
+              className="mx-auto mt-2 max-w-[11ch] text-[3rem] font-bold leading-[0.98] tracking-[-0.04em] text-gray-900 sm:mt-4 sm:max-w-[12ch] sm:text-[4.25rem] lg:mx-0 lg:max-w-[12ch] lg:text-[4.8rem]"
             >
               Reliable cleaning for{" "}
               <span className="text-brand-primary">homes and businesses in Hull</span>
@@ -82,16 +76,8 @@ export default function Hero() {
 
             <motion.div
               variants={itemVariants}
-              className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-gray-600 sm:mt-10 lg:justify-start"
-            >
-              <div className="inline-flex items-center gap-2">
-                <span className="font-semibold text-gray-900">50+ happy customers</span>
-              </div>
-              <div className="inline-flex items-center gap-2">
-                <MapPin size={14} className="text-brand-primary sm:h-4 sm:w-4" />
-                Based in Swanland
-              </div>
-            </motion.div>
+              className="hidden"
+            />
           </motion.div>
 
           <motion.div

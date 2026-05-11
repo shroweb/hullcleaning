@@ -38,14 +38,11 @@ export default function EndOfTenancyPage() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:flex lg:flex-row-reverse gap-20 items-center mb-24">
-          <div className="lg:w-1/2 rounded-[2.5rem] bg-gradient-to-br from-brand-accent via-white to-brand-accent-green p-12 flex items-center justify-center">
-            <div className="text-center space-y-6">
-              <div className="w-20 h-20 bg-white rounded-3xl shadow-xl flex items-center justify-center mx-auto">
-                <KeyRound size={36} className="text-brand-primary" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900">Deposit Protected</h3>
-              <p className="text-gray-600 max-w-xs mx-auto">A thorough clean to the standard letting agents expect at check-out, giving you the best chance of a full deposit return.</p>
+          <div className="lg:w-1/2 relative">
+            <div className="rounded-[2.5rem] overflow-hidden shadow-2xl">
+              <img src="/end-of-tenancy.jpg" alt="End of tenancy cleaning Hull" className="w-full h-auto" />
             </div>
+            <div className="absolute -top-10 -right-10 w-48 h-48 bg-brand-accent rounded-full -z-10 blur-2xl" />
           </div>
 
           <div className="lg:w-1/2 space-y-8">

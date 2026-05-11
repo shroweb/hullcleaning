@@ -38,14 +38,11 @@ export default function AirbnbPage() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:flex lg:flex-row-reverse gap-20 items-center mb-24">
-          <div className="lg:w-1/2 rounded-[2.5rem] bg-gradient-to-br from-brand-accent via-white to-brand-accent-green p-12 flex items-center justify-center">
-            <div className="text-center space-y-6">
-              <div className="w-20 h-20 bg-white rounded-3xl shadow-xl flex items-center justify-center mx-auto">
-                <BedDouble size={36} className="text-brand-primary" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900">Guest-Ready Every Time</h3>
-              <p className="text-gray-600 max-w-xs mx-auto">We work around your booking calendar so your property is always clean, fresh, and ready before the next arrival.</p>
+          <div className="lg:w-1/2 relative">
+            <div className="rounded-[2.5rem] overflow-hidden shadow-2xl">
+              <img src="/airbnb.jpg" alt="Airbnb and holiday let cleaning Hull" className="w-full h-auto" />
             </div>
+            <div className="absolute -top-10 -right-10 w-48 h-48 bg-brand-accent-green rounded-full -z-10 blur-2xl" />
           </div>
 
           <div className="lg:w-1/2 space-y-8">

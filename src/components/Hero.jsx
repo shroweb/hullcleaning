@@ -40,7 +40,7 @@ export default function Hero() {
             </motion.span>
             <motion.h1
               variants={itemVariants}
-              className="mx-auto mt-5 max-w-[10ch] text-[3rem] font-bold leading-[0.96] text-gray-900 sm:mt-8 sm:max-w-[12ch] sm:text-6xl lg:mx-0 lg:text-[5.5rem]"
+              className="mx-auto mt-5 max-w-[18ch] text-[2rem] font-bold leading-[1.05] text-gray-900 sm:mt-8 sm:text-[2.6rem] lg:mx-0 lg:max-w-none lg:text-[3.5rem]"
             >
               Reliable Cleaning for{" "}
               <span className="text-brand-primary">Homes and Businesses in Hull</span>

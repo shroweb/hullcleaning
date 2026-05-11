@@ -34,11 +34,12 @@ export default function Footer() {
           <div className="space-y-6">
             <h4 className="text-white font-bold text-lg">Services</h4>
             <ul className="space-y-4 text-sm">
-              <li><Link to="/services/residential" className="hover:text-brand-primary transition-colors">Domestic Cleaning</Link></li>
-              <li><Link to="/services/commercial" className="hover:text-brand-primary transition-colors">Commercial Offices</Link></li>
-              <li><Link to="/services/residential" className="hover:text-brand-primary transition-colors">End of Tenancy</Link></li>
-              <li><Link to="/services/commercial" className="hover:text-brand-primary transition-colors">Takeaway Deep Cleans</Link></li>
-              <li><Link to="/services#tidy-ups" className="hover:text-brand-primary transition-colors">Garden and Organisation Help</Link></li>
+              <li><Link to="/domestic-cleaning-hull" className="hover:text-brand-primary transition-colors">Domestic Cleaning</Link></li>
+              <li><Link to="/commercial-cleaning-hull" className="hover:text-brand-primary transition-colors">Commercial Offices</Link></li>
+              <li><Link to="/end-of-tenancy-cleaning-hull" className="hover:text-brand-primary transition-colors">End of Tenancy</Link></li>
+              <li><Link to="/takeaway-cleaning-hull" className="hover:text-brand-primary transition-colors">Takeaway Cleaning</Link></li>
+              <li><Link to="/airbnb-cleaning-hull" className="hover:text-brand-primary transition-colors">Airbnb & Holiday Lets</Link></li>
+              <li><Link to="/tidy-ups-hull" className="hover:text-brand-primary transition-colors">Tidy Ups & Garden Help</Link></li>
             </ul>
           </div>
 

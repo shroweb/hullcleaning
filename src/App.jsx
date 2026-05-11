@@ -10,6 +10,10 @@ const AboutPage = lazy(() => import("./pages/AboutPage"));
 const ServicesPage = lazy(() => import("./pages/ServicesPage"));
 const ResidentialPage = lazy(() => import("./pages/ResidentialPage"));
 const CommercialPage = lazy(() => import("./pages/CommercialPage"));
+const TidyUpsPage = lazy(() => import("./pages/TidyUpsPage"));
+const EndOfTenancyPage = lazy(() => import("./pages/EndOfTenancyPage"));
+const TakeawayPage = lazy(() => import("./pages/TakeawayPage"));
+const AirbnbPage = lazy(() => import("./pages/AirbnbPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const AreaPage = lazy(() => import("./pages/AreaPage"));
 const ReviewsPage = lazy(() => import("./pages/ReviewsPage"));
@@ -52,8 +56,12 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/services" element={<ServicesPage />} />
-              <Route path="/services/residential" element={<ResidentialPage />} />
-              <Route path="/services/commercial" element={<CommercialPage />} />
+              <Route path="/domestic-cleaning-hull" element={<ResidentialPage />} />
+              <Route path="/commercial-cleaning-hull" element={<CommercialPage />} />
+              <Route path="/tidy-ups-hull" element={<TidyUpsPage />} />
+              <Route path="/end-of-tenancy-cleaning-hull" element={<EndOfTenancyPage />} />
+              <Route path="/takeaway-cleaning-hull" element={<TakeawayPage />} />
+              <Route path="/airbnb-cleaning-hull" element={<AirbnbPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/reviews" element={<ReviewsPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />

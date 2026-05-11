@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Home, Building, Leaf, CheckCircle2 } from "lucide-react";
+import { Home, Building, Leaf, KeyRound, UtensilsCrossed, BedDouble, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card } from "./ui";
 
@@ -9,24 +9,48 @@ const services = [
     description: "Flexible one-off and regular home cleaning with careful attention to kitchens, bathrooms, dusting, floors, and general reset visits.",
     icon: Home,
     image: "/residential.png",
-    perks: ["One-off cleans", "Regular weekly or fortnightly visits", "End of tenancy support"],
-    link: "/services/residential",
+    perks: ["One-off cleans", "Regular weekly or fortnightly visits", "Deep cleans available"],
+    link: "/domestic-cleaning-hull",
   },
   {
-    title: "Commercial and Takeaway Cleaning",
-    description: "Practical cleaning for offices, workspaces, and food premises, including regular contracts and deeper reset cleans when needed.",
+    title: "End of Tenancy Cleaning",
+    description: "Thorough move-out cleans across Hull to help tenants and landlords meet check-out standards and get deposits back with confidence.",
+    icon: KeyRound,
+    image: null,
+    perks: ["Full property deep clean", "Ovens, fridges, and white goods", "Available on short notice"],
+    link: "/end-of-tenancy-cleaning-hull",
+  },
+  {
+    title: "Commercial Office Cleaning",
+    description: "Dependable workplace cleaning for offices and business premises across Hull, arranged around your hours and staff schedule.",
     icon: Building,
     image: "/commercial.png",
-    perks: ["Commercial offices", "Takeaway deep cleans", "Regular business cleaning"],
-    link: "/services/commercial",
+    perks: ["Regular cleaning contracts", "Workstations and common areas", "Flexible around opening hours"],
+    link: "/commercial-cleaning-hull",
+  },
+  {
+    title: "Takeaway and Restaurant Cleaning",
+    description: "Deep cleaning for food businesses in Hull, including kitchens, fryers, extraction, and front-of-house areas between services.",
+    icon: UtensilsCrossed,
+    image: null,
+    perks: ["Kitchen and extraction cleaning", "Fryers, ovens, and surfaces", "Early morning or late night slots"],
+    link: "/takeaway-cleaning-hull",
+  },
+  {
+    title: "Airbnb and Holiday Let Cleaning",
+    description: "Fast turnaround cleans for short-term lets and holiday properties across Hull and the East Riding, ready for each new guest.",
+    icon: BedDouble,
+    image: null,
+    perks: ["Same-day turnaround available", "Linen change and restocking", "Reliable between bookings"],
+    link: "/airbnb-cleaning-hull",
   },
   {
     title: "Tidy Ups and Organisation Help",
-    description: "Extra support for homes and outdoor spaces, including garden tidy ups, weeding, and help getting spaces back in order.",
+    description: "Practical support for homes and outdoor spaces, including garden tidy ups, weeding, and getting rooms back under control.",
     icon: Leaf,
     image: "/tidy-ups.jpg",
-    perks: ["Garden tidy ups", "General tidying", "Organisation help"],
-    link: "/services#tidy-ups",
+    perks: ["Garden tidy ups and weeding", "General tidying and declutter", "Organisation support"],
+    link: "/tidy-ups-hull",
   },
 ];
 

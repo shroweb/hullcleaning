@@ -96,10 +96,10 @@ export default function Hero() {
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="relative mx-auto mt-2 hidden w-full max-w-md lg:mt-0 lg:block lg:max-w-none"
+            className="relative mx-auto mt-2 hidden w-full max-w-md lg:mt-0 lg:block lg:max-w-[420px] xl:max-w-[480px]"
           >
             <div className="absolute inset-4 -z-10 rounded-[2.75rem] bg-gradient-to-br from-brand-accent via-white to-brand-accent-green blur-2xl" />
-            <div className="relative z-10 aspect-[5/5.9] overflow-hidden rounded-[2.5rem] border border-white/70 bg-white shadow-2xl shadow-blue-500/10 xl:aspect-[5/5.6]">
+            <div className="relative z-10 aspect-[4/3.8] overflow-hidden rounded-[2.5rem] border border-white/70 bg-white shadow-2xl shadow-blue-500/10">
               <img
                 src="/hero.png"
                 alt="Professional cleaning in Hull"

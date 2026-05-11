@@ -25,28 +25,28 @@ export default function Hero() {
       <div className="absolute left-[-10rem] top-[-8rem] h-72 w-72 rounded-full bg-brand-accent blur-3xl" />
       <div className="absolute right-[-10rem] top-10 h-72 w-72 rounded-full bg-brand-accent-green/80 blur-3xl" />
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
-        <div className="mx-auto max-w-[74rem]">
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(34rem,1.08fr)] lg:gap-16 xl:grid-cols-[minmax(0,0.9fr)_minmax(36rem,1.1fr)]">
+        <div className="mx-auto max-w-[76rem]">
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.84fr)_minmax(36rem,1.16fr)] lg:gap-18 xl:grid-cols-[minmax(0,0.82fr)_minmax(39rem,1.18fr)]">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center lg:max-w-[35rem] lg:text-left"
+            className="text-center lg:max-w-[31rem] lg:text-left"
           >
             <motion.h1
               variants={itemVariants}
-              className="mx-auto mt-2 max-w-[11ch] text-[3rem] font-bold leading-[0.98] tracking-[-0.04em] text-gray-900 sm:mt-4 sm:max-w-[12ch] sm:text-[4.25rem] lg:mx-0 lg:max-w-none lg:text-[4.05rem] xl:text-[4.3rem]"
+              className="mx-auto mt-2 max-w-[11ch] text-[3rem] font-bold leading-[0.98] tracking-[-0.04em] text-gray-900 sm:mt-4 sm:max-w-[12ch] sm:text-[4.25rem] lg:mx-0 lg:max-w-none lg:text-[4.15rem] xl:text-[4.45rem]"
             >
               <span className="block lg:whitespace-nowrap">Reliable cleaning</span>
-              <span className="block lg:whitespace-nowrap">for homes and</span>
-              <span className="block text-brand-primary lg:whitespace-nowrap">businesses in Hull</span>
+              <span className="block text-brand-primary lg:whitespace-nowrap">for Hull homes</span>
+              <span className="block lg:whitespace-nowrap">and businesses</span>
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="mx-auto mt-5 max-w-[24rem] text-base leading-relaxed text-gray-600 sm:max-w-xl sm:text-lg lg:mx-0 lg:max-w-[33rem]"
+              className="mx-auto mt-5 max-w-[24rem] text-base leading-relaxed text-gray-600 sm:max-w-xl sm:text-lg lg:mx-0 lg:max-w-[30rem]"
             >
-              One-off cleans, regular home visits, office cleaning, tenancy work, takeaway deep cleans, and tidy-up support from a Swanland-based team.
+              One-off cleans, regular home visits, office cleaning, tenancy work, takeaway deep cleans, and tidy-up support from a Swanland-based team covering Hull and nearby villages.
             </motion.p>
             <motion.div
               variants={itemVariants}
@@ -89,8 +89,8 @@ export default function Hero() {
             viewport={{ once: true }}
             className="relative mx-auto mt-2 hidden w-full lg:mt-0 lg:block"
           >
-            <div className="absolute inset-8 -z-10 rounded-[2.5rem] bg-white/70 blur-2xl" />
-            <div className="relative z-10 aspect-[1/1.12] overflow-hidden rounded-[2.5rem] border border-white/80 bg-white shadow-[0_30px_70px_rgba(15,23,42,0.12)] xl:aspect-[1/1.05]">
+            <div className="absolute inset-8 -z-10 rounded-[2.75rem] bg-white/70 blur-2xl" />
+            <div className="relative z-10 aspect-[1/1.18] overflow-hidden rounded-[2.75rem] border border-white/80 bg-white shadow-[0_32px_80px_rgba(15,23,42,0.14)] xl:aspect-[1/1.08]">
               <img
                 src="/hero.png"
                 alt="Professional cleaning in Hull"

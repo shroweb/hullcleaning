@@ -19,14 +19,14 @@ export default function Footer() {
               Local cleaning services based in Swanland, covering Hull and nearby villages for domestic, commercial, tenancy, takeaway, and tidy-up work.
             </p>
             <div className="flex gap-4">
-              <a href="https://w.app/inoutcleaning" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors">
-                <MessageCircle size={20} />
+              <a href="https://w.app/inoutcleaning" target="_blank" rel="noreferrer" aria-label="Chat with us on WhatsApp" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors">
+                <MessageCircle size={20} aria-hidden="true" />
               </a>
-              <a href="mailto:hull.cleaning@outlook.com" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-secondary hover:text-[#081525] transition-colors">
-                <Mail size={20} />
+              <a href="mailto:hull.cleaning@outlook.com" aria-label="Send us an email" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-secondary hover:text-[#081525] transition-colors">
+                <Mail size={20} aria-hidden="true" />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors">
-                <Instagram size={20} />
+              <a href="#" aria-label="Follow us on Instagram" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors">
+                <Instagram size={20} aria-hidden="true" />
               </a>
             </div>
           </div>

@@ -100,10 +100,13 @@ export default function Hero() {
           >
             <div className="absolute inset-4 -z-10 rounded-[2.75rem] bg-gradient-to-br from-brand-accent via-white to-brand-accent-green blur-2xl" />
             <div className="relative z-10 aspect-[5/5.9] overflow-hidden rounded-[2.5rem] border border-white/70 bg-white shadow-2xl shadow-blue-500/10 xl:aspect-[5/5.6]">
-              <img 
-                src="/hero.png" 
-                alt="Professional cleaning in Hull" 
+              <img
+                src="/hero.png"
+                alt="Professional cleaning in Hull"
                 className="h-full w-full object-cover object-center"
+                fetchpriority="high"
+                width="480"
+                height="565"
               />
               <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-brand-secondary/10 via-brand-primary/5 to-transparent" />
             </div>

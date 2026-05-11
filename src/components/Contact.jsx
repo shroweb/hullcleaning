@@ -128,25 +128,25 @@ export default function Contact() {
                 <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex="-1" autoComplete="off" />
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">First Name</label>
-                  <input name="First Name" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Alex" required />
+                  <label htmlFor="contact-first-name" className="text-sm font-bold text-gray-700">First Name</label>
+                  <input id="contact-first-name" name="First Name" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Alex" required />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Last Name</label>
-                  <input name="Last Name" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Taylor" required />
+                  <label htmlFor="contact-last-name" className="text-sm font-bold text-gray-700">Last Name</label>
+                  <input id="contact-last-name" name="Last Name" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Taylor" required />
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700">Email Address</label>
-                <input name="email" type="email" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="alex@example.com" required />
+                <label htmlFor="contact-email" className="text-sm font-bold text-gray-700">Email Address</label>
+                <input id="contact-email" name="email" type="email" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="alex@example.com" required />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700">Phone Number</label>
-                <input name="Phone Number" type="tel" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="07..." />
+                <label htmlFor="contact-phone" className="text-sm font-bold text-gray-700">Phone Number</label>
+                <input id="contact-phone" name="Phone Number" type="tel" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="07..." />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700">Service Required</label>
-                <select name="Service Required" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300">
+                <label htmlFor="contact-service" className="text-sm font-bold text-gray-700">Service Required</label>
+                <select id="contact-service" name="Service Required" className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300">
                   <option>Domestic Cleaning</option>
                   <option>Commercial Offices</option>
                   <option>End of Tenancy</option>
@@ -156,8 +156,8 @@ export default function Contact() {
                 </select>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700">Message</label>
-                <textarea name="message" rows={5} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Tell us what type of clean you need, your area, and whether it is a one-off or regular job..." required />
+                <label htmlFor="contact-message" className="text-sm font-bold text-gray-700">Message</label>
+                <textarea id="contact-message" name="message" rows={5} className="w-full rounded-2xl border border-gray-100 bg-gray-50 px-5 py-4 focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all duration-300" placeholder="Tell us what type of clean you need, your area, and whether it is a one-off or regular job..." required />
               </div>
                 <Button size="lg" className="w-full text-lg shadow-xl shadow-brand-primary/20">
                   Send Enquiry

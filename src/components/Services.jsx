@@ -54,20 +54,22 @@ const services = [
   },
 ];
 
-export default function Services() {
+export default function Services({ hideHeading = false }) {
   return (
-    <section id="services" className="overflow-hidden bg-gray-50/70 py-24">
+    <section id="services" className="overflow-hidden bg-gray-50/70 py-16">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom duration-700">
-          <span className="text-brand-label font-bold tracking-widest uppercase text-xs">Our Expertise</span>
-          <h2 className="mt-4 text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
-            Straightforward Cleaning Services <br />
-            <span className="text-brand-primary">Built Around Real Local Needs</span>
-          </h2>
-          <p className="mt-6 text-lg text-gray-600">
-            Domestic, commercial, tenancy, takeaway, and tidy-up support across Hull and the surrounding area.
-          </p>
-        </div>
+        {!hideHeading && (
+          <div className="text-center max-w-2xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom duration-700">
+            <span className="text-brand-label font-bold tracking-widest uppercase text-xs">Our Expertise</span>
+            <h2 className="mt-4 text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
+              Straightforward Cleaning Services <br />
+              <span className="text-brand-primary">Built Around Real Local Needs</span>
+            </h2>
+            <p className="mt-6 text-lg text-gray-600">
+              Domestic, commercial, tenancy, takeaway, and tidy-up support across Hull and the surrounding area.
+            </p>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service, index) => (

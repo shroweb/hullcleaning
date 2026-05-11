@@ -43,7 +43,7 @@ export default function Hero() {
               className="mx-auto mt-5 max-w-[10ch] text-[3rem] font-bold leading-[0.96] text-gray-900 sm:mt-8 sm:max-w-[12ch] sm:text-6xl lg:mx-0 lg:text-[5.5rem]"
             >
               Reliable Cleaning for{" "}
-              <span className="text-brand-primary">Homes and Businesses</span>
+              <span className="text-brand-primary">Homes and Businesses in Hull</span>
             </motion.h1>
             <motion.p
               variants={itemVariants}

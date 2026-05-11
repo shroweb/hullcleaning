@@ -21,7 +21,7 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#f7fbff] pb-12 pt-14 sm:pb-18 sm:pt-24 lg:pb-22 lg:pt-28">
+    <section className="relative overflow-hidden bg-[#f7fbff] pb-12 pt-20 sm:pb-18 sm:pt-24 lg:pb-22 lg:pt-28">
       <div className="absolute left-[-10rem] top-[-8rem] h-72 w-72 rounded-full bg-brand-accent blur-3xl" />
       <div className="absolute right-[-10rem] top-10 h-72 w-72 rounded-full bg-brand-accent-green/80 blur-3xl" />
       <div className="container relative z-10 mx-auto px-4 sm:px-6">

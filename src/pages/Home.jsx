@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Home"
-        description="Domestic and commercial cleaning in Swanland, Hull, and nearby villages. One-off cleans, regular visits, end of tenancy, takeaway cleans, and tidy-up help."
+        title="Domestic & Commercial Cleaning in Hull"
+        description="Domestic and commercial cleaning in Hull, Swanland, and nearby villages. One-off cleans, regular visits, end of tenancy cleaning, takeaway deep cleans, and tidy-up help."
       />
       <Hero />
       <Services />

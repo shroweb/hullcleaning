@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { CheckCircle2, MapPin, MessageCircle } from "lucide-react";
+import { CheckCircle2, MapPin, MessageCircle } from "lucide-react"; // CheckCircle2 used in floating badge
 import { Button } from "./ui";
 
 const containerVariants = {
@@ -59,22 +59,6 @@ export default function Hero() {
               takeaway deep cleans, and tidy-up support from a Swanland-based team
               covering Hull and nearby villages.
             </motion.p>
-
-            {/* Pills */}
-            <motion.div
-              variants={itemVariants}
-              className="mt-6 flex flex-wrap justify-center gap-2 xl:justify-start"
-            >
-              {["One-off and regular cleans", "Commercial offices", "End of tenancy"].map((item) => (
-                <div
-                  key={item}
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm ring-1 ring-gray-200 sm:text-sm"
-                >
-                  <CheckCircle2 size={13} className="text-brand-secondary shrink-0" />
-                  {item}
-                </div>
-              ))}
-            </motion.div>
 
             {/* CTAs */}
             <motion.div

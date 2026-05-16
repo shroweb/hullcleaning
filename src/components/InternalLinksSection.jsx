@@ -1,40 +1,71 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { Card } from "./ui";
 
 export default function InternalLinksSection({ title, description, items, variant = "services" }) {
   if (!items?.length) return null;
 
   return (
-    <section className="mt-16">
-      <div className="mb-8 max-w-3xl">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900">{title}</h2>
-        {description ? <p className="mt-4 text-lg leading-relaxed text-gray-600">{description}</p> : null}
-      </div>
+    <section className="mt-20">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="mb-8 max-w-3xl"
+      >
+        <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{title}</h2>
+        {description ? (
+          <p className="mt-4 leading-relaxed text-gray-500">{description}</p>
+        ) : null}
+      </motion.div>
 
       {variant === "areas" ? (
-        <div className="flex flex-wrap gap-3">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap gap-2.5"
+        >
           {items.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:border-brand-primary hover:text-brand-primary"
+              className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-600 transition-all duration-150 hover:border-brand-primary hover:bg-brand-accent hover:text-brand-primary"
             >
               {item.label}
             </Link>
           ))}
-        </div>
+        </motion.div>
       ) : (
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {items.map((item) => (
-            <Link key={item.to} to={item.to} className="block h-full">
-              <Card className="h-full border-gray-200 p-6 transition-shadow duration-200 hover:shadow-md">
-                <h3 className="text-xl font-bold text-gray-900">{item.label}</h3>
-                {item.description ? (
-                  <p className="mt-3 leading-relaxed text-gray-600">{item.description}</p>
-                ) : null}
-                <div className="mt-5 text-sm font-bold text-brand-primary">View page</div>
-              </Card>
-            </Link>
+          {items.map((item, i) => (
+            <motion.div
+              key={item.to}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: i * 0.06 }}
+              viewport={{ once: true }}
+            >
+              <Link to={item.to} className="group block h-full">
+                <Card className="h-full border-gray-100 p-6 shadow-sm transition-all duration-200 group-hover:border-blue-100 group-hover:shadow-md">
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-brand-primary transition-colors duration-150">
+                    {item.label}
+                  </h3>
+                  {item.description ? (
+                    <p className="mt-2.5 text-sm leading-relaxed text-gray-500 line-clamp-3">
+                      {item.description}
+                    </p>
+                  ) : null}
+                  <div className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-brand-primary">
+                    View page
+                    <ArrowRight size={14} className="transition-transform duration-150 group-hover:translate-x-0.5" />
+                  </div>
+                </Card>
+              </Link>
+            </motion.div>
           ))}
         </div>
       )}

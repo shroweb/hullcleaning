@@ -3,11 +3,11 @@ export const serviceAreas = [
     slug: "hull",
     name: "Hull",
     intro:
-      "Reliable domestic and commercial cleaning across Hull, with flexible one-off and regular visits tailored to your property.",
+      "We cover Hull regularly — homes, rentals, offices, and takeaways. One-off or ongoing, just get in touch and we'll work something out.",
     highlights: [
-      "Regular domestic cleaning for busy households",
-      "Commercial cleaning for offices and small workplaces",
-      "End of tenancy and move-out support across Hull",
+      "Regular domestic cleaning for households across the city",
+      "Commercial cleaning for offices and small workplaces in Hull",
+      "End of tenancy and move-out cleans at short notice",
     ],
     nearby: ["swanland", "anlaby", "hessle", "cottingham"],
   },
@@ -15,9 +15,9 @@ export const serviceAreas = [
     slug: "swanland",
     name: "Swanland",
     intro:
-      "Local cleaning support in Swanland from a team based nearby, offering regular home cleaning, end of tenancy cleans, and tidy ups.",
+      "We're based in Swanland, so local bookings are easy for us. Regular home cleaning, one-off visits, or end of tenancy — we do all of it.",
     highlights: [
-      "A genuinely local service based in and around Swanland",
+      "A genuinely local team — no long drives, no extra charges",
       "Regular house cleaning and one-off resets",
       "Tidy ups, decluttering, and property refreshes",
     ],
@@ -27,11 +27,11 @@ export const serviceAreas = [
     slug: "kirk-ella",
     name: "Kirk Ella",
     intro:
-      "Professional cleaning in Kirk Ella for busy households, landlords, offices, and properties that need a careful, dependable finish.",
+      "We clean homes and offices in Kirk Ella regularly. Whether it's a weekly visit or an end of tenancy deep clean, we'll sort it.",
     highlights: [
-      "Domestic cleaning for larger family homes",
+      "Domestic cleaning for family homes in Kirk Ella",
       "End of tenancy and landlord-ready cleans",
-      "Office and workplace cleaning nearby",
+      "Office and workplace cleaning close by",
     ],
     nearby: ["swanland", "willerby", "anlaby", "hull"],
   },
@@ -39,7 +39,7 @@ export const serviceAreas = [
     slug: "anlaby",
     name: "Anlaby",
     intro:
-      "Trusted cleaning services in Anlaby for homes and businesses, from one-off deep cleans to ongoing regular support.",
+      "From one-off cleans to regular visits, we cover Anlaby for homes and businesses. Easy to book, reliable to use.",
     highlights: [
       "Regular domestic cleaning visits in Anlaby",
       "One-off cleans and practical property resets",
@@ -51,7 +51,7 @@ export const serviceAreas = [
     slug: "hessle",
     name: "Hessle",
     intro:
-      "Practical, thorough cleaning in Hessle, including domestic cleaning, takeaway deep cleans, office cleans, and property refreshes.",
+      "We cover Hessle for domestic cleaning, takeaway deep cleans, office work, and general tidy-ups. Get in touch and we'll take it from there.",
     highlights: [
       "Domestic, commercial, and takeaway cleaning in Hessle",
       "End of tenancy cleaning for rented properties",
@@ -63,7 +63,7 @@ export const serviceAreas = [
     slug: "cottingham",
     name: "Cottingham",
     intro:
-      "Friendly local cleaning in Cottingham for homes, rentals, and workplaces that need consistent, high-standard cleaning.",
+      "We do regular cleaning for homes and businesses in Cottingham, as well as move-out cleans for landlords and tenants.",
     highlights: [
       "Regular cleaning for homes and flats in Cottingham",
       "Move-out cleaning for rentals and landlords",
@@ -75,7 +75,7 @@ export const serviceAreas = [
     slug: "willerby",
     name: "Willerby",
     intro:
-      "Reliable cleaning services in Willerby for homes, rental properties, offices, and one-off jobs that need a tidy, professional finish.",
+      "We cover Willerby for home cleaning, rental turnarounds, office cleans, and one-off jobs. Reliable, local, no fuss.",
     highlights: [
       "One-off and regular domestic cleaning in Willerby",
       "Office cleaning and practical commercial support",
@@ -87,7 +87,7 @@ export const serviceAreas = [
     slug: "north-ferriby",
     name: "North Ferriby",
     intro:
-      "Dependable cleaning in North Ferriby for domestic visits, end of tenancy work, office cleaning, and practical ongoing support.",
+      "We work in North Ferriby for domestic visits, end of tenancy cleans, and office cleaning. Short drive from our base in Swanland.",
     highlights: [
       "Reliable house cleaning in North Ferriby",
       "Move-out cleaning and refresh visits",
@@ -99,7 +99,7 @@ export const serviceAreas = [
     slug: "beverley",
     name: "Beverley",
     intro:
-      "Flexible cleaning services in Beverley for homes, offices, and end of tenancy jobs, with clear communication and dependable visits.",
+      "We cover Beverley for homes, offices, end of tenancy cleans, and holiday lets. Clear pricing, no hidden costs, easy to book.",
     highlights: [
       "Domestic cleaning for Beverley households",
       "End of tenancy and one-off deep cleaning",

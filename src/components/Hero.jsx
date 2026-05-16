@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { CheckCircle2, MapPin, MessageCircle } from "lucide-react"; // CheckCircle2 used in floating badge
+import { CheckCircle2, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "./ui";
 
 const containerVariants = {
@@ -60,6 +60,20 @@ export default function Hero() {
               covering Hull and nearby villages.
             </motion.p>
 
+            {/* Social proof — mobile only */}
+            <motion.div
+              variants={itemVariants}
+              className="mt-6 flex flex-wrap justify-center gap-3 xl:hidden"
+            >
+              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-medium text-gray-600 shadow-sm ring-1 ring-gray-100 sm:text-sm">
+                <span className="font-bold text-gray-900">50+</span> happy customers
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-medium text-gray-600 shadow-sm ring-1 ring-gray-100 sm:text-sm">
+                <MapPin size={13} className="text-brand-primary shrink-0" />
+                Based in Swanland
+              </div>
+            </motion.div>
+
             {/* CTAs */}
             <motion.div
               variants={itemVariants}
@@ -78,19 +92,6 @@ export default function Hero() {
               </Link>
             </motion.div>
 
-            {/* Social proof */}
-            <motion.div
-              variants={itemVariants}
-              className="mt-8 flex flex-wrap items-center justify-center gap-3 xl:justify-start"
-            >
-              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-medium text-gray-600 shadow-sm ring-1 ring-gray-100 sm:text-sm">
-                <span className="font-bold text-gray-900">50+</span> happy customers
-              </div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-medium text-gray-600 shadow-sm ring-1 ring-gray-100 sm:text-sm">
-                <MapPin size={13} className="text-brand-primary shrink-0" />
-                Based in Swanland
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* ── Right column — image (hidden below xl) ── */}

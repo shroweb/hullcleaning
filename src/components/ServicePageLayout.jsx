@@ -168,21 +168,36 @@ export default function ServicePageLayout({
           </div>
         </motion.div>
 
-        <InternalLinksSection
-          title={localCoverageTitle || `Areas we cover for ${title.toLowerCase()}`}
-          description={
-            localCoverageText ||
-            `We cover Hull, Swanland, and nearby villages for ${title.toLowerCase()}, with local pages for each area so you can quickly see where we work.`
-          }
-          items={areaLinks}
-          variant="areas"
-        />
-
-        <InternalLinksSection
-          title="Related cleaning services"
-          description="Customers often book more than one type of cleaning. These pages cover the other services we offer in the same area."
-          items={relatedServices}
-        />
+        {(areaLinks.length > 0 || relatedServices.length > 0) && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+            viewport={{ once: true }}
+            className="mt-20 rounded-[2rem] bg-gray-50 px-8 py-10 sm:px-10 lg:px-12"
+          >
+            {areaLinks.length > 0 && (
+              <InternalLinksSection
+                flush
+                title={localCoverageTitle || `Areas we cover for ${title.toLowerCase()}`}
+                description={localCoverageText}
+                items={areaLinks}
+                variant="areas"
+              />
+            )}
+            {areaLinks.length > 0 && relatedServices.length > 0 && (
+              <div className="my-10 border-t border-gray-200" />
+            )}
+            {relatedServices.length > 0 && (
+              <InternalLinksSection
+                flush
+                title="Other services we offer"
+                description="We often cover more than one type of cleaning for the same customer."
+                items={relatedServices}
+              />
+            )}
+          </motion.div>
+        )}
       </div>
     </div>
   );

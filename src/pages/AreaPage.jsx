@@ -208,18 +208,32 @@ export default function AreaPage() {
           </div>
         </motion.div>
 
-        <InternalLinksSection
-          title={`Cleaning services in ${area.name}`}
-          description={`These pages cover the main types of work we do in ${area.name}. Click through for more detail on any service.`}
-          items={serviceLinks}
-        />
-
-        <InternalLinksSection
-          title={`Nearby areas we also cover`}
-          description="We work across this part of East Yorkshire — if you're nearby, we most likely cover you too."
-          items={nearbyLinks}
-          variant="areas"
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45 }}
+          viewport={{ once: true }}
+          className="mt-20 rounded-[2rem] bg-gray-50 px-8 py-10 sm:px-10 lg:px-12"
+        >
+          <InternalLinksSection
+            flush
+            title={`Services we offer in ${area.name}`}
+            description="Click through any service for more detail on what's included and how to book."
+            items={serviceLinks}
+          />
+          {nearbyLinks.length > 0 && (
+            <>
+              <div className="my-10 border-t border-gray-200" />
+              <InternalLinksSection
+                flush
+                title="Nearby areas we also cover"
+                description="We work across this part of East Yorkshire — if you're nearby, we most likely cover you too."
+                items={nearbyLinks}
+                variant="areas"
+              />
+            </>
+          )}
+        </motion.div>
       </div>
     </div>
   );

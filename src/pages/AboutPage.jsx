@@ -1,26 +1,28 @@
 import { motion } from "framer-motion";
-import { Sparkles, Shield, UserCheck, Clock } from "lucide-react";
-import { Card } from "../components/ui";
+import { Link } from "react-router-dom";
+import { CheckCircle2, MessageCircle } from "lucide-react";
+import { Button, Card } from "../components/ui";
 import Seo from "../components/Seo";
 import InternalLinksSection from "../components/InternalLinksSection";
 import { serviceAreas } from "../data/serviceAreas";
 import { servicePages } from "../data/servicePages";
 
-const values = [
+const facts = [
   {
-    title: "Trustworthy Team",
-    description: "Every member of In & Out Cleaning is fully vetted, insured, and background-checked for your peace of mind.",
-    icon: Shield,
+    heading: "Fully insured",
+    body: "We carry full public liability insurance, so you can book knowing there's proper cover in place if anything goes wrong.",
   },
   {
-    title: "Local Expertise",
-    description: "Based in Swanland, we understand the needs of local homes and businesses across Hull and the surrounding villages.",
-    icon: UserCheck,
+    heading: "Based five minutes from most of Hull",
+    body: "We're in Swanland, which puts us within easy reach of Hull, Hessle, Anlaby, Kirk Ella, and the surrounding villages without long travel times.",
   },
   {
-    title: "Reliability Guaranteed",
-    description: "We show up on time, every time. Your schedule is our priority, and we never miss a clean.",
-    icon: Clock,
+    heading: "One point of contact",
+    body: "You'll deal with the same person from enquiry through to the clean itself — not a call centre or rotating staff.",
+  },
+  {
+    heading: "Straightforward pricing",
+    body: "We give you a clear price upfront based on the property and what you need. No hidden charges after the clean.",
   },
 ];
 
@@ -37,86 +39,157 @@ export default function AboutPage() {
   }));
 
   return (
-    <div className="pt-32 pb-24 bg-white">
+    <div className="bg-white">
       <Seo
         title="About"
         description="Learn about the Swanland-based team behind In & Out Cleaning and how we help homes and businesses across Hull and nearby villages."
       />
-      <div className="container mx-auto px-6">
+
+      <section className="bg-[#f8f9fa] pb-16 pt-28 sm:pt-32">
+        <div className="container mx-auto px-5 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-widest text-brand-label shadow-sm ring-1 ring-gray-200">
+              About us
+            </span>
+            <h1 className="mt-5 text-4xl font-extrabold leading-[1.08] tracking-tight text-gray-900 sm:text-5xl xl:text-[3.5rem]">
+              A local cleaning team{" "}
+              <span className="text-brand-primary">based in Swanland</span>
+            </h1>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-gray-500">
+              In &amp; Out Cleaning covers Hull, Swanland, and the surrounding villages. We focus on doing the job properly, being easy to deal with, and turning up when we say we will.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-5 pb-24 pt-14 sm:px-6">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="overflow-hidden rounded-[2rem] border border-gray-100 shadow-xl shadow-gray-200/60">
+              <img
+                src="/hero.png"
+                alt="In and Out Cleaning — based in Swanland"
+                className="aspect-[4/3] w-full object-cover"
+                width="600"
+                height="450"
+              />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.08 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+              What we do and how we work
+            </h2>
+            <p className="mt-5 leading-relaxed text-gray-500">
+              We started In &amp; Out Cleaning to give local homes and businesses a reliable option that didn't involve chasing up no-shows or getting someone different every visit. We keep things simple — you tell us what you need, we turn up and do it properly.
+            </p>
+            <p className="mt-4 leading-relaxed text-gray-500">
+              Whether it's a one-off clean before you move out, a weekly visit to keep your home in order, or a deep clean of your takeaway kitchen, the approach is the same: arrive when agreed, work through it thoroughly, and leave it the way you'd want to find it.
+            </p>
+            <p className="mt-4 leading-relaxed text-gray-500">
+              We cover Hull and a wide area around it — Swanland, Kirk Ella, Anlaby, Hessle, Cottingham, Beverley, and more. Most bookings come via WhatsApp, which is also the fastest way to get a quote.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="https://w.app/inoutcleaning" target="_blank" rel="noreferrer">
+                <Button size="lg" className="w-full gap-2 sm:w-auto">
+                  <MessageCircle size={18} />
+                  Chat on WhatsApp
+                </Button>
+              </a>
+              <Link to="/contact">
+                <Button variant="secondary" size="lg" className="w-full sm:w-auto">
+                  Get a price
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center max-w-3xl mx-auto mb-20"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mt-20"
         >
-          <span className="text-brand-label font-bold tracking-widest uppercase text-xs">Our Story</span>
-          <h1 className="mt-4 text-5xl font-extrabold text-gray-900 tracking-tight">
-            Passionately Cleaning <br />
-            <span className="text-brand-primary">Hull & East Yorkshire</span>
-          </h1>
-          <p className="mt-6 text-lg sm:text-xl text-gray-600">
-            We built In & Out Cleaning around dependable local service, clear communication, and practical help for busy households and businesses across Hull and East Yorkshire.
-          </p>
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            A few things worth knowing
+          </h2>
+          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {facts.map((fact) => (
+              <Card key={fact.heading} className="border-gray-100 p-6 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-green-500" />
+                  <div>
+                    <h3 className="font-bold text-gray-900">{fact.heading}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-gray-500">{fact.body}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-20">
-          <div className="relative">
-            <div className="rounded-[2.5rem] overflow-hidden shadow-2xl">
-              <img src="/hero.png" alt="Our team cleaning in Hull" className="w-full h-auto" />
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mt-20 rounded-[2rem] bg-gray-900 px-8 py-10 text-white lg:px-12 lg:py-12"
+        >
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <h2 className="text-2xl font-bold sm:text-3xl">Get a price</h2>
+              <p className="mt-3 max-w-xl text-gray-400">
+                WhatsApp is fastest. Tell us the property type and what you need, and we'll come back with a price.
+              </p>
             </div>
-            <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-brand-accent rounded-full -z-10 blur-2xl" />
-          </div>
-          
-          <div className="space-y-8">
-            <h2 className="text-3xl font-bold text-gray-900 tracking-tight">What Drives Us</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              We believe a clean, organised space makes day-to-day life easier. Whether it is your home, office, takeaway, rental property, or garden area, we approach each job with the same care and attention to detail.
-            </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              From one-off domestic cleans to regular visits and end of tenancy jobs, we focus on being easy to deal with, reliable on the day, and thorough in the finish.
-            </p>
-            
-            <div className="pt-6">
-              <div className="flex items-center gap-4 text-brand-primary font-bold text-xl">
-                <Sparkles className="w-8 h-8" />
-                <span>Practical cleaning with a local touch.</span>
-              </div>
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+              <a href="https://w.app/inoutcleaning" target="_blank" rel="noreferrer">
+                <Button size="lg" variant="white" className="w-full gap-2 sm:w-auto">
+                  <MessageCircle size={18} />
+                  Chat on WhatsApp
+                </Button>
+              </a>
+              <Link to="/contact">
+                <Button size="lg" className="w-full bg-white/10 shadow-none hover:bg-white/20 sm:w-auto">
+                  Contact form
+                </Button>
+              </Link>
             </div>
           </div>
+        </motion.div>
+
+        <div className="mt-20 rounded-[2rem] bg-gray-50 px-8 py-10 sm:px-10 lg:px-12">
+          <InternalLinksSection
+            flush
+            title="Cleaning services we offer"
+            description="Detail on each type of cleaning we do — what's included and how to book."
+            items={serviceLinks}
+          />
+          <div className="my-10 border-t border-gray-200" />
+          <InternalLinksSection
+            flush
+            title="Areas we cover"
+            items={areaLinks}
+            variant="areas"
+          />
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {values.map((value, index) => (
-            <motion.div
-              key={value.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full text-center">
-                <div className="w-16 h-16 bg-brand-accent text-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <value.icon size={32} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-
-        <InternalLinksSection
-          title="Cleaning services we provide"
-          description="If you want to see the detail behind each service, these pages cover the main work we carry out across Hull and the surrounding villages."
-          items={serviceLinks}
-        />
-
-        <InternalLinksSection
-          title="Areas we regularly cover"
-          description="We are based in Swanland and regularly work across West Hull and nearby villages, with dedicated local pages for each area."
-          items={areaLinks}
-          variant="areas"
-        />
       </div>
     </div>
   );

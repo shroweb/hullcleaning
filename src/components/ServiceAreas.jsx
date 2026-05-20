@@ -1,74 +1,51 @@
 import { motion } from "framer-motion";
-import { MapPin, ArrowRight, Sparkles } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card } from "./ui";
 import { serviceAreas } from "../data/serviceAreas";
 
 export default function ServiceAreas() {
   return (
-    <section className="py-24 bg-white">
+    <section className="bg-white py-24">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="text-brand-label font-bold tracking-widest uppercase text-xs">
+        <div className="mb-12">
+          <span className="text-brand-label text-xs font-bold uppercase tracking-[0.18em]">
             Service Areas
           </span>
-          <h2 className="mt-4 text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
-            Cleaning Across Hull and the Surrounding Villages
+          <h2 className="mt-4 max-w-2xl text-4xl font-extrabold tracking-tight text-gray-900 lg:text-5xl">
+            Cleaning across Hull and the surrounding villages
           </h2>
-          <p className="mt-6 text-lg text-gray-600">
-            We are based in Swanland and regularly cover homes and businesses across West Hull and East Yorkshire.
+          <p className="mt-4 max-w-xl text-lg text-gray-500">
+            Based in Swanland, we regularly cover homes and businesses across West Hull and East Yorkshire.
           </p>
         </div>
 
-        <div className="rounded-[2rem] bg-gradient-to-br from-brand-accent to-white p-6 shadow-sm shadow-blue-100/40 lg:p-8">
-          <div className="mb-8 flex flex-col items-center gap-6 text-center">
-            <div className="flex flex-col items-center">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-label shadow-sm">
-                <Sparkles size={14} />
-                Local Coverage
-              </div>
-              <p className="mt-4 max-w-3xl text-gray-600">
-                Each area has its own local page so the service coverage feels clear, useful, and easy to browse.
-              </p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-3">
-              {serviceAreas.map((area) => (
-                <Link
-                  key={`pill-${area.slug}`}
-                  to={`/areas/${area.slug}`}
-                  className="rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:border-brand-primary hover:text-brand-primary"
-                >
-                  {area.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {serviceAreas.map((area, index) => (
             <motion.div
               key={area.slug}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.06 }}
+              transition={{ duration: 0.45, delay: index * 0.05 }}
               viewport={{ once: true }}
             >
-              <Link to={`/areas/${area.slug}`} className="block h-full group">
-                <Card className="h-full border border-white/70 bg-white/90 shadow-md shadow-gray-200/60">
-                  <div className="w-12 h-12 rounded-2xl bg-brand-accent text-brand-primary flex items-center justify-center mb-5">
-                    <MapPin size={22} />
+              <Link to={`/areas/${area.slug}`} className="group block h-full">
+                <Card className="h-full border-gray-100 shadow-sm transition-all duration-200 group-hover:border-blue-100 group-hover:shadow-md">
+                  <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-accent text-brand-primary">
+                    <MapPin size={18} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">{area.name}</h3>
-                  <p className="mt-3 text-gray-600 leading-relaxed">{area.intro}</p>
-                  <div className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-primary">
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-brand-primary transition-colors duration-150">
+                    {area.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-500">{area.intro}</p>
+                  <div className="mt-4 flex items-center gap-1 text-sm font-bold text-brand-primary">
                     View local page
-                    <ArrowRight size={16} />
+                    <ArrowRight size={14} className="transition-transform duration-150 group-hover:translate-x-0.5" />
                   </div>
                 </Card>
               </Link>
             </motion.div>
           ))}
-          </div>
         </div>
       </div>
     </section>

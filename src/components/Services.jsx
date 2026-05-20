@@ -56,15 +56,15 @@ const services = [
 
 export default function Services({ hideHeading = false }) {
   return (
-    <section id="services" className="overflow-hidden bg-white py-24">
+    <section id="services" className="bg-white pb-24 pt-16">
       <div className="container mx-auto px-6">
         {!hideHeading && (
-          <div className="mx-auto mb-16 max-w-2xl text-center">
+          <div className="mb-12">
             <span className="text-brand-label text-xs font-bold uppercase tracking-[0.18em]">Services</span>
-            <h2 className="mt-4 text-4xl font-extrabold tracking-tight text-gray-900 lg:text-5xl">
-              Straightforward cleaning services for local homes and businesses
+            <h2 className="mt-4 max-w-2xl text-4xl font-extrabold tracking-tight text-gray-900 lg:text-5xl">
+              Straightforward cleaning for local homes and businesses
             </h2>
-            <p className="mt-5 text-lg text-gray-600">
+            <p className="mt-4 max-w-xl text-lg text-gray-500">
               Domestic, commercial, tenancy, takeaway, and tidy-up support across Hull and the surrounding area.
             </p>
           </div>
@@ -74,48 +74,49 @@ export default function Services({ hideHeading = false }) {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
               className="h-full group"
             >
-              <Card className="flex h-full flex-col overflow-hidden border-gray-200 bg-white transition-shadow duration-300 group-hover:shadow-lg">
-                <div className="mb-8 flex justify-center p-1 md:justify-start">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-accent text-brand-primary">
-                    <service.icon size={28} />
-                  </div>
-                </div>
-
-                <div className="flex-1 text-center md:text-left">
-                  <h3 className="mb-4 text-2xl font-bold text-gray-900">{service.title}</h3>
-                  <p className="mb-8 min-h-[112px] leading-relaxed text-gray-600">
-                    {service.description}
-                  </p>
-
-                  <ul className="mb-8 space-y-4">
-                    {service.perks.map((perk) => (
-                      <li key={perk} className="flex items-center justify-center gap-3 text-sm font-medium text-gray-700 md:justify-start">
-                        <CheckCircle2 size={18} className="shrink-0 text-green-500" />
-                        {perk}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {service.image ? (
-                  <div className="relative mt-4 h-52 overflow-hidden rounded-[1.5rem] bg-gray-100">
+              <Card className="flex h-full flex-col overflow-hidden border-gray-200 bg-white p-0 transition-shadow duration-300 group-hover:shadow-lg">
+                {service.image && (
+                  <div className="h-48 w-full overflow-hidden rounded-t-[1.75rem] bg-gray-100">
                     <img
                       src={service.image}
                       alt={service.title}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   </div>
-                ) : null}
+                )}
 
-                <Link to={service.link} className="mt-6 inline-flex items-center justify-center text-sm font-bold text-brand-primary hover:text-[#0d68d2] md:justify-start">
-                  View details
-                </Link>
+                <div className="flex flex-1 flex-col p-7">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-accent text-brand-primary">
+                    <service.icon size={24} />
+                  </div>
+
+                  <h3 className="mb-3 text-xl font-bold text-gray-900">{service.title}</h3>
+                  <p className="mb-6 leading-relaxed text-gray-500 text-sm">{service.description}</p>
+
+                  <ul className="mb-6 space-y-2.5">
+                    {service.perks.map((perk) => (
+                      <li key={perk} className="flex items-center gap-2.5 text-sm font-medium text-gray-700">
+                        <CheckCircle2 size={16} className="shrink-0 text-green-500" />
+                        {perk}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto">
+                    <Link
+                      to={service.link}
+                      className="inline-flex items-center text-sm font-bold text-brand-primary hover:text-[#0d68d2]"
+                    >
+                      View details →
+                    </Link>
+                  </div>
+                </div>
               </Card>
             </motion.div>
           ))}

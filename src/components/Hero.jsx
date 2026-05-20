@@ -30,13 +30,13 @@ export default function Hero() {
             animate="visible"
             className="text-center xl:text-left"
           >
-            <motion.span
+            <motion.div
               variants={itemVariants}
-              className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold tracking-wide text-brand-primary shadow-sm ring-1 ring-blue-100 sm:text-sm"
+              className="flex items-center gap-1.5 text-sm text-gray-400"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-secondary" />
-              Based in Swanland · Covering Hull &amp; nearby villages
-            </motion.span>
+              <MapPin size={13} className="shrink-0" />
+              Swanland, East Yorkshire
+            </motion.div>
 
             <motion.h1
               variants={itemVariants}

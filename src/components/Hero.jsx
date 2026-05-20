@@ -21,7 +21,7 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-white pb-16 pt-24 sm:pt-28 sm:pb-20 xl:pt-32 xl:pb-24">
       <div className="absolute inset-x-0 top-0 h-[32rem] bg-gradient-to-b from-blue-50 via-green-50/60 to-white" />
 
-      <div className="container relative z-10 mx-auto px-5 sm:px-6">
+      <div className="container relative z-10 mx-auto px-6">
         <div className="grid items-center gap-12 xl:grid-cols-[1fr_0.9fr] xl:gap-16">
 
           <motion.div

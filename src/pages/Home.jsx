@@ -18,7 +18,9 @@ export default function Home() {
       <Stats />
       <Reviews />
       <ServiceAreas />
-      <Contact />
+      <div className="container mx-auto px-6 pb-24">
+        <Contact />
+      </div>
     </>
   );
 }

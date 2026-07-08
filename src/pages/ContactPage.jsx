@@ -12,8 +12,8 @@ export default function ContactPage() {
         description="Contact In & Out Cleaning for quotes across Swanland, Hull, and nearby villages. Fast WhatsApp and email enquiries."
       />
 
-      <section className="bg-[#f8f9fa] pb-16 pt-28 sm:pt-32">
-        <div className="container mx-auto px-5 sm:px-6">
+      <section className="bg-[#f8f9fa] pb-16 pt-28 sm:pt-32 border-b border-slate-200">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -33,7 +33,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <div className="container mx-auto px-5 pb-24 sm:px-6">
+      <div className="max-w-6xl mx-auto px-6 pb-24">
         <div className="pt-14">
           <Contact />
         </div>

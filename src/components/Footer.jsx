@@ -73,24 +73,17 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-6">
             <Link to="/privacy" className="hover:text-brand-primary transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-brand-primary transition-colors">Terms of Service</Link>
-            <span className="opacity-60">Web design &amp; development by</span>
-            <a
-              href="https://swift7.co.uk"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-brand-primary transition-colors"
-            >
-              Swift7
-            </a>
-            <span className="opacity-40">&amp;</span>
-            <a
-              href="https://shroweb.com"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-brand-primary transition-colors"
-            >
-              Shro Web
-            </a>
+            <span className="opacity-60">
+              Web design in Hull by{" "}
+              <a
+                href="https://swift7.co.uk"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand-primary transition-colors font-semibold"
+              >
+                Swift7
+              </a>
+            </span>
           </div>
         </div>
       </div>

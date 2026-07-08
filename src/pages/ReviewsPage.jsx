@@ -13,8 +13,8 @@ export default function ReviewsPage() {
         description="Customer reviews for In & Out Cleaning across Swanland, Hull, and the surrounding villages."
       />
 
-      <section className="bg-[#f8f9fa] pb-16 pt-28 sm:pt-32">
-        <div className="container mx-auto px-5 sm:px-6">
+      <section className="bg-[#f8f9fa] pb-16 pt-28 sm:pt-32 border-b border-slate-200">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ export default function ReviewsPage() {
         </div>
       </section>
 
-      <div className="container mx-auto px-5 pb-24 pt-14 sm:px-6">
+      <div className="max-w-6xl mx-auto px-6 pb-24 pt-14">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,26 +45,31 @@ export default function ReviewsPage() {
           {reviews.map((review) => (
             <div
               key={`${review.name}-${review.location}`}
-              className="flex h-full flex-col rounded-[2rem] border border-gray-100 bg-white p-8 shadow-sm"
+              className="flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-7 shadow-sm hover:border-slate-300 transition-all duration-300"
             >
-              <div className="mb-5 flex gap-1">
+              <div className="mb-4 flex gap-0.5">
                 {[...Array(review.stars)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+                  <Star key={i} size={14} className="fill-amber-400 text-amber-400" />
                 ))}
               </div>
 
-              <blockquote className="flex-1 text-base leading-relaxed text-gray-700">
+              <blockquote className="flex-1 text-sm leading-relaxed text-slate-600">
                 "{review.text}"
               </blockquote>
 
-              <div className="mt-8 flex items-end justify-between gap-4 border-t border-gray-100 pt-5">
-                <div>
-                  <div className="font-bold text-gray-900">{review.name}</div>
-                  <div className="mt-0.5 text-sm text-brand-primary">{review.location}</div>
+              <div className="mt-6 pt-5 border-t border-slate-100 flex items-center gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">
+                  {review.name.charAt(0)}
                 </div>
-                <div className="shrink-0 rounded-full border border-gray-200 px-3 py-1 text-xs font-medium text-gray-500">
-                  {review.service}
+                <div className="flex-1 min-w-0">
+                  <div className="font-bold text-brand-deep text-sm truncate">{review.name}</div>
+                  <div className="mt-0.5 text-xs font-semibold text-brand-primary truncate">{review.location}</div>
                 </div>
+                {review.service && (
+                  <div className="shrink-0 rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                    {review.service.replace(" cleaning", "").replace(" clean", "")}
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -75,7 +80,7 @@ export default function ReviewsPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mt-20 rounded-[2rem] bg-gray-900 px-8 py-10 text-white lg:px-12 lg:py-12"
+          className="mt-20 rounded-[2rem] bg-brand-deep px-8 py-10 text-white lg:px-12 lg:py-12 shadow-md"
         >
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div>

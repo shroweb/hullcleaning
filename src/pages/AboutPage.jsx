@@ -45,8 +45,8 @@ export default function AboutPage() {
         description="Learn about the Swanland-based team behind In & Out Cleaning and how we help homes and businesses across Hull and nearby villages."
       />
 
-      <section className="bg-[#f8f9fa] pb-16 pt-28 sm:pt-32">
-        <div className="container mx-auto px-5 sm:px-6">
+      <section className="bg-[#f8f9fa] pb-16 pt-28 sm:pt-32 border-b border-slate-200">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="container mx-auto px-5 pb-24 pt-14 sm:px-6">
+      <div className="max-w-6xl mx-auto px-6 pb-24 pt-14">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -120,37 +120,44 @@ export default function AboutPage() {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-20"
-        >
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-            A few things worth knowing
-          </h2>
-          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
-            {facts.map((fact) => (
-              <Card key={fact.heading} className="border-gray-100 p-6 shadow-sm">
-                <div className="flex items-start gap-4">
-                  <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-green-500" />
-                  <div>
-                    <h3 className="font-bold text-gray-900">{fact.heading}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-gray-500">{fact.body}</p>
+      </div>
+
+      <section className="bg-slate-50 py-20 border-y border-slate-250">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+              A few things worth knowing
+            </h2>
+            <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+              {facts.map((fact) => (
+                <Card key={fact.heading} className="border-slate-200 p-6 shadow-sm bg-white">
+                  <div className="flex items-start gap-4">
+                    <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-green-500" />
+                    <div>
+                      <h3 className="font-bold text-gray-900">{fact.heading}</h3>
+                      <p className="mt-1.5 text-sm leading-relaxed text-gray-500">{fact.body}</p>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </motion.div>
+                </Card>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <div className="max-w-6xl mx-auto px-6 pb-24 pt-20">
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mt-20 rounded-[2rem] bg-gray-900 px-8 py-10 text-white lg:px-12 lg:py-12"
+          className="mt-20 rounded-[2rem] bg-brand-deep px-8 py-10 text-white lg:px-12 lg:py-12 shadow-md"
         >
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div>

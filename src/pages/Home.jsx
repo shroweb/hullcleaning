@@ -18,9 +18,11 @@ export default function Home() {
       <Stats />
       <Reviews />
       <ServiceAreas />
-      <div className="container mx-auto px-6 pb-24">
-        <Contact />
-      </div>
+      <section className="bg-slate-50 py-20 border-t border-slate-200">
+        <div className="max-w-6xl mx-auto px-6">
+          <Contact />
+        </div>
+      </section>
     </>
   );
 }

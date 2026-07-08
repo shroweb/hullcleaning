@@ -28,8 +28,8 @@ export default function ServicesPage() {
         description="Domestic, commercial, takeaway, tenancy, garden tidy up, and organisation help in Hull and nearby villages."
       />
 
-      <section className="bg-[#f8f9fa] pb-16 pt-28 sm:pt-32">
-        <div className="container mx-auto px-5 sm:px-6">
+      <section className="bg-[#f8f9fa] pb-16 pt-28 sm:pt-32 border-b border-slate-200">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,13 +67,13 @@ export default function ServicesPage() {
 
       <Stats />
 
-      <div className="container mx-auto px-5 pb-24 sm:px-6">
+      <div className="max-w-6xl mx-auto px-6 pb-24">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
           viewport={{ once: true }}
-          className="mt-16 rounded-[2rem] bg-gray-900 px-8 py-10 text-white lg:px-12 lg:py-12"
+          className="mt-16 rounded-[2rem] bg-brand-deep px-8 py-10 text-white lg:px-12 lg:py-12 shadow-md"
         >
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div>

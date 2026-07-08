@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Home, Building, Leaf, KeyRound, UtensilsCrossed, BedDouble, CheckCircle2 } from "lucide-react";
+import { Home, Building, Leaf, KeyRound, UtensilsCrossed, BedDouble, CheckCircle2, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card } from "./ui";
 
@@ -9,7 +9,7 @@ const services = [
     description: "Flexible one-off and regular home cleaning with careful attention to kitchens, bathrooms, dusting, floors, and general reset visits.",
     icon: Home,
     image: "/residential.png",
-    perks: ["One-off cleans", "Regular weekly or fortnightly visits", "Deep cleans available"],
+    perks: ["One-off resets", "Regular weekly/fortnightly visits", "Detailed kitchen & bathroom cleans"],
     link: "/domestic-cleaning-hull",
   },
   {
@@ -17,7 +17,7 @@ const services = [
     description: "Thorough move-out cleans across Hull to help tenants and landlords meet check-out standards and get deposits back with confidence.",
     icon: KeyRound,
     image: "/end-of-tenancy.jpg",
-    perks: ["Full property deep clean", "Ovens, fridges, and white goods", "Available on short notice"],
+    perks: ["Full deep cleans of all rooms", "Ovens & white goods scrubbed", "Short notice booking slots"],
     link: "/end-of-tenancy-cleaning-hull",
   },
   {
@@ -25,95 +25,102 @@ const services = [
     description: "Dependable workplace cleaning for offices and business premises across Hull, arranged around your hours and staff schedule.",
     icon: Building,
     image: "/commercial.png",
-    perks: ["Regular cleaning contracts", "Workstations and common areas", "Flexible around opening hours"],
+    perks: ["Routine contract visits", "Workstations & common areas", "Quiet hours timing"],
     link: "/commercial-cleaning-hull",
   },
   {
-    title: "Takeaway and Restaurant Cleaning",
+    title: "Takeaway & Restaurant Cleaning",
     description: "Deep cleaning for food businesses in Hull, including kitchens, fryers, extraction, and front-of-house areas between services.",
     icon: UtensilsCrossed,
     image: "/takeaway.jpg",
-    perks: ["Kitchen and extraction cleaning", "Fryers, ovens, and surfaces", "Early morning or late night slots"],
+    perks: ["Kitchen & ventilation cleans", "Fryers, grills & cookers", "Out of hours operations"],
     link: "/takeaway-cleaning-hull",
   },
   {
-    title: "Airbnb and Holiday Let Cleaning",
+    title: "Airbnb & Holiday Let Cleaning",
     description: "Fast turnaround cleans for short-term lets and holiday properties across Hull and the East Riding, ready for each new guest.",
     icon: BedDouble,
     image: "/airbnb.jpg",
-    perks: ["Same-day turnaround available", "Linen change and restocking", "Reliable between bookings"],
+    perks: ["Same-day transition times", "Linen replacement & restocking", "Key collection management"],
     link: "/airbnb-cleaning-hull",
   },
   {
-    title: "Tidy Ups and Organisation Help",
+    title: "Tidy Ups & Organisation Help",
     description: "Practical support for homes and outdoor spaces, including garden tidy ups, weeding, and getting rooms back under control.",
     icon: Leaf,
     image: "/tidy-ups.jpg",
-    perks: ["Garden tidy ups and weeding", "General tidying and declutter", "Organisation support"],
+    perks: ["Garden weeding & path tidies", "Room sorting & decluttering", "General organization resets"],
     link: "/tidy-ups-hull",
   },
 ];
 
 export default function Services({ hideHeading = false }) {
   return (
-    <section id="services" className="bg-white pb-24 pt-16">
-      <div className="container mx-auto px-6">
+    <section id="services" className="bg-white pb-28 pt-20">
+      <div className="max-w-6xl mx-auto px-6">
         {!hideHeading && (
-          <div className="mb-12">
-            <span className="text-brand-label text-xs font-bold uppercase tracking-[0.18em]">Services</span>
-            <h2 className="mt-4 max-w-2xl text-4xl font-extrabold tracking-tight text-gray-900 lg:text-5xl">
-              Straightforward cleaning for local homes and businesses
+          <div className="mb-16 text-center max-w-2xl mx-auto">
+            <span className="text-brand-primary text-xs font-bold uppercase tracking-wider bg-slate-100 px-4 py-1.5 rounded-full">
+              What We Offer
+            </span>
+            <h2 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-brand-deep sm:text-4xl">
+              Professional cleaning tailored for homes & businesses
             </h2>
-            <p className="mt-4 max-w-xl text-lg text-gray-500">
-              Domestic, commercial, tenancy, takeaway, and tidy-up support across Hull and the surrounding area.
+            <p className="mt-4 text-base text-slate-500 sm:text-lg">
+              Independent domestic, commercial, tenancy, takeaway, and tidy-up support across Hull and surrounding villages.
             </p>
           </div>
         )}
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
+              transition={{ duration: 0.5, delay: index * 0.04, ease: "easeOut" }}
               viewport={{ once: true }}
               className="h-full group"
             >
-              <Card className="flex h-full flex-col overflow-hidden border-gray-200 bg-white p-0 transition-shadow duration-300 group-hover:shadow-lg">
+              <Card className="flex h-full flex-col overflow-hidden border-slate-200 bg-white p-0 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300">
                 {service.image && (
-                  <div className="h-48 w-full overflow-hidden rounded-t-[1.75rem] bg-gray-100">
+                  <div className="relative h-52 w-full overflow-hidden bg-slate-100 border-b border-slate-100">
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.01]"
+                      loading="lazy"
                     />
                   </div>
                 )}
 
                 <div className="flex flex-1 flex-col p-7">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-accent text-brand-primary">
-                    <service.icon size={24} />
+                  {/* Clean Icon Container */}
+                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-slate-50 text-slate-700 shadow-sm border border-slate-100 group-hover:bg-brand-primary group-hover:text-white group-hover:border-brand-primary transition-all duration-300">
+                    <service.icon size={22} />
                   </div>
 
-                  <h3 className="mb-3 text-xl font-bold text-gray-900">{service.title}</h3>
-                  <p className="mb-6 leading-relaxed text-gray-500 text-sm">{service.description}</p>
+                  <h3 className="mb-3 font-display text-lg font-bold text-brand-deep group-hover:text-brand-primary transition-colors duration-200">
+                    {service.title}
+                  </h3>
+                  <p className="mb-5 leading-relaxed text-slate-500 text-sm">{service.description}</p>
 
                   <ul className="mb-6 space-y-2.5">
                     {service.perks.map((perk) => (
-                      <li key={perk} className="flex items-center gap-2.5 text-sm font-medium text-gray-700">
-                        <CheckCircle2 size={16} className="shrink-0 text-green-500" />
-                        {perk}
+                      <li key={perk} className="flex items-center gap-2.5 text-sm font-semibold text-slate-700">
+                        <CheckCircle2 size={15} className="shrink-0 text-brand-secondary" />
+                        <span>{perk}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <div className="mt-auto">
+                  <div className="mt-auto pt-4 border-t border-slate-100">
                     <Link
                       to={service.link}
-                      className="inline-flex items-center text-sm font-bold text-brand-primary hover:text-[#0d68d2]"
+                      className="inline-flex items-center gap-1.5 text-sm font-extrabold text-brand-primary group-hover:text-brand-label transition-colors duration-200"
                     >
-                      View details →
+                      View details
+                      <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-0.5" />
                     </Link>
                   </div>
                 </div>

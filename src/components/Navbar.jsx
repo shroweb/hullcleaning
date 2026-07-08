@@ -1,11 +1,13 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Menu, X, Sparkles } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
   const links = [
     { to: "/services", label: "Services" },
     { to: "/about", label: "About" },
@@ -14,63 +16,109 @@ export default function Navbar() {
   ];
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
+    <motion.header
+      initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 mx-auto flex items-center justify-between px-4 py-2.5 sm:px-6 sm:py-4 max-w-7xl"
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="fixed top-0 left-0 right-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur-md shadow-sm"
     >
-      <div className="absolute inset-0 -z-10 rounded-b-[1.75rem] border-b border-white/20 bg-white/60 shadow-sm backdrop-blur-xl" />
-      
-      <Link to="/" className="group cursor-pointer">
-        <img
-          src="/logo.png"
-          alt="In & Out Cleaning"
-          className="h-8 w-auto transition-transform duration-300 group-hover:scale-[1.02] sm:h-14"
-        />
-      </Link>
-
-      <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-        {links.map((link) => (
-          <Link key={link.to} to={link.to} className="hover:text-brand-primary transition-colors">
-            {link.label}
-          </Link>
-        ))}
-      </div>
-
-      <div className="flex items-center gap-4">
-        <Link to="/contact" className="hidden sm:flex">
-          <Button size="sm">Book Now</Button>
+      <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+        <Link to="/" className="group cursor-pointer flex items-center">
+          <img
+            src="/logo.png"
+            alt="In & Out Cleaning"
+            className="h-8 w-auto transition-transform duration-300 group-hover:scale-[1.01] sm:h-11"
+          />
         </Link>
-        <button
-          type="button"
-          onClick={() => setIsOpen((open) => !open)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 shadow-sm md:hidden"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-        >
-          {isOpen ? <X size={18} /> : <Menu size={18} />}
-        </button>
-      </div>
 
-      {isOpen ? (
-        <div className="absolute left-4 right-4 top-full mt-3 rounded-3xl border border-white/70 bg-white/95 p-4 shadow-2xl backdrop-blur md:hidden">
-          <div className="flex flex-col gap-2 text-sm font-medium text-gray-700">
-            {links.map((link) => (
+        {/* Desktop Links with sliding animated pill */}
+        <div className="hidden md:flex items-center gap-1.5 rounded-full bg-slate-900/[0.03] p-1.5 text-sm font-medium text-slate-600">
+          {links.map((link) => {
+            const isActive = location.pathname === link.to;
+            return (
               <Link
                 key={link.to}
                 to={link.to}
-                onClick={() => setIsOpen(false)}
-                className="rounded-2xl px-4 py-3 transition-colors hover:bg-brand-accent hover:text-brand-primary"
+                className={`relative rounded-full px-4 py-2 transition-colors duration-300 ${
+                  isActive ? "text-brand-primary" : "hover:text-slate-900"
+                }`}
               >
+                {isActive && (
+                  <motion.div
+                    layoutId="active-pill"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    className="absolute inset-0 -z-10 rounded-full bg-white shadow-sm ring-1 ring-slate-100"
+                  />
+                )}
                 {link.label}
               </Link>
-            ))}
-            <Link to="/contact" onClick={() => setIsOpen(false)} className="pt-2">
-              <Button size="md" className="w-full">Book Now</Button>
-            </Link>
-          </div>
+            );
+          })}
         </div>
-      ) : null}
-    </motion.nav>
+
+        <div className="flex items-center gap-3">
+          <Link to="/contact" className="hidden sm:flex">
+            <Button size="sm" className="shadow-md">Book Now</Button>
+          </Link>
+          <button
+            type="button"
+            onClick={() => setIsOpen((open) => !open)}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-gray-700 shadow-sm md:hidden hover:bg-slate-50 transition-colors"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+          >
+            {isOpen ? <X size={16} /> : <Menu size={16} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 15, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 15, scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 350, damping: 25 }}
+            className="absolute left-4 right-4 top-full mt-3 overflow-hidden rounded-2xl border border-slate-150 bg-white/98 p-5 shadow-2xl backdrop-blur-xl md:hidden"
+          >
+            <div className="flex flex-col gap-1.5 text-sm font-medium text-slate-700">
+              {links.map((link, idx) => {
+                const isActive = location.pathname === link.to;
+                return (
+                  <motion.div
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                    key={link.to}
+                  >
+                    <Link
+                      to={link.to}
+                      onClick={() => setIsOpen(false)}
+                      className={`block rounded-xl px-4 py-3 transition-colors ${
+                        isActive
+                          ? "bg-brand-accent text-brand-primary font-semibold"
+                          : "hover:bg-slate-50 hover:text-slate-900"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+              <motion.div
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: links.length * 0.05 }}
+                className="pt-3 border-t border-slate-100 mt-1"
+              >
+                <Link to="/contact" onClick={() => setIsOpen(false)}>
+                  <Button size="md" className="w-full shadow-md">Book Now</Button>
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }

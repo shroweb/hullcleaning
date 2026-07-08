@@ -1,28 +1,27 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { CheckCircle2, MapPin, MessageCircle } from "lucide-react";
+import { MapPin, MessageCircle, Star, ShieldCheck, CheckCircle } from "lucide-react";
 import { Button } from "./ui";
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
   },
 };
 
 const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
+  hidden: { y: 15, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
 };
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white pb-16 pt-24 sm:pt-28 sm:pb-20 xl:pt-32 xl:pb-24">
-      <div className="absolute inset-x-0 top-0 h-[32rem] bg-gradient-to-b from-blue-50 via-green-50/60 to-white" />
+    <section className="relative overflow-hidden bg-slate-50/60 pb-16 pt-28 sm:pt-32 sm:pb-20 xl:pt-36 xl:pb-28 border-b border-slate-200">
 
-      <div className="container relative z-10 mx-auto px-6">
-        <div className="grid items-center gap-12 xl:grid-cols-[1fr_0.9fr] xl:gap-16">
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        <div className="grid items-center gap-12 xl:grid-cols-[1fr_0.95fr] xl:gap-16">
 
           <motion.div
             variants={containerVariants}
@@ -32,39 +31,46 @@ export default function Hero() {
           >
             <motion.div
               variants={itemVariants}
-              className="flex items-center gap-1.5 text-sm text-gray-400"
+              className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-primary"
             >
-              <MapPin size={13} className="shrink-0" />
+              <MapPin size={13} className="text-brand-secondary" />
               Swanland, East Yorkshire
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="mx-auto mt-5 text-[2.1rem] font-extrabold leading-[1.08] tracking-tight text-gray-900 sm:text-[2.75rem] xl:mx-0 xl:text-[3.4rem]"
+              className="mx-auto mt-5 font-display text-[2.25rem] font-extrabold leading-[1.1] tracking-tight text-brand-deep sm:text-[3.25rem] xl:mx-0 xl:text-[3.6rem]"
             >
-              Reliable cleaning for{" "}
-              <span className="text-brand-primary">Hull homes and businesses</span>
+              Reliable cleaning for homes & businesses in Hull
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-gray-500 sm:text-lg xl:mx-0"
+              className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-500 sm:text-lg xl:mx-0"
             >
-              One-off cleans, regular home visits, office cleaning, tenancy work,
-              takeaway deep cleans, and tidy-up support from a Swanland-based team
-              covering Hull and nearby villages.
+              Based locally in Swanland, In & Out Cleaning provides high-standard domestic, commercial, end of tenancy, and takeaway deep cleaning. We are an independent, fully insured local service you can count on.
             </motion.p>
 
+            {/* Clean row of trust points (instead of floating template badges) */}
             <motion.div
               variants={itemVariants}
-              className="mt-6 flex flex-wrap justify-center gap-3 xl:hidden"
+              className="mt-6 flex flex-wrap justify-center gap-6 xl:justify-start text-sm text-slate-600 font-medium"
             >
-              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-medium text-gray-600 shadow-sm ring-1 ring-gray-100 sm:text-sm">
-                <span className="font-bold text-gray-900">50+</span> properties cleaned
+              <div className="flex items-center gap-2">
+                <ShieldCheck size={18} className="text-brand-secondary" />
+                <span>Fully DBS Checked & Insured</span>
               </div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-medium text-gray-600 shadow-sm ring-1 ring-gray-100 sm:text-sm">
-                <MapPin size={13} className="text-brand-primary shrink-0" />
-                Based in Swanland
+              <div className="flex items-center gap-2">
+                <CheckCircle size={18} className="text-brand-secondary" />
+                <span>Independent Local Team</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <div className="flex">
+                  {[1, 2, 3, 4, 5].map(i => (
+                    <Star key={i} size={14} className="fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <span>5-Star Vetted Service</span>
               </div>
             </motion.div>
 
@@ -73,7 +79,7 @@ export default function Hero() {
               className="mx-auto mt-8 flex max-w-xs flex-col gap-3 sm:max-w-sm sm:flex-row sm:justify-center xl:mx-0 xl:justify-start"
             >
               <a href="https://w.app/inoutcleaning" target="_blank" rel="noreferrer" className="flex-1 sm:flex-none">
-                <Button size="lg" className="w-full gap-2 shadow-lg shadow-brand-primary/25 sm:w-auto">
+                <Button size="lg" className="w-full gap-2.5 sm:w-auto">
                   <MessageCircle size={18} />
                   Chat on WhatsApp
                 </Button>
@@ -88,43 +94,21 @@ export default function Hero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.92, x: 40 }}
+            initial={{ opacity: 0, scale: 0.98, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             className="relative mx-auto hidden w-full max-w-[480px] xl:block xl:max-w-none"
           >
-            <div className="absolute inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-brand-accent via-white to-brand-accent-green blur-2xl opacity-80" />
-
-            <div className="relative aspect-[4/3.6] overflow-hidden rounded-[2rem] border border-white/60 shadow-2xl shadow-blue-500/10">
+            {/* Clean, static picture frame without template glow orbs or infinite floating loops */}
+            <div className="relative aspect-[4/3.3] overflow-hidden rounded-[1.5rem] border border-slate-100 bg-white p-2 shadow-lg shadow-brand-deep/5">
               <img
                 src="/hero.png"
-                alt="Professional cleaning in Hull"
-                className="h-full w-full object-cover object-center"
+                alt="Professional cleaning service in Hull"
+                className="h-full w-full object-cover rounded-[1.2rem]"
                 fetchpriority="high"
                 width="480"
-                height="432"
+                height="400"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-            </div>
-
-            <div className="absolute -left-5 top-6 flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-xl ring-1 ring-gray-100">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-green-50">
-                <CheckCircle2 size={18} className="text-green-500" />
-              </div>
-              <div className="leading-tight">
-                <div className="text-[11px] text-gray-400">Fully</div>
-                <div className="text-sm font-bold text-gray-900">Insured</div>
-              </div>
-            </div>
-
-            <div className="absolute -bottom-4 -right-4 rounded-2xl bg-white px-4 py-3 shadow-xl ring-1 ring-gray-100">
-              <div className="flex items-center gap-1 mb-1">
-                {[1,2,3,4,5].map(i => (
-                  <svg key={i} className="h-3 w-3 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                ))}
-              </div>
-              <div className="text-sm font-bold text-gray-900">50+ properties cleaned</div>
-              <div className="text-[11px] text-gray-400">across Hull &amp; East Riding</div>
             </div>
           </motion.div>
 

@@ -40,8 +40,8 @@ export default function AreaPage() {
   return (
     <div className="bg-white">
       <Seo
-        title={`${area.name} Cleaning Services | Professional Cleaner`}
-        description={`${area.intro} Domestic cleaning, commercial cleaning, end of tenancy cleans, takeaway cleaning, and tidy-up help in ${area.name}.`}
+        title={`${area.name} Cleaning Services`}
+        description={`Local domestic and commercial cleaning in ${area.name}, including regular visits, one-off deep cleans, tenancy cleans and practical tidy-up help.`}
       />
 
       <section className="relative overflow-hidden bg-slate-50 pb-16 pt-28 sm:pt-32">
@@ -69,7 +69,7 @@ export default function AreaPage() {
                   Chat on WhatsApp
                 </Button>
               </a>
-              <Link to="/contact">
+              <Link to="/contact/">
                 <Button variant="secondary" size="lg" className="w-full sm:w-auto">
                   Get a Price
                 </Button>
@@ -270,7 +270,7 @@ export default function AreaPage() {
                   Message on WhatsApp
                 </Button>
               </a>
-              <Link to="/contact">
+              <Link to="/contact/">
                 <Button size="lg" className="w-full bg-white/10 text-white border-transparent shadow-none hover:bg-white/20 sm:w-auto">
                   Contact Page
                 </Button>

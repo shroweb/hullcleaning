@@ -9,10 +9,10 @@ export default function Navbar() {
   const location = useLocation();
 
   const links = [
-    { to: "/services", label: "Services" },
-    { to: "/about", label: "About" },
-    { to: "/reviews", label: "Reviews" },
-    { to: "/contact", label: "Contact" },
+    { to: "/services/", label: "Services" },
+    { to: "/about/", label: "About" },
+    { to: "/reviews/", label: "Reviews" },
+    { to: "/contact/", label: "Contact" },
   ];
 
   return (
@@ -57,7 +57,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <Link to="/contact" className="hidden sm:flex">
+          <Link to="/contact/" className="hidden sm:flex">
             <Button size="sm" className="shadow-md">Book Now</Button>
           </Link>
           <button
@@ -111,7 +111,7 @@ export default function Navbar() {
                 transition={{ delay: links.length * 0.05 }}
                 className="pt-3 border-t border-slate-100 mt-1"
               >
-                <Link to="/contact" onClick={() => setIsOpen(false)}>
+                <Link to="/contact/" onClick={() => setIsOpen(false)}>
                   <Button size="md" className="w-full shadow-md">Book Now</Button>
                 </Link>
               </motion.div>

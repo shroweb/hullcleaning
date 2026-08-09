@@ -116,7 +116,7 @@ export default function Services({ hideHeading = false }) {
 
                   <div className="mt-auto pt-4 border-t border-slate-100">
                     <Link
-                      to={service.link}
+                      to={`${service.link.replace(/\/+$/, "")}/`}
                       className="inline-flex items-center gap-1.5 text-sm font-extrabold text-brand-primary group-hover:text-brand-label transition-colors duration-200"
                     >
                       View details

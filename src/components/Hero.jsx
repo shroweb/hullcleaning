@@ -84,7 +84,7 @@ export default function Hero() {
                   Chat on WhatsApp
                 </Button>
               </a>
-              <Link to="/contact" className="flex-1 sm:flex-none">
+              <Link to="/contact/" className="flex-1 sm:flex-none">
                 <Button size="lg" variant="secondary" className="w-full sm:w-auto">
                   Book a Clean
                 </Button>

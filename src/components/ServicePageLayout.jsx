@@ -55,7 +55,7 @@ export default function ServicePageLayout({
                     {primaryCtaLabel}
                   </Button>
                 </a>
-                <Link to="/contact">
+                <Link to="/contact/">
                   <Button variant="secondary" size="lg" className="w-full sm:w-auto">
                     {secondaryCtaLabel}
                   </Button>
@@ -169,7 +169,7 @@ export default function ServicePageLayout({
                   Chat on WhatsApp
                 </Button>
               </a>
-              <Link to="/contact">
+              <Link to="/contact/">
                 <Button size="lg" className="w-full bg-white/10 text-white border-transparent shadow-none hover:bg-white/20 sm:w-auto">
                   Contact Form
                 </Button>

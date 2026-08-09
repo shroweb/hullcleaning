@@ -111,7 +111,7 @@ export default function AboutPage() {
                   Chat on WhatsApp
                 </Button>
               </a>
-              <Link to="/contact">
+              <Link to="/contact/">
                 <Button variant="secondary" size="lg" className="w-full sm:w-auto">
                   Get a price
                 </Button>
@@ -173,7 +173,7 @@ export default function AboutPage() {
                   Chat on WhatsApp
                 </Button>
               </a>
-              <Link to="/contact">
+              <Link to="/contact/">
                 <Button size="lg" className="w-full bg-white/10 shadow-none hover:bg-white/20 sm:w-auto">
                   Contact form
                 </Button>

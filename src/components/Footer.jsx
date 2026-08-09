@@ -34,12 +34,12 @@ export default function Footer() {
           <div className="space-y-6">
             <h4 className="text-white font-bold text-lg">Services</h4>
             <ul className="space-y-4 text-sm">
-              <li><Link to="/domestic-cleaning-hull" className="hover:text-brand-primary transition-colors">Domestic Cleaning</Link></li>
-              <li><Link to="/commercial-cleaning-hull" className="hover:text-brand-primary transition-colors">Commercial Offices</Link></li>
-              <li><Link to="/end-of-tenancy-cleaning-hull" className="hover:text-brand-primary transition-colors">End of Tenancy</Link></li>
-              <li><Link to="/takeaway-cleaning-hull" className="hover:text-brand-primary transition-colors">Takeaway Cleaning</Link></li>
-              <li><Link to="/airbnb-cleaning-hull" className="hover:text-brand-primary transition-colors">Airbnb & Holiday Lets</Link></li>
-              <li><Link to="/tidy-ups-hull" className="hover:text-brand-primary transition-colors">Tidy Ups & Garden Help</Link></li>
+              <li><Link to="/domestic-cleaning-hull/" className="hover:text-brand-primary transition-colors">Domestic Cleaning</Link></li>
+              <li><Link to="/commercial-cleaning-hull/" className="hover:text-brand-primary transition-colors">Commercial Offices</Link></li>
+              <li><Link to="/end-of-tenancy-cleaning-hull/" className="hover:text-brand-primary transition-colors">End of Tenancy</Link></li>
+              <li><Link to="/takeaway-cleaning-hull/" className="hover:text-brand-primary transition-colors">Takeaway Cleaning</Link></li>
+              <li><Link to="/airbnb-cleaning-hull/" className="hover:text-brand-primary transition-colors">Airbnb & Holiday Lets</Link></li>
+              <li><Link to="/tidy-ups-hull/" className="hover:text-brand-primary transition-colors">Tidy Ups & Garden Help</Link></li>
             </ul>
           </div>
 
@@ -48,7 +48,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               {serviceAreas.map((area) => (
                 <li key={area.slug}>
-                  <Link to={`/areas/${area.slug}`} className="hover:text-brand-primary transition-colors">
+                  <Link to={`/areas/${area.slug}/`} className="hover:text-brand-primary transition-colors">
                     {area.name}
                   </Link>
                 </li>
@@ -71,8 +71,8 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-400">
           <div>© 2026 In & Out Cleaning. All Rights Reserved.</div>
           <div className="flex flex-wrap items-center justify-center gap-6">
-            <Link to="/privacy" className="hover:text-brand-primary transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-brand-primary transition-colors">Terms of Service</Link>
+            <Link to="/privacy/" className="hover:text-brand-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms/" className="hover:text-brand-primary transition-colors">Terms of Service</Link>
             <span className="opacity-60">
               Web design in Hull by{" "}
               <a

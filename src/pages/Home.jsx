@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Seo
         title="Domestic & Commercial Cleaning in Hull"
-        description="Domestic and commercial cleaning in Hull, Swanland, and nearby villages. One-off cleans, regular visits, end of tenancy cleaning, takeaway deep cleans, and tidy-up help."
+        description="Professional domestic and commercial cleaning in Hull and Swanland. Regular visits, one-off cleans, tenancy cleans, takeaway deep cleans and tidy-up help."
       />
       <Hero />
       <Services />

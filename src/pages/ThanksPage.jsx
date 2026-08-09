@@ -7,7 +7,7 @@ export default function ThanksPage() {
     <div className="bg-white pt-32 pb-24">
       <Seo
         title="Thank You"
-        description="Thank you for contacting In & Out Cleaning."
+        description="Thank you for contacting In & Out Cleaning. We have received your enquiry and will reply shortly with cleaning availability and a quote."
       />
       <div className="container mx-auto max-w-3xl px-6 text-center">
         <div className="rounded-[2.5rem] bg-gray-50 p-10 shadow-sm">

@@ -22,7 +22,7 @@ export default function Reviews() {
           </div>
           <div>
             <Link
-              to="/reviews"
+              to="/reviews/"
               className="inline-flex items-center gap-1.5 text-sm font-extrabold text-brand-primary hover:text-brand-label transition-colors duration-200"
             >
               Read all reviews

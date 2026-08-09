@@ -6,6 +6,8 @@ import { Card } from "./ui";
 export default function InternalLinksSection({ title, description, items, variant = "services", flush = false }) {
   if (!items?.length) return null;
 
+  const canonicalPath = (to) => (to === "/" ? to : `${to.replace(/\/+$/, "")}/`);
+
   return (
     <div className={flush ? "" : "mt-12"}>
       <div className="mb-6 max-w-3xl">
@@ -20,7 +22,7 @@ export default function InternalLinksSection({ title, description, items, varian
           {items.map((item) => (
             <Link
               key={item.to}
-              to={item.to}
+              to={canonicalPath(item.to)}
               className="group flex items-center gap-2.5 rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-700 transition-colors hover:border-brand-primary hover:text-brand-primary"
             >
               <MapPin size={13} className="shrink-0 text-gray-300 transition-colors group-hover:text-brand-primary" />
@@ -31,7 +33,7 @@ export default function InternalLinksSection({ title, description, items, varian
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {items.map((item) => (
-            <Link key={item.to} to={item.to} className="group block h-full">
+            <Link key={item.to} to={canonicalPath(item.to)} className="group block h-full">
               <Card className="h-full border-gray-200 bg-white p-5 shadow-none transition-all duration-200 group-hover:border-blue-100 group-hover:shadow-sm">
                 <h3 className="text-base font-bold text-gray-900 transition-colors duration-150 group-hover:text-brand-primary">
                   {item.label}

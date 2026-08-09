@@ -5,7 +5,7 @@ export default function TermsPage() {
     <div className="bg-white pt-32 pb-24">
       <Seo
         title="Terms of Service"
-        description="Terms of service for In & Out Cleaning enquiries and bookings."
+        description="Read the terms for In & Out Cleaning enquiries, bookings, cancellations, property access and payments across Hull and nearby areas."
       />
       <div className="container mx-auto max-w-4xl px-6">
         <div className="mb-12">

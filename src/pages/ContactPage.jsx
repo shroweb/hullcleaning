@@ -56,7 +56,7 @@ export default function ContactPage() {
               {serviceAreas.map((area) => (
                 <Link
                   key={area.slug}
-                  to={`/areas/${area.slug}`}
+                  to={`/areas/${area.slug}/`}
                   className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white hover:text-gray-900"
                 >
                   {area.name}

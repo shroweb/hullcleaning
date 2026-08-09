@@ -29,7 +29,7 @@ export default function ServiceAreas() {
               transition={{ duration: 0.5, delay: index * 0.04, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Link to={`/areas/${area.slug}`} className="group block h-full">
+              <Link to={`/areas/${area.slug}/`} className="group block h-full">
                 <Card className="h-full border-slate-200 bg-white p-7 shadow-sm hover:border-slate-350 hover:shadow-md transition-all duration-300">
                   <h3 className="font-display text-lg font-bold text-brand-deep group-hover:text-brand-primary transition-colors duration-150">
                     {area.name}

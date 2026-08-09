@@ -130,7 +130,7 @@ const staticRoutes = {
   },
   '/terms': {
     title: 'Terms of Service | In & Out Cleaning',
-    description: 'Terms of service for In & Out Cleaning enquiries and bookings.',
+    description: 'Read the terms for In & Out Cleaning enquiries, bookings, cancellations, property access and payments across Hull and nearby areas.',
     content: `
       <h1>Terms of Service</h1>
       <p>Terms of service for In & Out Cleaning enquiries and bookings. When you book a clean with us, you agree to our standard terms covering cancellations, payment, access to properties, and insurance details.</p>
@@ -139,7 +139,7 @@ const staticRoutes = {
   },
   '/thanks': {
     title: 'Thank You | In & Out Cleaning',
-    description: 'Thank you for contacting In & Out Cleaning.',
+    description: 'Thank you for contacting In & Out Cleaning. We have received your enquiry and will reply shortly with cleaning availability and a quote.',
     content: `
       <h1>Thank You</h1>
       <p>Thank you for contacting In & Out Cleaning. We have received your enquiry and will get back to you shortly with a quote.</p>
@@ -153,8 +153,8 @@ for (const area of serviceAreas) {
   const route = `/areas/${area.slug}`;
   const highlightsHtml = area.highlights.map(h => `<li>${h}</li>`).join('\n        ');
   areaRoutes[route] = {
-    title: `${area.name} Cleaning Services | Professional Cleaner | In & Out Cleaning`,
-    description: `${area.intro} Domestic cleaning, commercial cleaning, end of tenancy cleans, takeaway cleaning, and tidy-up help in ${area.name}.`,
+    title: `${area.name} Cleaning Services | In & Out Cleaning`,
+    description: `Local domestic and commercial cleaning in ${area.name}, including regular visits, one-off deep cleans, tenancy cleans and practical tidy-up help.`,
     content: `
       <h1>Cleaning Services in ${area.name}</h1>
       <p>${area.intro}</p>
@@ -177,7 +177,7 @@ const routes = { ...staticRoutes, ...areaRoutes };
 // Process main home page dist/index.html first
 const homeRoute = {
   title: 'In & Out Cleaning | Domestic & Commercial Cleaning in Hull',
-  description: 'Domestic and commercial cleaning in Hull and Swanland. One-off cleans, regular visits, tenancy cleaning, takeaway deep cleans, and tidy-up help.',
+  description: 'Professional domestic and commercial cleaning in Hull and Swanland. Regular visits, one-off cleans, tenancy cleans, takeaway deep cleans and tidy-up help.',
   canonical: `${BASE_URL}/`
 };
 
@@ -200,7 +200,7 @@ console.log('Pre-rendered: / -> dist/index.html');
 
 // Process all sub-routes
 for (const [route, meta] of Object.entries(routes)) {
-  const canonicalUrl = `${BASE_URL}${route}`;
+  const canonicalUrl = `${BASE_URL}${route}/`;
   
   // Start from processedHomeHtml to keep all clean tags intact and only swap route-specific ones
   let html = processedHomeHtml

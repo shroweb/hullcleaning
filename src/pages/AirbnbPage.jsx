@@ -15,7 +15,7 @@ const features = [
 
 export default function AirbnbPage() {
   const areaLinks = serviceAreas
-    .filter((area) => ["hull", "beverley", "cottingham", "north-ferriby", "swanland"].includes(area.slug))
+    .filter((area) => ["hull", "beverley", "bridlington", "cottingham", "north-ferriby", "swanland"].includes(area.slug))
     .map((area) => ({
       label: area.name,
       to: `/areas/${area.slug}`,
@@ -50,7 +50,7 @@ export default function AirbnbPage() {
         primaryCtaLabel="Chat on WhatsApp"
         secondaryCtaLabel="Get a Quote"
         localCoverageTitle="Airbnb and holiday-let cleaning across Hull and East Yorkshire"
-        localCoverageText="We cover Hull and nearby East Yorkshire locations for Airbnb and holiday-let cleaning, including Swanland, Beverley, Cottingham, and surrounding areas."
+        localCoverageText="We cover Hull and East Yorkshire for Airbnb and holiday-let cleaning, including Swanland, Beverley, Cottingham, North Ferriby, and the Bridlington coast."
         areaLinks={areaLinks}
         relatedServices={relatedServices}
         infoCards={[

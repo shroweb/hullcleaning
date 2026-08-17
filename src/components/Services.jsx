@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Home, Building, Leaf, KeyRound, UtensilsCrossed, BedDouble, CheckCircle2, ArrowRight } from "lucide-react";
+import { Home, Building, Leaf, KeyRound, UtensilsCrossed, ChefHat, BedDouble, CheckCircle2, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card } from "./ui";
 
@@ -29,12 +29,20 @@ const services = [
     link: "/commercial-cleaning-hull",
   },
   {
-    title: "Takeaway & Restaurant Cleaning",
-    description: "Deep cleaning for food businesses in Hull, including kitchens, fryers, extraction, and front-of-house areas between services.",
+    title: "Takeaway Cleaning",
+    description: "Deep cleaning for takeaways and fast-food kitchens in Hull, including fryers, extraction, and prep areas between services.",
     icon: UtensilsCrossed,
     image: "/takeaway.jpg",
     perks: ["Kitchen & ventilation cleans", "Fryers, grills & cookers", "Out of hours operations"],
     link: "/takeaway-cleaning-hull",
+  },
+  {
+    title: "Restaurant Cleaning",
+    description: "Deep cleaning for restaurants, cafes, and bars in Hull — kitchens, dining areas, bars, and front-of-house, arranged out of hours.",
+    icon: ChefHat,
+    image: "/takeaway.jpg",
+    perks: ["Dining & front-of-house areas", "Kitchens, bars & facilities", "Early morning / late night slots"],
+    link: "/restaurant-cleaning-hull",
   },
   {
     title: "Airbnb & Holiday Let Cleaning",

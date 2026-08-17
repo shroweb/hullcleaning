@@ -21,7 +21,13 @@ export const servicePages = [
     slug: "takeaway-cleaning-hull",
     title: "Takeaway Cleaning",
     shortTitle: "Takeaway cleaning",
-    description: "Deep cleaning for takeaways and food businesses in Hull, including kitchens, extraction, and front-of-house areas.",
+    description: "Deep cleaning for takeaways and fast-food kitchens in Hull, including fryers, extraction, and prep areas.",
+  },
+  {
+    slug: "restaurant-cleaning-hull",
+    title: "Restaurant Cleaning",
+    shortTitle: "Restaurant cleaning",
+    description: "Deep cleaning for restaurants, cafes, and bars in Hull — kitchens, dining areas, bars, and front-of-house, arranged out of hours.",
   },
   {
     slug: "airbnb-cleaning-hull",

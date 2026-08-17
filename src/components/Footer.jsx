@@ -38,6 +38,7 @@ export default function Footer() {
               <li><Link to="/commercial-cleaning-hull/" className="hover:text-brand-primary transition-colors">Commercial Offices</Link></li>
               <li><Link to="/end-of-tenancy-cleaning-hull/" className="hover:text-brand-primary transition-colors">End of Tenancy</Link></li>
               <li><Link to="/takeaway-cleaning-hull/" className="hover:text-brand-primary transition-colors">Takeaway Cleaning</Link></li>
+              <li><Link to="/restaurant-cleaning-hull/" className="hover:text-brand-primary transition-colors">Restaurant Cleaning</Link></li>
               <li><Link to="/airbnb-cleaning-hull/" className="hover:text-brand-primary transition-colors">Airbnb & Holiday Lets</Link></li>
               <li><Link to="/tidy-ups-hull/" className="hover:text-brand-primary transition-colors">Tidy Ups & Garden Help</Link></li>
             </ul>

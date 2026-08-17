@@ -41,7 +41,8 @@ const staticRoutes = {
         <li><strong>Domestic Cleaning:</strong> Regular weekly or fortnightly home visits, and one-off deep cleans.</li>
         <li><strong>Commercial Cleaning:</strong> Office and business cleaning tailored to your working hours.</li>
         <li><strong>End of Tenancy Cleaning:</strong> Deep cleaning for tenants and landlords to ensure deposit returns.</li>
-        <li><strong>Takeaway Cleaning:</strong> Heavy-duty deep cleans for takeaways and food businesses in Hull, including kitchens, extraction units, and fryers.</li>
+        <li><strong>Takeaway Cleaning:</strong> Heavy-duty deep cleans for takeaways in Hull, including kitchens, extraction units, and fryers.</li>
+        <li><strong>Restaurant Cleaning:</strong> Deep cleaning for restaurants, cafes, and bars in Hull, including dining areas, bars, kitchens, and front-of-house.</li>
         <li><strong>Airbnb Cleaning:</strong> Fast turnarounds, linen changes, and preparation between guest bookings.</li>
         <li><strong>Tidy Ups & Organisation:</strong> Garden weeding, decluttering, and sorting messy spaces.</li>
       </ul>
@@ -75,12 +76,21 @@ const staticRoutes = {
     `
   },
   '/takeaway-cleaning-hull': {
-    title: 'Takeaway and Restaurant Cleaning Hull | In & Out Cleaning',
-    description: 'Specialist takeaway and restaurant cleaning in Hull. Kitchen deep cleans, fryers, extraction, and front-of-house — available early mornings and late nights.',
+    title: 'Takeaway Cleaning Hull | In & Out Cleaning',
+    description: 'Takeaway kitchen cleaning in Hull. Fryers, ovens, extraction, and surfaces deep cleaned — available early mornings and late nights.',
     content: `
-      <h1>Takeaway and Restaurant Deep Cleaning in Hull</h1>
-      <p>Specialist deep cleaning services for takeaways, restaurants, and food premises in Hull. We carry out heavy-duty sanitation that day-to-day wipe-downs cannot cover.</p>
-      <p>We clean commercial kitchens, extractors, canopies, fryers, ovens, grills, and front-of-house customer areas. Available overnight or early mornings to fit your business hours.</p>
+      <h1>Takeaway Deep Cleaning in Hull</h1>
+      <p>Specialist deep cleaning for takeaways in Hull. We carry out heavy-duty sanitation that day-to-day wipe-downs cannot cover.</p>
+      <p>We clean takeaway kitchens, extractors, canopies, fryers, ovens, grills, and front counters. Available overnight or early mornings to fit your business hours.</p>
+    `
+  },
+  '/restaurant-cleaning-hull': {
+    title: 'Restaurant Cleaning Hull | In & Out Cleaning',
+    description: 'Restaurant cleaning in Hull — dining areas, bars, kitchens, and front-of-house deep cleans arranged out of hours.',
+    content: `
+      <h1>Restaurant Deep Cleaning in Hull</h1>
+      <p>Deep cleaning for restaurants, cafes, and bars in Hull. We clean dining areas, bars, kitchens, and customer facilities to a standard that day-to-day wipe-downs cannot cover.</p>
+      <p>We cover front-of-house and seating areas, bars and back-bar, toilets, floors, walls, and kitchen surfaces. Available overnight or early mornings to fit your opening hours.</p>
     `
   },
   '/airbnb-cleaning-hull': {

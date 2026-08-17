@@ -13,6 +13,7 @@ const CommercialPage = lazy(() => import("./pages/CommercialPage"));
 const TidyUpsPage = lazy(() => import("./pages/TidyUpsPage"));
 const EndOfTenancyPage = lazy(() => import("./pages/EndOfTenancyPage"));
 const TakeawayPage = lazy(() => import("./pages/TakeawayPage"));
+const RestaurantPage = lazy(() => import("./pages/RestaurantPage"));
 const AirbnbPage = lazy(() => import("./pages/AirbnbPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const AreaPage = lazy(() => import("./pages/AreaPage"));
@@ -61,6 +62,7 @@ export default function App() {
               <Route path="/tidy-ups-hull" element={<TidyUpsPage />} />
               <Route path="/end-of-tenancy-cleaning-hull" element={<EndOfTenancyPage />} />
               <Route path="/takeaway-cleaning-hull" element={<TakeawayPage />} />
+              <Route path="/restaurant-cleaning-hull" element={<RestaurantPage />} />
               <Route path="/airbnb-cleaning-hull" element={<AirbnbPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/reviews" element={<ReviewsPage />} />

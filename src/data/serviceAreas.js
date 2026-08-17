@@ -133,7 +133,7 @@ export const serviceAreas = [
     faqQuestion: "Do you clean houses near the North Ferriby riverfront?",
     faqAnswer: "Yes, we cover the entire North Ferriby area, including all streets leading down to the riverside.",
     travelNote: "North Ferriby is located right next to Swanland, just a 5-minute drive down the hill. This close proximity means we can easily pop over for one-off estimates, key handovers, or emergency cleaning resets.",
-    nearby: ["swanland", "hessle", "hull", "beverley"],
+    nearby: ["swanland", "hessle", "hull", "brough"],
   },
   {
     slug: "beverley",
@@ -150,7 +150,41 @@ export const serviceAreas = [
     faqQuestion: "Do you offer weekend changeovers for Airbnbs in Beverley?",
     faqAnswer: "Yes, we provide reliable turnaround services for holiday lets, including weekends, to prepare your property for the next guests.",
     travelNote: "Beverley is approximately 15 to 20 minutes from our Swanland base via the A164. We group our Beverley cleaning appointments together to ensure we remain prompt and reliable for all local clients.",
-    nearby: ["cottingham", "north-ferriby", "hull", "willerby"],
+    nearby: ["cottingham", "north-ferriby", "hull", "bridlington"],
+  },
+  {
+    slug: "brough",
+    name: "Brough",
+    intro:
+      "We cover Brough for regular domestic cleaning, one-off visits, and end of tenancy cleans. Easy to book and reliable to use.",
+    highlights: [
+      "Regular domestic cleaning for Brough households",
+      "One-off cleans and move-out support",
+      "Holiday-let and short-term rental changeovers",
+    ],
+    propertyTypes: "Brough has grown quickly in recent years, with large modern estates and new-build family homes alongside older properties near the town centre. We regularly clean detached and semi-detached homes, as well as the growing number of commuter and short-term lets.",
+    localFocus: "Brough is a busy commuter town on the Hull to Selby line, so many households want dependable regular cleaning while they are at work. We also help with end of tenancy cleans as tenants move in and out.",
+    faqQuestion: "Do you offer regular weekly or fortnightly cleaning in Brough?",
+    faqAnswer: "Yes, we offer regular weekly or fortnightly slots in Brough, as well as one-off deep cleans when you need a single reset.",
+    travelNote: "Brough is a short drive from our Swanland base via the A63, taking around 15 minutes. We already work across nearby North Ferriby and the villages to the west of Hull, so fitting Brough bookings into our routes is straightforward.",
+    nearby: ["north-ferriby", "swanland", "hessle", "hull"],
+  },
+  {
+    slug: "bridlington",
+    name: "Bridlington",
+    intro:
+      "We cover Bridlington for holiday-let changeovers, Airbnb turnovers, and domestic cleaning. Reliable cover for coastal properties.",
+    highlights: [
+      "Holiday-let and Airbnb changeovers in Bridlington",
+      "Regular cleaning for coastal homes and apartments",
+      "End of tenancy and one-off deep cleans",
+    ],
+    propertyTypes: "Bridlington is one of East Yorkshire's busiest seaside towns, with a mix of holiday lets, self-catering apartments, guesthouses, and permanent homes. We clean coastal flats and houses along the seafront, plus residential streets further inland.",
+    localFocus: "Holiday-let owners in Bridlington need fast, reliable changeovers between guest stays, often at short notice during the summer season. We also support permanent residents with regular domestic cleaning.",
+    faqQuestion: "Can you handle holiday-let changeovers in Bridlington during the summer season?",
+    faqAnswer: "Yes, we provide turnaround cleans for holiday lets and Airbnbs in Bridlington, including during the busy summer season, with linen changes and restocking if needed.",
+    travelNote: "Bridlington is around 40 to 45 minutes from our Swanland base via Beverley. We group coastal bookings together so we can offer reliable, pre-arranged changeover slots for holiday-let owners.",
+    nearby: ["beverley", "hull"],
   },
 ];
 

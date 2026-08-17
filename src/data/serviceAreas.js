@@ -150,7 +150,7 @@ export const serviceAreas = [
     faqQuestion: "Do you offer weekend changeovers for Airbnbs in Beverley?",
     faqAnswer: "Yes, we provide reliable turnaround services for holiday lets, including weekends, to prepare your property for the next guests.",
     travelNote: "Beverley is approximately 15 to 20 minutes from our Swanland base via the A164. We group our Beverley cleaning appointments together to ensure we remain prompt and reliable for all local clients.",
-    nearby: ["cottingham", "north-ferriby", "hull", "bridlington"],
+    nearby: ["cottingham", "north-ferriby", "hull", "willerby"],
   },
   {
     slug: "brough",
@@ -168,23 +168,6 @@ export const serviceAreas = [
     faqAnswer: "Yes, we offer regular weekly or fortnightly slots in Brough, as well as one-off deep cleans when you need a single reset.",
     travelNote: "Brough is a short drive from our Swanland base via the A63, taking around 15 minutes. We already work across nearby North Ferriby and the villages to the west of Hull, so fitting Brough bookings into our routes is straightforward.",
     nearby: ["north-ferriby", "swanland", "hessle", "hull"],
-  },
-  {
-    slug: "bridlington",
-    name: "Bridlington",
-    intro:
-      "We cover Bridlington for holiday-let changeovers, Airbnb turnovers, and domestic cleaning. Reliable cover for coastal properties.",
-    highlights: [
-      "Holiday-let and Airbnb changeovers in Bridlington",
-      "Regular cleaning for coastal homes and apartments",
-      "End of tenancy and one-off deep cleans",
-    ],
-    propertyTypes: "Bridlington is one of East Yorkshire's busiest seaside towns, with a mix of holiday lets, self-catering apartments, guesthouses, and permanent homes. We clean coastal flats and houses along the seafront, plus residential streets further inland.",
-    localFocus: "Holiday-let owners in Bridlington need fast, reliable changeovers between guest stays, often at short notice during the summer season. We also support permanent residents with regular domestic cleaning.",
-    faqQuestion: "Can you handle holiday-let changeovers in Bridlington during the summer season?",
-    faqAnswer: "Yes, we provide turnaround cleans for holiday lets and Airbnbs in Bridlington, including during the busy summer season, with linen changes and restocking if needed.",
-    travelNote: "Bridlington is around 40 to 45 minutes from our Swanland base via Beverley. We group coastal bookings together so we can offer reliable, pre-arranged changeover slots for holiday-let owners.",
-    nearby: ["beverley", "hull"],
   },
 ];
 

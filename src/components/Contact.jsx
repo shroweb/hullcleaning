@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import { Clock3, Mail, MapPin, MessageCircle, Send } from "lucide-react";
 import { Button } from "./ui";
 
-const formEndpoint = "https://api.web3forms.com/submit";
-const accessKey = "cdccd11d-d7bd-49c4-a85c-1a3d51fe9b70";
+const formEndpoint = "https://formsubmit.co/shro.callum@gmail.com";
 
 const contactDetails = [
   {
@@ -104,33 +103,20 @@ export default function Contact() {
           {/* Form Column */}
           <div className="p-8 sm:p-10 lg:p-12">
             <form className="space-y-5" action={formEndpoint} method="POST">
-              <input type="hidden" name="access_key" value={accessKey} />
-              <input type="hidden" name="subject" value="Cleaning enquiry from hullcleaning.co.uk" />
-              <input type="hidden" name="from_name" value="In & Out Cleaning Website" />
-              <input type="hidden" name="redirect" value={successUrl} />
-              <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex="-1" autoComplete="off" />
+              <input type="hidden" name="_next" value={successUrl} />
+              <input type="hidden" name="_subject" value="Cleaning enquiry from hullcleaning.co.uk" />
+              <input type="hidden" name="_captcha" value="false" />
 
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                <div className="space-y-1.5">
-                  <label htmlFor="contact-first-name" className="text-xs font-bold uppercase tracking-wider text-slate-600">First name</label>
-                  <input
-                    id="contact-first-name"
-                    name="First Name"
-                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-brand-deep placeholder-slate-400 transition-all focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary shadow-sm"
-                    placeholder="Alex"
-                    required
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <label htmlFor="contact-last-name" className="text-xs font-bold uppercase tracking-wider text-slate-600">Last name</label>
-                  <input
-                    id="contact-last-name"
-                    name="Last Name"
-                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-brand-deep placeholder-slate-400 transition-all focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary shadow-sm"
-                    placeholder="Taylor"
-                    required
-                  />
-                </div>
+              <div className="space-y-1.5">
+                <label htmlFor="contact-name" className="text-xs font-bold uppercase tracking-wider text-slate-600">Name</label>
+                <input
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-brand-deep placeholder-slate-400 transition-all focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary shadow-sm"
+                  placeholder="Alex Taylor"
+                  required
+                />
               </div>
 
               <div className="space-y-1.5">
@@ -149,7 +135,7 @@ export default function Contact() {
                 <label htmlFor="contact-phone" className="text-xs font-bold uppercase tracking-wider text-slate-600">Phone <span className="font-normal text-slate-400">(optional)</span></label>
                 <input
                   id="contact-phone"
-                  name="Phone Number"
+                  name="phone"
                   type="tel"
                   className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-brand-deep placeholder-slate-400 transition-all focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary shadow-sm"
                   placeholder="07123 456789"
@@ -161,13 +147,14 @@ export default function Contact() {
                 <div className="relative">
                   <select
                     id="contact-service"
-                    name="Service Required"
+                    name="service"
                     className="w-full appearance-none rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-brand-deep transition-all focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary shadow-sm"
                   >
                     <option>Domestic Cleaning</option>
                     <option>Commercial Offices</option>
                     <option>End of Tenancy</option>
                     <option>Takeaway Cleaning</option>
+                    <option>Restaurant Cleaning</option>
                     <option>Garden Tidy Up</option>
                     <option>Organisation Help</option>
                   </select>
@@ -191,7 +178,7 @@ export default function Contact() {
                 />
               </div>
 
-              <Button size="lg" className="w-full gap-2 shadow-sm mt-2">
+              <Button size="lg" type="submit" className="w-full gap-2 shadow-sm mt-2">
                 <Send size={15} />
                 Send Inquiry
               </Button>

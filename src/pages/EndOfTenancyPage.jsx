@@ -31,8 +31,13 @@ export default function EndOfTenancyPage() {
   return (
     <>
       <Seo
-        title="End of Tenancy Cleaning Hull"
-        description="End of tenancy cleaning in Hull for tenants and landlords. Thorough move-out cleans to meet check-out standards and protect your deposit."
+        title="End of Tenancy Cleaning Hull | Move Out Cleaners"
+        description="Guaranteed end of tenancy cleaning in Hull for tenants, landlords, and agents. Full handover cleans including ovens, appliances, and check-out standards."
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services/" },
+          { name: "End of Tenancy Cleaning", path: "/end-of-tenancy-cleaning-hull/" },
+        ]}
       />
       <ServicePageLayout
         eyebrow="Move-Out Cleaning"
@@ -40,7 +45,7 @@ export default function EndOfTenancyPage() {
         highlight="in Hull"
         description="Thorough move-out cleans for tenants and landlords across Hull and the surrounding area, helping you meet check-out standards and protect deposits."
         image="/end-of-tenancy.jpg"
-        imageAlt="End of tenancy cleaning Hull"
+        imageAlt="End of tenancy move out deep cleaning in Hull"
         introTitle="Cleaned to the standard agents actually inspect"
         introText="End of tenancy cleans cover the places letting agents notice, from ovens and extractor fans to skirting boards and bathrooms. We work through the property properly so it feels ready for handover."
         features={features}

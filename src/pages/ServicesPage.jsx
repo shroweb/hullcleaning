@@ -24,8 +24,12 @@ export default function ServicesPage() {
   return (
     <div className="bg-white">
       <Seo
-        title="Cleaning Services"
-        description="Domestic, commercial, takeaway, tenancy, garden tidy up, and organisation help in Hull and nearby villages."
+        title="Cleaning Services in Hull | Domestic, Commercial & Tenancy"
+        description="Full range of cleaning services across Hull and East Yorkshire: domestic cleaning, commercial offices, end of tenancy, takeaway deep cleans, and garden tidy-ups."
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services/" },
+        ]}
       />
 
       <section className="bg-[#f8f9fa] pb-16 pt-28 sm:pt-32 border-b border-slate-200">

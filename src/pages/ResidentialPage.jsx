@@ -31,8 +31,13 @@ export default function ResidentialPage() {
   return (
     <>
       <Seo
-        title="Domestic Cleaning"
-        description="Domestic cleaning in Hull and nearby villages, including one-off cleans, regular visits, and end of tenancy support."
+        title="Domestic Cleaning in Hull | Regular & Deep House Cleaners"
+        description="Professional domestic and house cleaning in Hull, Swanland, and West Hull villages. Trusted weekly, fortnightly, and one-off deep cleans."
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services/" },
+          { name: "Domestic Cleaning", path: "/domestic-cleaning-hull/" },
+        ]}
       />
       <ServicePageLayout
         eyebrow="Home Cleaning"
@@ -40,7 +45,7 @@ export default function ResidentialPage() {
         highlight="that fits around home life"
         description="We help with one-off and regular domestic cleaning across Hull and nearby areas, giving homes a reliable reset without the stress."
         image="/residential.png"
-        imageAlt="Residential cleaning"
+        imageAlt="Domestic house cleaning in Hull and Swanland"
         introTitle="Built around the way your home actually runs"
         introText="Whether you need a helping hand every week, a one-off refresh before guests arrive, or an end of tenancy clean, each visit is shaped around your priorities rather than a rigid checklist."
         features={features}

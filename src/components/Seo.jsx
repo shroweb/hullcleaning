@@ -9,7 +9,7 @@ const defaultDescription =
 const getCanonicalPath = (pathname) =>
   pathname === "/" ? pathname : `${pathname.replace(/\/+$/, "")}/`;
 
-export default function Seo({ title, description = defaultDescription }) {
+export default function Seo({ title, description = defaultDescription, schema, breadcrumbs }) {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -39,6 +39,8 @@ export default function Seo({ title, description = defaultDescription }) {
     const socialImage = `${baseUrl}/logo.png`;
 
     upsertMeta('meta[name="description"]', "name", "description", description);
+    upsertMeta('meta[property="og:locale"]', "property", "og:locale", "en_GB");
+    upsertMeta('meta[property="og:site_name"]', "property", "og:site_name", siteName);
     upsertMeta('meta[property="og:title"]', "property", "og:title", title ? `${title} | ${siteName}` : siteName);
     upsertMeta('meta[property="og:description"]', "property", "og:description", description);
     upsertMeta('meta[property="og:url"]', "property", "og:url", canonicalUrl);
@@ -49,7 +51,51 @@ export default function Seo({ title, description = defaultDescription }) {
     upsertMeta('meta[name="twitter:description"]', "name", "twitter:description", description);
     upsertMeta('meta[name="twitter:image"]', "name", "twitter:image", socialImage);
     upsertLink("canonical", canonicalUrl);
-  }, [title, description, pathname]);
+
+    // Dynamic Schema Injection
+    const schemasToInject = [];
+
+    if (breadcrumbs && breadcrumbs.length > 0) {
+      schemasToInject.push({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbs.map((crumb, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "name": crumb.name,
+          "item": crumb.path.startsWith("http") ? crumb.path : `${baseUrl}${getCanonicalPath(crumb.path)}`
+        }))
+      });
+    }
+
+    if (schema) {
+      if (Array.isArray(schema)) {
+        schemasToInject.push(...schema);
+      } else {
+        schemasToInject.push(schema);
+      }
+    }
+
+    let dynamicScript = document.getElementById("dynamic-seo-schema");
+    if (schemasToInject.length > 0) {
+      if (!dynamicScript) {
+        dynamicScript = document.createElement("script");
+        dynamicScript.id = "dynamic-seo-schema";
+        dynamicScript.type = "application/ld+json";
+        document.head.appendChild(dynamicScript);
+      }
+      dynamicScript.textContent = JSON.stringify(
+        schemasToInject.length === 1 ? schemasToInject[0] : schemasToInject
+      );
+    } else if (dynamicScript) {
+      dynamicScript.remove();
+    }
+
+    return () => {
+      const scriptOnCleanup = document.getElementById("dynamic-seo-schema");
+      if (scriptOnCleanup) scriptOnCleanup.remove();
+    };
+  }, [title, description, pathname, schema, breadcrumbs]);
 
   return null;
 }

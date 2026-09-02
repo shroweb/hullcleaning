@@ -31,8 +31,13 @@ export default function TidyUpsPage() {
   return (
     <>
       <Seo
-        title="Tidy Ups and Garden Help"
-        description="Garden tidy ups, weeding, and organisation help across Hull and nearby villages. Practical support for homes and outdoor spaces."
+        title="Garden Tidy Ups & House Decluttering Hull | In & Out Cleaning"
+        description="Practical garden tidy ups, weeding, and house organisation in Hull and East Yorkshire villages. Hands-on decluttering and garden help."
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services/" },
+          { name: "Tidy Ups & Organisation", path: "/tidy-ups-hull/" },
+        ]}
       />
       <ServicePageLayout
         eyebrow="Garden and Home"
@@ -40,7 +45,7 @@ export default function TidyUpsPage() {
         highlight="organisation help in Hull"
         description="Practical support for homes and outdoor spaces across Hull and the surrounding area, from garden clear-ups to getting rooms back in order."
         image="/tidy-ups.jpg"
-        imageAlt="Garden tidy up service Hull"
+        imageAlt="Garden tidy ups and house decluttering in Hull"
         introTitle="Useful when things have simply built up"
         introText="Whether it is a garden that has got away from you, a spare room that needs sorting, or a home that needs a practical reset before viewings or guests, we can help with the hands-on work that is hard to find time for."
         features={features}

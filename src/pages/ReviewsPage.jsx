@@ -9,8 +9,12 @@ export default function ReviewsPage() {
   return (
     <div className="bg-white">
       <Seo
-        title="Reviews"
-        description="Customer reviews for In & Out Cleaning across Swanland, Hull, and the surrounding villages."
+        title="Customer Reviews & Ratings | In & Out Cleaning Hull"
+        description="Read customer reviews and feedback for In & Out Cleaning across Hull, Swanland, Hessle, Beverley, and surrounding East Yorkshire areas."
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Reviews", path: "/reviews/" },
+        ]}
       />
 
       <section className="bg-[#f8f9fa] pb-16 pt-28 sm:pt-32 border-b border-slate-200">

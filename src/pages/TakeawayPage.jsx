@@ -33,8 +33,13 @@ export default function TakeawayPage() {
   return (
     <>
       <Seo
-        title="Takeaway Cleaning Hull"
-        description="Takeaway kitchen cleaning in Hull — fryers, ovens, extraction, and surfaces deep cleaned out of hours."
+        title="Takeaway Cleaning Hull | Commercial Kitchen Deep Cleans"
+        description="Specialist takeaway kitchen deep cleaning in Hull. Fryers, ovens, extraction canopies, and food prep surfaces deep cleaned out of hours."
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services/" },
+          { name: "Takeaway Cleaning", path: "/takeaway-cleaning-hull/" },
+        ]}
       />
       <ServicePageLayout
         eyebrow="Food Business Cleaning"
@@ -42,7 +47,7 @@ export default function TakeawayPage() {
         highlight="cleaning in Hull"
         description="Deep cleaning for takeaways across Hull, from fryers and extraction systems to counters and prep areas, arranged around your opening times."
         image="/takeaway.jpg"
-        imageAlt="Takeaway kitchen cleaning Hull"
+        imageAlt="Takeaway commercial kitchen deep cleaning Hull"
         introTitle="Heavy-duty cleaning where day-to-day wipe-downs are not enough"
         introText="Takeaway kitchens build up grease, carbon, and hard-to-reach dirt fast. We deal with the deeper cleaning work that is difficult to keep on top of during service and schedule visits for early mornings or late nights."
         features={features}

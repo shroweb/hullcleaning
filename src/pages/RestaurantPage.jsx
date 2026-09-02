@@ -33,8 +33,13 @@ export default function RestaurantPage() {
   return (
     <>
       <Seo
-        title="Restaurant Cleaning Hull"
-        description="Restaurant cleaning in Hull — dining areas, bars, kitchens, and front-of-house deep cleans arranged out of hours to keep your restaurant spotless."
+        title="Restaurant Cleaning Hull | Kitchen & Bar Deep Cleans"
+        description="Professional restaurant cleaning in Hull. Dining areas, bars, kitchens, and front-of-house deep cleans scheduled out of hours."
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services/" },
+          { name: "Restaurant Cleaning", path: "/restaurant-cleaning-hull/" },
+        ]}
       />
       <ServicePageLayout
         eyebrow="Restaurant Cleaning"
@@ -42,7 +47,7 @@ export default function RestaurantPage() {
         highlight="in Hull"
         description="Deep cleaning for restaurants, cafes, and bars in Hull — from the dining room and bar to the kitchen, arranged around your opening hours."
         image="/takeaway.jpg"
-        imageAlt="Restaurant cleaning Hull"
+        imageAlt="Restaurant kitchen and dining deep cleaning in Hull"
         introTitle="The deeper clean your restaurant needs between services"
         introText="Restaurants build up grease, grime, and high-traffic wear that daily wipe-downs can't fully cover. We handle the deeper cleaning work across kitchens, dining areas, bars, and customer facilities, scheduled for early mornings, late nights, or quieter days."
         features={features}

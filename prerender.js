@@ -21,8 +21,8 @@ const template = fs.readFileSync(TEMPLATE_PATH, 'utf8');
 // Define static routes metadata and fallbacks
 const staticRoutes = {
   '/about': {
-    title: 'About | In & Out Cleaning',
-    description: 'Learn about the Swanland-based team behind In & Out Cleaning and how we help homes and businesses across Hull and nearby villages.',
+    title: 'About Us | Local Cleaning Team in Hull & Swanland | In & Out Cleaning',
+    description: 'Learn about the Swanland-based team behind In & Out Cleaning and how we help homes and businesses across Hull and nearby East Yorkshire villages.',
     content: `
       <h1>About In & Out Cleaning</h1>
       <p>In & Out Cleaning covers Hull, Swanland, and the surrounding villages. We focus on doing the job properly, being easy to deal with, and turning up when we say we will.</p>
@@ -32,8 +32,8 @@ const staticRoutes = {
     `
   },
   '/services': {
-    title: 'Cleaning Services | In & Out Cleaning',
-    description: 'Domestic, commercial, takeaway, tenancy, garden tidy up, and organisation help in Hull and nearby villages.',
+    title: 'Cleaning Services in Hull | Domestic, Commercial & Tenancy | In & Out Cleaning',
+    description: 'Full range of cleaning services across Hull and East Yorkshire: domestic cleaning, commercial offices, end of tenancy, takeaway deep cleans, and garden tidy-ups.',
     content: `
       <h1>Cleaning Services in Hull and Nearby Areas</h1>
       <p>In & Out Cleaning provides reliable cleaning services for homes, rentals, offices, and food businesses across Hull and East Yorkshire. Explore our specialist services below:</p>
@@ -49,8 +49,8 @@ const staticRoutes = {
     `
   },
   '/domestic-cleaning-hull': {
-    title: 'Domestic Cleaning | In & Out Cleaning',
-    description: 'Domestic cleaning in Hull and nearby villages, including one-off cleans, regular visits, and end of tenancy support.',
+    title: 'Domestic Cleaning in Hull | Regular & Deep House Cleaners | In & Out Cleaning',
+    description: 'Professional domestic and house cleaning in Hull, Swanland, and West Hull villages. Trusted weekly, fortnightly, and one-off deep cleans.',
     content: `
       <h1>Domestic Cleaning in Hull</h1>
       <p>We provide professional and reliable home cleaning visits across Hull, Swanland, and surrounding villages. Whether you need a regular weekly/fortnightly slot or a one-off deep clean, we can help.</p>
@@ -58,8 +58,8 @@ const staticRoutes = {
     `
   },
   '/commercial-cleaning-hull': {
-    title: 'Commercial Cleaning | In & Out Cleaning',
-    description: 'Commercial office cleaning and takeaway deep cleans across Hull and nearby villages.',
+    title: 'Commercial Cleaning Hull | Office & Workplace Cleaners | In & Out Cleaning',
+    description: 'Professional commercial and office cleaning in Hull and West Hull villages. Flexible contract cleaning and out-of-hours office cleaning.',
     content: `
       <h1>Commercial Cleaning in Hull</h1>
       <p>Professional commercial cleaning for offices, small business premises, and retail spaces in Hull and nearby villages. We work around your business hours to ensure minimal disruption to your team.</p>
@@ -67,8 +67,8 @@ const staticRoutes = {
     `
   },
   '/end-of-tenancy-cleaning-hull': {
-    title: 'End of Tenancy Cleaning Hull | In & Out Cleaning',
-    description: 'End of tenancy cleaning in Hull for tenants and landlords. Thorough move-out cleans to meet check-out standards and protect your deposit.',
+    title: 'End of Tenancy Cleaning Hull | Move Out Cleaners | In & Out Cleaning',
+    description: 'Guaranteed end of tenancy cleaning in Hull for tenants, landlords, and agents. Full handover cleans including ovens, appliances, and check-out standards.',
     content: `
       <h1>End of Tenancy Cleaning in Hull</h1>
       <p>Move-out and tenancy handover deep cleans for tenants, landlords, and letting agents. We clean to the rigorous standards required by letting agents to help protect your deposit.</p>
@@ -76,8 +76,8 @@ const staticRoutes = {
     `
   },
   '/takeaway-cleaning-hull': {
-    title: 'Takeaway Cleaning Hull | In & Out Cleaning',
-    description: 'Takeaway kitchen cleaning in Hull. Fryers, ovens, extraction, and surfaces deep cleaned — available early mornings and late nights.',
+    title: 'Takeaway Cleaning Hull | Commercial Kitchen Deep Cleans | In & Out Cleaning',
+    description: 'Specialist takeaway kitchen deep cleaning in Hull. Fryers, ovens, extraction canopies, and food prep surfaces deep cleaned out of hours.',
     content: `
       <h1>Takeaway Deep Cleaning in Hull</h1>
       <p>Specialist deep cleaning for takeaways in Hull. We carry out heavy-duty sanitation that day-to-day wipe-downs cannot cover.</p>
@@ -85,8 +85,8 @@ const staticRoutes = {
     `
   },
   '/restaurant-cleaning-hull': {
-    title: 'Restaurant Cleaning Hull | In & Out Cleaning',
-    description: 'Restaurant cleaning in Hull — dining areas, bars, kitchens, and front-of-house deep cleans arranged out of hours.',
+    title: 'Restaurant Cleaning Hull | Kitchen & Bar Deep Cleans | In & Out Cleaning',
+    description: 'Professional restaurant cleaning in Hull. Dining areas, bars, kitchens, and front-of-house deep cleans scheduled out of hours.',
     content: `
       <h1>Restaurant Deep Cleaning in Hull</h1>
       <p>Deep cleaning for restaurants, cafes, and bars in Hull. We clean dining areas, bars, kitchens, and customer facilities to a standard that day-to-day wipe-downs cannot cover.</p>
@@ -94,8 +94,8 @@ const staticRoutes = {
     `
   },
   '/airbnb-cleaning-hull': {
-    title: 'Airbnb and Holiday Let Cleaning Hull | In & Out Cleaning',
-    description: 'Airbnb and holiday let cleaning in Hull and East Yorkshire. Fast turnaround cleans with linen change, restocking, and reliable cover between every booking.',
+    title: 'Airbnb Cleaning Hull | Holiday Let Turnover Service | In & Out Cleaning',
+    description: 'Fast, dependable Airbnb and holiday let cleaning in Hull & East Yorkshire. Thorough changeover cleans, fresh linen, and guest-ready resets.',
     content: `
       <h1>Airbnb and Holiday Let Cleaning in Hull</h1>
       <p>Fast turnaround cleaning and preparation for Airbnbs and holiday rentals in Hull and East Yorkshire. We make sure your property is immaculate and fully stocked for the next guest's arrival.</p>
@@ -103,8 +103,8 @@ const staticRoutes = {
     `
   },
   '/tidy-ups-hull': {
-    title: 'Tidy Ups and Garden Help | In & Out Cleaning',
-    description: 'Garden tidy ups, weeding, and organisation help across Hull and nearby villages. Practical support for homes and outdoor spaces.',
+    title: 'Garden Tidy Ups & House Decluttering Hull | In & Out Cleaning',
+    description: 'Practical garden tidy ups, weeding, and house organisation in Hull and East Yorkshire villages. Hands-on decluttering and garden help.',
     content: `
       <h1>Garden Tidy Ups and Organisation Help in Hull</h1>
       <p>Practical tidy-up services for houses, gardens, and messy rooms. We help with weeding, lawn mowing, garden clearance, decluttering, and custom organisation for cupboards, garages, or wardrobes.</p>
@@ -112,8 +112,8 @@ const staticRoutes = {
     `
   },
   '/contact': {
-    title: 'Contact | In & Out Cleaning',
-    description: 'Contact In & Out Cleaning for quotes across Swanland, Hull, and nearby villages. Fast WhatsApp and email enquiries.',
+    title: 'Contact Us | In & Out Cleaning Hull & East Yorkshire',
+    description: 'Get in touch with In & Out Cleaning for free cleaning quotes across Hull, Swanland, and East Yorkshire. Instant WhatsApp and online enquiries.',
     content: `
       <h1>Contact In & Out Cleaning</h1>
       <p>Get a cleaning quote for your home, office, or business. We are based in Swanland and cover Hull and nearby villages.</p>
@@ -121,8 +121,8 @@ const staticRoutes = {
     `
   },
   '/reviews': {
-    title: 'Reviews | In & Out Cleaning',
-    description: 'Customer reviews for In & Out Cleaning across Swanland, Hull, and the surrounding villages.',
+    title: 'Customer Reviews & Ratings | In & Out Cleaning Hull',
+    description: 'Read customer reviews and feedback for In & Out Cleaning across Hull, Swanland, Hessle, Beverley, and surrounding East Yorkshire areas.',
     content: `
       <h1>Customer Reviews</h1>
       <p>See what our local customers say about In & Out Cleaning. We pride ourselves on reliability, thorough work, and clear communication.</p>
@@ -140,11 +140,10 @@ const staticRoutes = {
   },
   '/terms': {
     title: 'Terms of Service | In & Out Cleaning',
-    description: 'Read the terms for In & Out Cleaning enquiries, bookings, cancellations, property access and payments across Hull and nearby areas.',
+    description: 'Terms of service and booking terms for In & Out Cleaning services.',
     content: `
       <h1>Terms of Service</h1>
-      <p>Terms of service for In & Out Cleaning enquiries and bookings. When you book a clean with us, you agree to our standard terms covering cancellations, payment, access to properties, and insurance details.</p>
-      <p>Please contact us directly if you have any questions about booking policies.</p>
+      <p>Terms of service for In & Out Cleaning. Clear information regarding appointments, payment terms, and cancellation policies.</p>
     `
   },
   '/thanks': {
@@ -163,8 +162,33 @@ for (const area of serviceAreas) {
   const route = `/areas/${area.slug}`;
   const highlightsHtml = area.highlights.map(h => `<li>${h}</li>`).join('\n        ');
   areaRoutes[route] = {
-    title: `${area.name} Cleaning Services | In & Out Cleaning`,
-    description: `Local domestic and commercial cleaning in ${area.name}, including regular visits, one-off deep cleans, tenancy cleans and practical tidy-up help.`,
+    title: `Cleaners in ${area.name} | Domestic & Commercial Cleaning | In & Out Cleaning`,
+    description: `Local domestic and commercial cleaners in ${area.name}. Regular home cleaning, one-off deep cleans, tenancy cleans, and local business cleaning.`,
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": `Cleaning Services in ${area.name}`,
+        "serviceType": "Cleaning Service",
+        "provider": { "@id": "https://hullcleaning.co.uk/#business" },
+        "areaServed": { "@type": "AdministrativeArea", "name": area.name },
+        "description": `Professional domestic and commercial cleaning in ${area.name}, East Yorkshire.`
+      },
+      ...(area.faqQuestion && area.faqAnswer ? [{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": area.faqQuestion,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": area.faqAnswer
+            }
+          }
+        ]
+      }] : [])
+    ],
     content: `
       <h1>Cleaning Services in ${area.name}</h1>
       <p>${area.intro}</p>
@@ -220,6 +244,12 @@ for (const [route, meta] of Object.entries(routes)) {
     .replace(/<meta[^>]*?property="og:description"[^>]*?content="[^"]*"[^>]*?\/?>/is, `<meta property="og:description" content="${meta.description}" />`)
     .replace(/<meta[^>]*?property="og:url"[^>]*?content="[^"]*"[^>]*?\/?>/is, `<meta property="og:url" content="${canonicalUrl}" />`)
     .replace(/<link[^>]*?rel="canonical"[^>]*?href="[^"]*"[^>]*?\/?>/is, `<link rel="canonical" href="${canonicalUrl}" />`);
+
+  // If page has specific schema, inject it before </head>
+  if (meta.schema) {
+    const schemaScript = `  <script type="application/ld+json">\n  ${JSON.stringify(meta.schema, null, 2)}\n  </script>\n</head>`;
+    html = html.replace('</head>', schemaScript);
+  }
 
   // Inject page-specific fallback HTML inside the .seo-fallback div
   const seoFallbackPattern = /<div class="seo-fallback">([\s\S]*?)<\/div>/;

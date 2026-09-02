@@ -41,8 +41,12 @@ export default function AboutPage() {
   return (
     <div className="bg-white">
       <Seo
-        title="About"
-        description="Learn about the Swanland-based team behind In & Out Cleaning and how we help homes and businesses across Hull and nearby villages."
+        title="About Us | Local Cleaning Team in Hull & Swanland"
+        description="Learn about the Swanland-based team behind In & Out Cleaning and how we help homes and businesses across Hull and nearby East Yorkshire villages."
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "About Us", path: "/about/" },
+        ]}
       />
 
       <section className="bg-[#f8f9fa] pb-16 pt-28 sm:pt-32 border-b border-slate-200">

@@ -37,11 +37,54 @@ export default function AreaPage() {
       to: `/areas/${serviceArea.slug}`,
     }));
 
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Areas Covered", path: "/services/" },
+    { name: area.name, path: `/areas/${area.slug}/` },
+  ];
+
+  const areaSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": `Cleaning Services in ${area.name}`,
+      "serviceType": "Cleaning Service",
+      "provider": {
+        "@id": "https://hullcleaning.co.uk/#business"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": area.name
+      },
+      "description": `Professional domestic and commercial cleaning in ${area.name}, East Yorkshire.`
+    },
+    ...(area.faqQuestion && area.faqAnswer
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": area.faqQuestion,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": area.faqAnswer
+                }
+              }
+            ]
+          }
+        ]
+      : [])
+  ];
+
   return (
     <div className="bg-white">
       <Seo
-        title={`${area.name} Cleaning Services`}
-        description={`Local domestic and commercial cleaning in ${area.name}, including regular visits, one-off deep cleans, tenancy cleans and practical tidy-up help.`}
+        title={`Cleaners in ${area.name} | Domestic & Commercial Cleaning`}
+        description={`Local domestic and commercial cleaners in ${area.name}. Regular home cleaning, one-off deep cleans, tenancy cleans, and local business cleaning.`}
+        breadcrumbs={breadcrumbs}
+        schema={areaSchema}
       />
 
       <section className="relative overflow-hidden bg-slate-50 pb-16 pt-28 sm:pt-32">

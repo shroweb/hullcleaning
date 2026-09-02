@@ -31,8 +31,13 @@ export default function CommercialPage() {
   return (
     <>
       <Seo
-        title="Commercial Cleaning"
-        description="Commercial office cleaning and takeaway deep cleans across Hull and nearby villages."
+        title="Commercial Cleaning Hull | Office & Workplace Cleaners"
+        description="Professional commercial and office cleaning in Hull and West Hull villages. Flexible contract cleaning and out-of-hours office cleaning."
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services/" },
+          { name: "Commercial Cleaning", path: "/commercial-cleaning-hull/" },
+        ]}
       />
       <ServicePageLayout
         eyebrow="Business Cleaning"
@@ -40,7 +45,7 @@ export default function CommercialPage() {
         highlight="for offices and food premises"
         description="We provide dependable cleaning for offices, workplaces, and takeaways across Hull and the surrounding area, with visits arranged around your business."
         image="/commercial.png"
-        imageAlt="Commercial cleaning"
+        imageAlt="Commercial office cleaning in Hull and East Yorkshire"
         introTitle="Practical cleaning that works around your hours"
         introText="Every workplace runs differently, so we keep things straightforward. We can help with regular office cleaning, takeaway resets, and deeper cleans arranged around quieter periods to keep disruption low."
         features={features}

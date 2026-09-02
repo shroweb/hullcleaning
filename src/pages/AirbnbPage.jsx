@@ -33,8 +33,13 @@ export default function AirbnbPage() {
   return (
     <>
       <Seo
-        title="Airbnb and Holiday Let Cleaning Hull"
-        description="Airbnb and holiday let cleaning in Hull and East Yorkshire. Fast turnaround cleans with linen change, restocking, and reliable cover between every booking."
+        title="Airbnb Cleaning Hull | Holiday Let Turnover Service"
+        description="Fast, dependable Airbnb and holiday let cleaning in Hull & East Yorkshire. Thorough changeover cleans, fresh linen, and guest-ready resets."
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services/" },
+          { name: "Airbnb Cleaning", path: "/airbnb-cleaning-hull/" },
+        ]}
       />
       <ServicePageLayout
         eyebrow="Short-Term Lets"
@@ -42,7 +47,7 @@ export default function AirbnbPage() {
         highlight="cleaning in Hull"
         description="Fast, reliable turnaround cleans for short-term lets and holiday properties across Hull and East Yorkshire, so every guest arrives to a fresh, welcoming space."
         image="/airbnb.jpg"
-        imageAlt="Airbnb and holiday let cleaning Hull"
+        imageAlt="Airbnb and holiday let turnover cleaning Hull"
         introTitle="Reliable between every booking"
         introText="Short-term lets depend on consistent presentation. We handle the turnaround clean between guests, including bathroom and kitchen resets, linen changes, and restocking if needed, so the property feels guest-ready every time."
         features={features}

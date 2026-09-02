@@ -8,8 +8,12 @@ export default function ContactPage() {
   return (
     <div className="bg-white">
       <Seo
-        title="Contact"
-        description="Contact In & Out Cleaning for quotes across Swanland, Hull, and nearby villages. Fast WhatsApp and email enquiries."
+        title="Contact Us | In & Out Cleaning Hull & East Yorkshire"
+        description="Get in touch with In & Out Cleaning for free cleaning quotes across Hull, Swanland, and East Yorkshire. Instant WhatsApp and online enquiries."
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact/" },
+        ]}
       />
 
       <section className="bg-[#f8f9fa] pb-16 pt-28 sm:pt-32 border-b border-slate-200">

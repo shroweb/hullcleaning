@@ -51,6 +51,39 @@ const staticRoutes = {
   '/domestic-cleaning-hull': {
     title: 'Domestic Cleaning in Hull | Regular & Deep House Cleaners | In & Out Cleaning',
     description: 'Professional domestic and house cleaning in Hull, Swanland, and West Hull villages. Trusted weekly, fortnightly, and one-off deep cleans.',
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Domestic Cleaning in Hull",
+        "serviceType": "House Cleaning",
+        "provider": { "@id": "https://hullcleaning.co.uk/#business" },
+        "areaServed": { "@type": "City", "name": "Hull" },
+        "description": "Professional domestic and regular house cleaning in Hull and surrounding East Yorkshire villages."
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you bring your own cleaning supplies and equipment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we bring all professional cleaning products, vacuums, and supplies. We can also use any preferred eco-friendly or specialist products you provide."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I book a regular weekly or fortnightly domestic cleaning slot?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we offer reliable weekly and fortnightly recurring slots with the same cleaner so your home upkeep stays consistent."
+            }
+          }
+        ]
+      }
+    ],
     content: `
       <h1>Domestic Cleaning in Hull</h1>
       <p>We provide professional and reliable home cleaning visits across Hull, Swanland, and surrounding villages. Whether you need a regular weekly/fortnightly slot or a one-off deep clean, we can help.</p>
@@ -69,6 +102,39 @@ const staticRoutes = {
   '/end-of-tenancy-cleaning-hull': {
     title: 'End of Tenancy Cleaning Hull | Move Out Cleaners | In & Out Cleaning',
     description: 'Guaranteed end of tenancy cleaning in Hull for tenants, landlords, and agents. Full handover cleans including ovens, appliances, and check-out standards.',
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "End of Tenancy Cleaning Hull",
+        "serviceType": "Move Out Cleaning",
+        "provider": { "@id": "https://hullcleaning.co.uk/#business" },
+        "areaServed": { "@type": "City", "name": "Hull" },
+        "description": "Thorough end of tenancy and move-out deep cleaning in Hull to meet letting agent inspection standards."
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does your end of tenancy clean include oven and appliance cleaning?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, full oven, hob, extractor, fridge/freezer interior, and white goods deep cleaning are included in our standard tenancy checklist."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you carry out short-notice tenancy cleans in Hull?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we regularly handle fast-turnaround handover cleans for tenants and landlords across Hull and Swanland with flexible scheduling."
+            }
+          }
+        ]
+      }
+    ],
     content: `
       <h1>End of Tenancy Cleaning in Hull</h1>
       <p>Move-out and tenancy handover deep cleans for tenants, landlords, and letting agents. We clean to the rigorous standards required by letting agents to help protect your deposit.</p>

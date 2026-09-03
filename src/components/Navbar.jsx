@@ -27,6 +27,8 @@ export default function Navbar() {
           <img
             src="/logo.png"
             alt="In & Out Cleaning"
+            width="160"
+            height="44"
             className="h-8 w-auto transition-transform duration-300 group-hover:scale-[1.01] sm:h-11"
           />
         </Link>
@@ -63,10 +65,12 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setIsOpen((open) => !open)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-gray-700 shadow-sm md:hidden hover:bg-slate-50 transition-colors"
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-gray-700 shadow-sm md:hidden hover:bg-slate-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            {isOpen ? <X size={16} /> : <Menu size={16} />}
+            {isOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
       </div>

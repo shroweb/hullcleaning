@@ -43,6 +43,14 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTop />
       <div className="relative font-sans text-gray-900 bg-white">
+        {/* Skip to Content for Accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:bg-brand-primary focus:px-4 focus:py-2 focus:text-white focus:shadow-lg focus:outline-none"
+        >
+          Skip to main content
+        </a>
+
         {/* Scroll indicator */}
         <motion.div 
           className="fixed top-0 left-0 right-0 h-1 bg-brand-primary z-[60] origin-left" 
@@ -51,7 +59,7 @@ export default function App() {
         
         <Navbar />
         
-        <main className="min-h-screen">
+        <main id="main-content" className="min-h-screen">
           <Suspense fallback={null}>
             <Routes>
               <Route path="/" element={<Home />} />

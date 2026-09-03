@@ -12,6 +12,8 @@ export default function Footer() {
               <img
                 src="/logo.png"
                 alt="In & Out Cleaning"
+                width="240"
+                height="64"
                 className="h-16 w-auto transition-transform duration-300 group-hover:scale-[1.02]"
               />
             </Link>
@@ -24,9 +26,6 @@ export default function Footer() {
               </a>
               <a href="mailto:hull.cleaning@outlook.com" aria-label="Send us an email" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-secondary hover:text-[#081525] transition-colors">
                 <Mail size={20} aria-hidden="true" />
-              </a>
-              <a href="#" aria-label="Follow us on Instagram" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-primary hover:text-white transition-colors">
-                <Instagram size={20} aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -44,12 +43,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 lg:col-span-1">
             <h4 className="text-white font-bold text-lg">Areas We Cover</h4>
-            <ul className="space-y-4 text-sm">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 text-sm">
               {serviceAreas.map((area) => (
                 <li key={area.slug}>
-                  <Link to={`/areas/${area.slug}/`} className="hover:text-brand-primary transition-colors">
+                  <Link to={`/areas/${area.slug}/`} className="hover:text-brand-primary transition-colors block truncate">
                     {area.name}
                   </Link>
                 </li>

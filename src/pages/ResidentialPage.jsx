@@ -28,6 +28,40 @@ export default function ResidentialPage() {
       description: service.description,
     }));
 
+  const serviceSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Domestic Cleaning in Hull",
+      "serviceType": "House Cleaning",
+      "provider": { "@id": "https://hullcleaning.co.uk/#business" },
+      "areaServed": { "@type": "City", "name": "Hull" },
+      "description": "Professional domestic and regular house cleaning in Hull and surrounding East Yorkshire villages."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you bring your own cleaning supplies and equipment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we bring all professional cleaning products, vacuums, and supplies. We can also use any preferred eco-friendly or specialist products you provide."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I book a regular weekly or fortnightly domestic cleaning slot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer reliable weekly and fortnightly recurring slots with the same cleaner so your home upkeep stays consistent."
+          }
+        }
+      ]
+    }
+  ];
+
   return (
     <>
       <Seo
@@ -38,6 +72,7 @@ export default function ResidentialPage() {
           { name: "Services", path: "/services/" },
           { name: "Domestic Cleaning", path: "/domestic-cleaning-hull/" },
         ]}
+        schema={serviceSchema}
       />
       <ServicePageLayout
         eyebrow="Home Cleaning"

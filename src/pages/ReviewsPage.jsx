@@ -6,6 +6,33 @@ import { reviews } from "../data/reviews";
 import Seo from "../components/Seo";
 
 export default function ReviewsPage() {
+  const reviewsSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://hullcleaning.co.uk/#business",
+    "name": "In & Out Cleaning",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": String(reviews.length),
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": reviews.map((rev) => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": rev.name
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": rev.stars,
+        "bestRating": "5"
+      },
+      "reviewBody": rev.text
+    }))
+  };
+
   return (
     <div className="bg-white">
       <Seo
@@ -15,6 +42,7 @@ export default function ReviewsPage() {
           { name: "Home", path: "/" },
           { name: "Reviews", path: "/reviews/" },
         ]}
+        schema={reviewsSchema}
       />
 
       <section className="bg-[#f8f9fa] pb-16 pt-28 sm:pt-32 border-b border-slate-200">

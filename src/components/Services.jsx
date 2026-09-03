@@ -10,7 +10,7 @@ const services = [
     icon: Home,
     image: "/residential.png",
     perks: ["One-off resets", "Regular weekly/fortnightly visits", "Detailed kitchen & bathroom cleans"],
-    link: "/domestic-cleaning-hull",
+    link: "/domestic-cleaning-hull/",
   },
   {
     title: "End of Tenancy Cleaning",
@@ -18,7 +18,7 @@ const services = [
     icon: KeyRound,
     image: "/end-of-tenancy.jpg",
     perks: ["Full deep cleans of all rooms", "Ovens & white goods scrubbed", "Short notice booking slots"],
-    link: "/end-of-tenancy-cleaning-hull",
+    link: "/end-of-tenancy-cleaning-hull/",
   },
   {
     title: "Commercial Office Cleaning",
@@ -26,7 +26,7 @@ const services = [
     icon: Building,
     image: "/commercial.png",
     perks: ["Routine contract visits", "Workstations & common areas", "Quiet hours timing"],
-    link: "/commercial-cleaning-hull",
+    link: "/commercial-cleaning-hull/",
   },
   {
     title: "Takeaway Cleaning",
@@ -34,7 +34,7 @@ const services = [
     icon: UtensilsCrossed,
     image: "/takeaway.jpg",
     perks: ["Kitchen & ventilation cleans", "Fryers, grills & cookers", "Out of hours operations"],
-    link: "/takeaway-cleaning-hull",
+    link: "/takeaway-cleaning-hull/",
   },
   {
     title: "Restaurant Cleaning",
@@ -42,7 +42,7 @@ const services = [
     icon: ChefHat,
     image: "/takeaway.jpg",
     perks: ["Dining & front-of-house areas", "Kitchens, bars & facilities", "Early morning / late night slots"],
-    link: "/restaurant-cleaning-hull",
+    link: "/restaurant-cleaning-hull/",
   },
   {
     title: "Airbnb & Holiday Let Cleaning",
@@ -50,7 +50,7 @@ const services = [
     icon: BedDouble,
     image: "/airbnb.jpg",
     perks: ["Same-day transition times", "Linen replacement & restocking", "Key collection management"],
-    link: "/airbnb-cleaning-hull",
+    link: "/airbnb-cleaning-hull/",
   },
   {
     title: "Tidy Ups & Organisation Help",
@@ -58,7 +58,7 @@ const services = [
     icon: Leaf,
     image: "/tidy-ups.jpg",
     perks: ["Garden weeding & path tidies", "Room sorting & decluttering", "General organization resets"],
-    link: "/tidy-ups-hull",
+    link: "/tidy-ups-hull/",
   },
 ];
 
@@ -95,7 +95,9 @@ export default function Services({ hideHeading = false }) {
                   <div className="relative h-52 w-full overflow-hidden bg-slate-100 border-b border-slate-100">
                     <img
                       src={service.image}
-                      alt={service.title}
+                      alt={`${service.title} in Hull and East Yorkshire`}
+                      width="400"
+                      height="208"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.01]"
                       loading="lazy"
                     />

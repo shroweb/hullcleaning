@@ -113,6 +113,8 @@ export default function Contact() {
                   id="contact-name"
                   name="name"
                   type="text"
+                  autoComplete="name"
+                  autoCapitalize="words"
                   className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-brand-deep placeholder-slate-400 transition-all focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary shadow-sm"
                   placeholder="Alex Taylor"
                   required
@@ -125,6 +127,7 @@ export default function Contact() {
                   id="contact-email"
                   name="email"
                   type="email"
+                  autoComplete="email"
                   className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-brand-deep placeholder-slate-400 transition-all focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary shadow-sm"
                   placeholder="alex@example.com"
                   required
@@ -137,6 +140,7 @@ export default function Contact() {
                   id="contact-phone"
                   name="phone"
                   type="tel"
+                  autoComplete="tel"
                   className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-brand-deep placeholder-slate-400 transition-all focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary shadow-sm"
                   placeholder="07123 456789"
                 />
@@ -182,6 +186,10 @@ export default function Contact() {
                 <Send size={15} />
                 Send Inquiry
               </Button>
+
+              <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500 pt-1">
+                <span>🔒 Free no-obligation quote &bull; Reply within a few hours</span>
+              </div>
             </form>
           </div>
         </div>

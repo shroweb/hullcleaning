@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { CheckCircle2, MessageCircle, MapPin, Sparkles } from "lucide-react";
+import { CheckCircle2, MessageCircle, MapPin, Sparkles, ShieldCheck, Clock3 } from "lucide-react";
 import { Button, Card } from "./ui";
 import InternalLinksSection from "./InternalLinksSection";
 
@@ -50,7 +50,7 @@ export default function ServicePageLayout({
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a href="https://w.app/inoutcleaning" target="_blank" rel="noreferrer">
-                  <Button size="lg" className="w-full gap-2.5 sm:w-auto">
+                  <Button size="lg" className="w-full gap-2.5 sm:w-auto shadow-md">
                     <MessageCircle size={18} />
                     {primaryCtaLabel}
                   </Button>
@@ -60,6 +60,21 @@ export default function ServicePageLayout({
                     {secondaryCtaLabel}
                   </Button>
                 </Link>
+              </div>
+
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-slate-200/80 pt-5 text-xs font-medium text-slate-600">
+                <span className="inline-flex items-center gap-1.5">
+                  <ShieldCheck size={14} className="text-emerald-600" />
+                  Fully DBS Checked & Insured
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <Sparkles size={14} className="text-amber-500" />
+                  5-Star Local Service
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <Clock3 size={14} className="text-brand-primary" />
+                  Fast WhatsApp Quotes
+                </span>
               </div>
             </motion.div>
 

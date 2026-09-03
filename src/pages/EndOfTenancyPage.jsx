@@ -28,6 +28,40 @@ export default function EndOfTenancyPage() {
       description: service.description,
     }));
 
+  const tenancySchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "End of Tenancy Cleaning Hull",
+      "serviceType": "Move Out Cleaning",
+      "provider": { "@id": "https://hullcleaning.co.uk/#business" },
+      "areaServed": { "@type": "City", "name": "Hull" },
+      "description": "Thorough end of tenancy and move-out deep cleaning in Hull to meet letting agent inspection standards."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does your end of tenancy clean include oven and appliance cleaning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, full oven, hob, extractor, fridge/freezer interior, and white goods deep cleaning are included in our standard tenancy checklist."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you carry out short-notice tenancy cleans in Hull?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we regularly handle fast-turnaround handover cleans for tenants and landlords across Hull and Swanland with flexible scheduling."
+          }
+        }
+      ]
+    }
+  ];
+
   return (
     <>
       <Seo
@@ -38,6 +72,7 @@ export default function EndOfTenancyPage() {
           { name: "Services", path: "/services/" },
           { name: "End of Tenancy Cleaning", path: "/end-of-tenancy-cleaning-hull/" },
         ]}
+        schema={tenancySchema}
       />
       <ServicePageLayout
         eyebrow="Move-Out Cleaning"
